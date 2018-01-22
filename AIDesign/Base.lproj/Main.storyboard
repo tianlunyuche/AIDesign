@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e08-9j-dff" id="AJc-ye-qay">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -63,14 +63,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qq-5y-QpJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="80" y="64" width="295" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="opI-sd-RKd">
+                                <rect key="frame" x="0.0" y="64" width="80" height="554"/>
+                                <color key="backgroundColor" red="1" green="0.61329630660000001" blue="0.30232147819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7qq-5y-QpJ" firstAttribute="leading" secondItem="NAv-jL-bbo" secondAttribute="leading" id="4Nw-F3-na3"/>
+                            <constraint firstItem="NAv-jL-bbo" firstAttribute="bottom" secondItem="opI-sd-RKd" secondAttribute="bottom" id="3A4-1t-bAV"/>
+                            <constraint firstItem="7qq-5y-QpJ" firstAttribute="leading" secondItem="NAv-jL-bbo" secondAttribute="leading" constant="80" id="4Nw-F3-na3"/>
+                            <constraint firstItem="opI-sd-RKd" firstAttribute="top" secondItem="NAv-jL-bbo" secondAttribute="top" id="AE3-Q6-FLY"/>
+                            <constraint firstItem="opI-sd-RKd" firstAttribute="leading" secondItem="NAv-jL-bbo" secondAttribute="leading" id="DnF-5d-tnk"/>
                             <constraint firstItem="NAv-jL-bbo" firstAttribute="trailing" secondItem="7qq-5y-QpJ" secondAttribute="trailing" id="G4x-Wo-hFL"/>
+                            <constraint firstItem="7qq-5y-QpJ" firstAttribute="leading" secondItem="opI-sd-RKd" secondAttribute="trailing" id="IZf-W0-sg5"/>
                             <constraint firstItem="7qq-5y-QpJ" firstAttribute="top" secondItem="NAv-jL-bbo" secondAttribute="top" id="JT3-HV-Ewt"/>
                             <constraint firstItem="NAv-jL-bbo" firstAttribute="bottom" secondItem="7qq-5y-QpJ" secondAttribute="bottom" id="f5u-cv-Lrh"/>
                         </constraints>
@@ -78,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wh2-A4-N04"/>
                     <connections>
+                        <outlet property="menuView" destination="opI-sd-RKd" id="GlS-Oi-mcG"/>
                         <outlet property="searchDisplayController" destination="OLS-kS-WYf" id="r23-1s-xMC"/>
                         <outlet property="tableView" destination="7qq-5y-QpJ" id="zsz-zd-vtT"/>
                     </connections>

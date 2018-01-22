@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351E37E82016150E008D157C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37E72016150E008D157C /* GLKit.framework */; };
+		351E37EA20161534008D157C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37E920161534008D157C /* CFNetwork.framework */; };
+		351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EB20161545008D157C /* libz.1.2.5.tbd */; };
+		351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */; };
+		351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E37F2201625FA008D157C /* ZXResultTableVC.m */; };
 		359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */; };
 		359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4D1FF792B00083C042 /* Foundation.framework */; };
 		359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4F1FF792B50083C042 /* UIKit.framework */; };
@@ -18,7 +23,6 @@
 		359E7D5C1FF792E40083C042 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D5B1FF792E40083C042 /* AVFoundation.framework */; };
 		359E7D5E1FF792E90083C042 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D5D1FF792E90083C042 /* CoreTelephony.framework */; };
 		359E7D601FF792EF0083C042 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D5F1FF792EE0083C042 /* CoreLocation.framework */; };
-		359E7D621FF792F80083C042 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D611FF792F80083C042 /* libz.tbd */; };
 		359E7D641FF7935D0083C042 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D631FF7935C0083C042 /* libc++.tbd */; };
 		359E7D681FF795190083C042 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D491FF792650083C042 /* iflyMSC.framework */; };
 		35C04A6A1FF743BC00AB4510 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A691FF743BC00AB4510 /* AppDelegate.m */; };
@@ -33,6 +37,9 @@
 		35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7FD7200B00B200C13235 /* ZXGoodsCell01.m */; };
 		35CE7FDA200B00B200C13235 /* ZXGoodsCell01.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CE7FD8200B00B200C13235 /* ZXGoodsCell01.xib */; };
 		35CE7FDB200B229100C13235 /* ZXOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7FCF200AEDE600C13235 /* ZXOrderVC.m */; };
+		35E2D9D620130F320028B504 /* Service.json in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9D520130C590028B504 /* Service.json */; };
+		35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D9D9201322590028B504 /* ZXMenuCell.m */; };
+		35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9DA201322590028B504 /* ZXMenuCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		351E37E72016150E008D157C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		351E37E920161534008D157C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		351E37EB20161545008D157C /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		351E37EE2016248C008D157C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
+		351E37F1201625FA008D157C /* ZXResultTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXResultTableVC.h; sourceTree = "<group>"; };
+		351E37F2201625FA008D157C /* ZXResultTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXResultTableVC.m; sourceTree = "<group>"; };
 		359E7D491FF792650083C042 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		359E7D4D1FF792B00083C042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,12 +99,13 @@
 		35C04A8E1FF743BC00AB4510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CE7FCE200AEDE600C13235 /* ZXOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXOrderVC.h; sourceTree = "<group>"; };
 		35CE7FCF200AEDE600C13235 /* ZXOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXOrderVC.m; sourceTree = "<group>"; };
-		35CE7FD3200AF7C200C13235 /* ZXProductCell01.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXProductCell01.m; sourceTree = "<group>"; };
-		35CE7FD4200AF7C200C13235 /* ZXProductCell01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXProductCell01.h; sourceTree = "<group>"; };
-		35CE7FD5200AF7C200C13235 /* ZXProductCell01.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXProductCell01.xib; sourceTree = "<group>"; };
 		35CE7FD6200B00B200C13235 /* ZXGoodsCell01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXGoodsCell01.h; sourceTree = "<group>"; };
 		35CE7FD7200B00B200C13235 /* ZXGoodsCell01.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXGoodsCell01.m; sourceTree = "<group>"; };
 		35CE7FD8200B00B200C13235 /* ZXGoodsCell01.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXGoodsCell01.xib; sourceTree = "<group>"; };
+		35E2D9D520130C590028B504 /* Service.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Service.json; sourceTree = "<group>"; };
+		35E2D9D8201322590028B504 /* ZXMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMenuCell.h; sourceTree = "<group>"; };
+		35E2D9D9201322590028B504 /* ZXMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMenuCell.m; sourceTree = "<group>"; };
+		35E2D9DA201322590028B504 /* ZXMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMenuCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +113,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */,
+				351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */,
+				351E37EA20161534008D157C /* CFNetwork.framework in Frameworks */,
+				351E37E82016150E008D157C /* GLKit.framework in Frameworks */,
 				359E7D681FF795190083C042 /* iflyMSC.framework in Frameworks */,
 				359E7D641FF7935D0083C042 /* libc++.tbd in Frameworks */,
-				359E7D621FF792F80083C042 /* libz.tbd in Frameworks */,
 				359E7D601FF792EF0083C042 /* CoreLocation.framework in Frameworks */,
 				359E7D5E1FF792E90083C042 /* CoreTelephony.framework in Frameworks */,
 				359E7D5C1FF792E40083C042 /* AVFoundation.framework in Frameworks */,
@@ -132,9 +150,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		351E37ED2016248C008D157C /* BDSClientLib */ = {
+			isa = PBXGroup;
+			children = (
+				351E37EE2016248C008D157C /* .gitignore */,
+				351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */,
+			);
+			path = BDSClientLib;
+			sourceTree = "<group>";
+		};
 		359E7D481FF792650083C042 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				351E37ED2016248C008D157C /* BDSClientLib */,
+				351E37EB20161545008D157C /* libz.1.2.5.tbd */,
+				351E37E920161534008D157C /* CFNetwork.framework */,
+				351E37E72016150E008D157C /* GLKit.framework */,
 				359E7D631FF7935C0083C042 /* libc++.tbd */,
 				359E7D611FF792F80083C042 /* libz.tbd */,
 				359E7D5F1FF792EE0083C042 /* CoreLocation.framework */,
@@ -188,6 +219,7 @@
 				35C04A731FF743BC00AB4510 /* LaunchScreen.storyboard */,
 				35C04A761FF743BC00AB4510 /* Info.plist */,
 				35C04A771FF743BC00AB4510 /* main.m */,
+				35E2D9D520130C590028B504 /* Service.json */,
 			);
 			path = AIDesign;
 			sourceTree = "<group>";
@@ -225,6 +257,8 @@
 			children = (
 				35CE7FCE200AEDE600C13235 /* ZXOrderVC.h */,
 				35CE7FCF200AEDE600C13235 /* ZXOrderVC.m */,
+				351E37F1201625FA008D157C /* ZXResultTableVC.h */,
+				351E37F2201625FA008D157C /* ZXResultTableVC.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -247,12 +281,12 @@
 		35CE7FD2200AF7AF00C13235 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				35CE7FD4200AF7C200C13235 /* ZXProductCell01.h */,
-				35CE7FD3200AF7C200C13235 /* ZXProductCell01.m */,
-				35CE7FD5200AF7C200C13235 /* ZXProductCell01.xib */,
 				35CE7FD6200B00B200C13235 /* ZXGoodsCell01.h */,
 				35CE7FD7200B00B200C13235 /* ZXGoodsCell01.m */,
 				35CE7FD8200B00B200C13235 /* ZXGoodsCell01.xib */,
+				35E2D9D8201322590028B504 /* ZXMenuCell.h */,
+				35E2D9D9201322590028B504 /* ZXMenuCell.m */,
+				35E2D9DA201322590028B504 /* ZXMenuCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -364,9 +398,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */,
 				35C04A751FF743BC00AB4510 /* LaunchScreen.storyboard in Resources */,
 				35CE7FDA200B00B200C13235 /* ZXGoodsCell01.xib in Resources */,
 				35C04A721FF743BC00AB4510 /* Assets.xcassets in Resources */,
+				35E2D9D620130F320028B504 /* Service.json in Resources */,
 				35C04A701FF743BC00AB4510 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +430,9 @@
 			files = (
 				35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */,
 				35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */,
+				35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */,
 				35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */,
+				351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */,
 				35C04A781FF743BC00AB4510 /* main.m in Sources */,
 				35C04A6A1FF743BC00AB4510 /* AppDelegate.m in Sources */,
 			);
@@ -570,6 +608,10 @@
 				INFOPLIST_FILE = AIDesign/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AIDesign/Frameworks/BDSClientLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.habav.AIDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,6 +632,10 @@
 				INFOPLIST_FILE = AIDesign/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AIDesign/Frameworks/BDSClientLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.habav.AIDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
