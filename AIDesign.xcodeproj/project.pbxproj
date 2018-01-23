@@ -12,6 +12,8 @@
 		351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EB20161545008D157C /* libz.1.2.5.tbd */; };
 		351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */; };
 		351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E37F2201625FA008D157C /* ZXResultTableVC.m */; };
+		351E383D20178CCE008D157C /* ZXAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E383A201789F2008D157C /* ZXAlertVC.m */; };
+		351E383F20178CE1008D157C /* ZXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E383C201789F2008D157C /* ZXTableViewCell.m */; };
 		359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */; };
 		359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4D1FF792B00083C042 /* Foundation.framework */; };
 		359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4F1FF792B50083C042 /* UIKit.framework */; };
@@ -67,6 +69,23 @@
 		351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		351E37F1201625FA008D157C /* ZXResultTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXResultTableVC.h; sourceTree = "<group>"; };
 		351E37F2201625FA008D157C /* ZXResultTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXResultTableVC.m; sourceTree = "<group>"; };
+		351E37F5201631E8008D157C /* .gitIgnore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitIgnore; sourceTree = "<group>"; };
+		351E37F6201631E8008D157C /* BDSASRDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRDefines.h; sourceTree = "<group>"; };
+		351E37F7201631E8008D157C /* BDSASRParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
+		351E37F8201631E8008D157C /* BDSEventManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSEventManager.h; sourceTree = "<group>"; };
+		351E37F9201631E8008D157C /* BDSUploaderDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSUploaderDefines.h; sourceTree = "<group>"; };
+		351E37FA201631E8008D157C /* BDSUploaderParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSUploaderParameters.h; sourceTree = "<group>"; };
+		351E37FB201631E8008D157C /* BDSWakeupDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupDefines.h; sourceTree = "<group>"; };
+		351E37FC201631E8008D157C /* BDSWakeupParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupParameters.h; sourceTree = "<group>"; };
+		351E37FE201631E8008D157C /* BDRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewController.h; sourceTree = "<group>"; };
+		351E37FF201631E8008D157C /* BDRecognizerViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewDelegate.h; sourceTree = "<group>"; };
+		351E3800201631E8008D157C /* BDRecognizerViewParamsObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewParamsObject.h; sourceTree = "<group>"; };
+		351E3801201631E8008D157C /* BDTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTheme.h; sourceTree = "<group>"; };
+		351E3838201789F1008D157C /* ZXTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXTableViewCell.h; sourceTree = "<group>"; };
+		351E3839201789F1008D157C /* ZXTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTableViewCell.xib; sourceTree = "<group>"; };
+		351E383A201789F2008D157C /* ZXAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAlertVC.m; sourceTree = "<group>"; };
+		351E383B201789F2008D157C /* ZXAlertVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAlertVC.h; sourceTree = "<group>"; };
+		351E383C201789F2008D157C /* ZXTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXTableViewCell.m; sourceTree = "<group>"; };
 		359E7D491FF792650083C042 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		359E7D4D1FF792B00083C042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,10 +172,58 @@
 		351E37ED2016248C008D157C /* BDSClientLib */ = {
 			isa = PBXGroup;
 			children = (
+				351E37F4201631E8008D157C /* ASR */,
 				351E37EE2016248C008D157C /* .gitignore */,
 				351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */,
 			);
 			path = BDSClientLib;
+			sourceTree = "<group>";
+		};
+		351E37F4201631E8008D157C /* ASR */ = {
+			isa = PBXGroup;
+			children = (
+				351E37F5201631E8008D157C /* .gitIgnore */,
+				351E37F6201631E8008D157C /* BDSASRDefines.h */,
+				351E37F7201631E8008D157C /* BDSASRParameters.h */,
+				351E37F8201631E8008D157C /* BDSEventManager.h */,
+				351E37F9201631E8008D157C /* BDSUploaderDefines.h */,
+				351E37FA201631E8008D157C /* BDSUploaderParameters.h */,
+				351E37FB201631E8008D157C /* BDSWakeupDefines.h */,
+				351E37FC201631E8008D157C /* BDSWakeupParameters.h */,
+				351E37FD201631E8008D157C /* UIHeaders */,
+			);
+			path = ASR;
+			sourceTree = "<group>";
+		};
+		351E37FD201631E8008D157C /* UIHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				351E37FE201631E8008D157C /* BDRecognizerViewController.h */,
+				351E37FF201631E8008D157C /* BDRecognizerViewDelegate.h */,
+				351E3800201631E8008D157C /* BDRecognizerViewParamsObject.h */,
+				351E3801201631E8008D157C /* BDTheme.h */,
+			);
+			path = UIHeaders;
+			sourceTree = "<group>";
+		};
+		351E3836201789CA008D157C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				351E3837201789E6008D157C /* AlertVC */,
+			);
+			path = Common;
+			sourceTree = SOURCE_ROOT;
+		};
+		351E3837201789E6008D157C /* AlertVC */ = {
+			isa = PBXGroup;
+			children = (
+				351E383B201789F2008D157C /* ZXAlertVC.h */,
+				351E383A201789F2008D157C /* ZXAlertVC.m */,
+				351E3838201789F1008D157C /* ZXTableViewCell.h */,
+				351E383C201789F2008D157C /* ZXTableViewCell.m */,
+				351E3839201789F1008D157C /* ZXTableViewCell.xib */,
+			);
+			path = AlertVC;
 			sourceTree = "<group>";
 		};
 		359E7D481FF792650083C042 /* Frameworks */ = {
@@ -188,6 +255,7 @@
 		35C04A5C1FF743BC00AB4510 = {
 			isa = PBXGroup;
 			children = (
+				351E3836201789CA008D157C /* Common */,
 				35C04A671FF743BC00AB4510 /* AIDesign */,
 				35C04A801FF743BC00AB4510 /* AIDesignTests */,
 				35C04A8B1FF743BC00AB4510 /* AIDesignUITests */,
@@ -428,6 +496,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351E383F20178CE1008D157C /* ZXTableViewCell.m in Sources */,
+				351E383D20178CCE008D157C /* ZXAlertVC.m in Sources */,
 				35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */,
 				35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */,
 				35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */,

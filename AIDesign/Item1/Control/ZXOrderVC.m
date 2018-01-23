@@ -10,9 +10,25 @@
 #import "ZXGoodsCell01.h"
 #import "ZXMenuCell.h"
 #import "ZXResultTableVC.h"
+#import "ZXAlertVC.h"
+
+#import "BDSASRDefines.h"
+#import "BDSASRParameters.h"
+#import "BDSWakeupDefines.h"
+#import "BDSWakeupParameters.h"
+#import "BDSEventManager.h"
+#import "BDRecognizerViewController.h"
+#import "fcntl.h"
+//#import "AudioInputStream.h"
+
 
 #define ZXGoodsCell @"ZXGoodsCell01"
 #define ZXMenuCell @"ZXMenuCell"
+
+
+const NSString* API_KEY =@"CfGHkaxz5VfDbLkn8gdoKb8v";
+const NSString* SECRET_KEY =@"dGqy8gG8iLGayjvbsadSXAfRmg7dbDUY";
+const NSString* APP_ID =@"10605504";
 
 @interface ZXOrderVC ()<UITableViewDelegate ,UITableViewDataSource>
 
@@ -47,7 +63,6 @@
 //    NSString *jsonPath =[[NSBundle mainBundle] pathForResource:@"Service" ofType:@"json"];
 //    NSData *data =[NSData dataWithContentsOfFile:jsonPath];
 //    NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-
 }
 
 -(UISearchController *)searchVC{
@@ -74,6 +89,41 @@
     return UITableViewAutomaticDimension;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    UIAlertController *vc =[UIAlertController alertControllerWithTitle:nil message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+//    vc.view.backgroundColor =[UIColor clearColor];
+//    UIAlertAction *action =[UIAlertAction actionWithTitle:@"buyao" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        NSLog(@"gaoxiao");
+//    }];
+//    UIAlertAction *action2 =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        NSLog(@"取消");
+//    }];
+//    UIAlertAction *action3 =[UIAlertAction actionWithTitle:@"不再" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//        NSLog(@"东东");
+//    }];
+//    UIView *view =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 300,200)];
+//    view.backgroundColor =[UIColor redColor];
+//    UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn addTarget:self action:@selector(objectd ) forControlEvents:UIControlEventTouchUpInside];
+//    btn.frame =CGRectMake(0, 0, 300, 100);
+//    btn.backgroundColor =[UIColor blueColor];
+//    [view addSubview:btn];
+////    [vc.view addSubview:view];
+//    [vc addAction:action3];
+//    [vc addAction:action2];
+//    [vc addAction:action];
+    
+    ZXAlertVC *vc =[ZXAlertVC alertControllerWithTitle:@"" message:@"" preferredStyle:ZXAlertControllerStyleActionSheet];
+    ZXAlertAction *action =[ZXAlertAction actionWithTitle:@"好的" style:ZXAlertActionStyleDefault handler:^(ZXAlertAction * _Nullable action) {
+       
+    }];
+    [vc addAction:action];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)objectd{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -86,5 +136,10 @@
     return cell;
 }
 
+
+#pragma mark - Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"ds");
+}
 
 @end
