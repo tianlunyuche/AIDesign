@@ -30,7 +30,7 @@ const NSString* API_KEY =@"CfGHkaxz5VfDbLkn8gdoKb8v";
 const NSString* SECRET_KEY =@"dGqy8gG8iLGayjvbsadSXAfRmg7dbDUY";
 const NSString* APP_ID =@"10605504";
 
-@interface ZXOrderVC ()<UITableViewDelegate ,UITableViewDataSource>
+@interface ZXOrderVC ()<UITableViewDelegate ,UITableViewDataSource ,ZXAlertVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITableView *menuView;
@@ -38,6 +38,7 @@ const NSString* APP_ID =@"10605504";
 @property(nonatomic,strong) UISearchController *searchVC;
 
 @property(nonatomic,strong) ZXResultTableVC *resultTableVC;
+@property(nonatomic,strong) ZXAlertVC *alertVC ;
 @end
 
 @implementation ZXOrderVC
@@ -113,12 +114,25 @@ const NSString* APP_ID =@"10605504";
 //    [vc addAction:action2];
 //    [vc addAction:action];
     
-    ZXAlertVC *vc =[ZXAlertVC alertControllerWithTitle:@"" message:@"" preferredStyle:ZXAlertControllerStyleActionSheet];
     ZXAlertAction *action =[ZXAlertAction actionWithTitle:@"好的" style:ZXAlertActionStyleDefault handler:^(ZXAlertAction * _Nullable action) {
-       
+        
     }];
-    [vc addAction:action];
-    [self presentViewController:vc animated:YES completion:nil];
+    ZXAlertAction *action2 =[ZXAlertAction actionWithTitle:@"取消" style:ZXAlertActionStyleCancel handler:^(ZXAlertAction * _Nullable action) {
+        
+    }];
+    [_alertVC removeAllAction];
+    [_alertVC addAction:action];
+    [_alertVC addAction:action2];
+    [self.alertVC show];
+}
+
+-(ZXAlertVC *)alertVC{
+    if (!_alertVC) {
+        _alertVC =[ZXAlertVC alertControllerWithTitle:@"" message:@"" preferredStyle:ZXAlertControllerStyleActionSheet];
+        
+
+    }
+    return _alertVC;
 }
 
 -(void)objectd{
@@ -137,6 +151,9 @@ const NSString* APP_ID =@"10605504";
 }
 
 
+-(void)didSelectIndex:(NSInteger)index{
+    NSLog(@"%ld",(long)index);
+}
 #pragma mark - Navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"ds");

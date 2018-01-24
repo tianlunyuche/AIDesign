@@ -8,6 +8,7 @@
 
 #import "ZXAlertVC.h"
 #import "ZXTableViewCell.h"
+#import <YYKit.h>
 
 #define Cell @"ZXTableViewCell"
 
@@ -15,7 +16,6 @@
 
 @property (nullable, nonatomic, readwrite) NSString *title;
 @property (nonatomic, readwrite) ZXAlertActionStyle style;
-
 @end
 
 @implementation ZXAlertAction
@@ -30,6 +30,7 @@
         self.title =title;
         self.style =style;
     }
+    handler(self);
     
     return self;
 }
@@ -39,7 +40,10 @@
 
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray<ZXAlertAction *> *alertAction;
+@property(nonatomic,strong) NSMutableArray<ZXAlertAction *> *cancelAction;
 @property (nonatomic, readwrite) ZXAlertControllerStyle preferredStyle;
+
+@property(nonatomic,assign) NSInteger section;
 
 @end
 
@@ -55,7 +59,12 @@
         self.title =title;
         self.message =message;
         self.preferredStyle =preferredStyle;
-        self.view.backgroundColor =[UIColor colorWithRed:1 green:0 blue:0 alpha:0.1];
+        self.view.backgroundColor =[UIColor grayColor];
+        self.view.alpha =0;
+        self.modalPresentationStyle = UIModalPresentationCurrentContext;
+        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        self.section =1;
     }
     return self;
 }
@@ -72,8 +81,15 @@
 
 -(void)addAction:(ZXAlertAction *)action{
     
+    if (action.style == ZXAlertActionStyleCancel) {
+        _section =2;
+        [self.cancelAction addObject:action];
+    }else
     [self.alertAction addObject:action];
-    [self.tableView reloadData];
+}
+
+-(void)removeAllAction{
+    [self.alertAction removeAllObjects];
 }
 
 #pragma mark - UITableViewDelegate
@@ -83,20 +99,54 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(didSelectIndex:)]) {
+        [_delegate didSelectIndex:indexPath.row];
+        return;
+    }
+    [self dissmisView];
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.alertAction.count;
+
+    if (section == 0) {
+        return self.alertAction.count;
+    }
+    return self.cancelAction.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ZXTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:Cell];
-    
+    if (indexPath.section ==0) {
+        ZXAlertAction *action = self.alertAction[indexPath.row];
+        cell.title.text =action.title;
+    }else
+        cell.title.text =self.cancelAction[indexPath.row].title;
+
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.section;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section ==1) {
+        return 20;
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section ==1) {
+        return [[UIView alloc] init];
+    }
+    return nil;
+}
+
+#pragma mark - LazyLoad
 -(NSMutableArray<ZXAlertAction *> *)alertAction{
     if (!_alertAction) {
         _alertAction =[NSMutableArray arrayWithCapacity:1];
@@ -106,11 +156,45 @@
 
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 300, 300, 200) style:UITableViewStylePlain];
+        _tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, 0) style:UITableViewStylePlain];
+        _tableView.backgroundColor =[UIColor clearColor];
         [self.view addSubview:_tableView];
 
     }
     return _tableView;
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self dissmisView];
+}
+
+-(void)dissmisView{
+    [UIView animateWithDuration:0.17 animations:^{
+        
+        self.view.alpha =0;
+        self.tableView.frame =CGRectMake(0, kScreenHeight, kScreenWidth, self.tableView.bounds.size.height);
+    } completion:^(BOOL finished) {
+        
+        [self.view removeFromSuperview];
+        self.section =1;
+        [self removeAllAction];
+    }];
+}
+
+-(void)show{
+    
+    CGFloat height =self.alertAction.count * 44 +(self.section -1)*20;
+    self.tableView.frame =CGRectMake(0, kScreenHeight, kScreenWidth, height);
+    [self.tableView reloadData];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.view];
+    [UIView animateWithDuration:0.17 animations:^{
+        
+        self.view.alpha =0.5;
+        self.tableView.frame =CGRectMake(0, kScreenHeight -self.tableView.bounds.size.height, kScreenWidth, self.tableView.bounds.size.height);
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 @end

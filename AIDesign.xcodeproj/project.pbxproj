@@ -13,7 +13,8 @@
 		351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */; };
 		351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E37F2201625FA008D157C /* ZXResultTableVC.m */; };
 		351E383D20178CCE008D157C /* ZXAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E383A201789F2008D157C /* ZXAlertVC.m */; };
-		351E383F20178CE1008D157C /* ZXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E383C201789F2008D157C /* ZXTableViewCell.m */; };
+		351E38482018DFF4008D157C /* ZXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E38462018DFF4008D157C /* ZXTableViewCell.m */; };
+		351E38492018DFF4008D157C /* ZXTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351E38472018DFF4008D157C /* ZXTableViewCell.xib */; };
 		359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */; };
 		359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4D1FF792B00083C042 /* Foundation.framework */; };
 		359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4F1FF792B50083C042 /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 		35E2D9D620130F320028B504 /* Service.json in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9D520130C590028B504 /* Service.json */; };
 		35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D9D9201322590028B504 /* ZXMenuCell.m */; };
 		35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9DA201322590028B504 /* ZXMenuCell.xib */; };
+		745564FDA2E397E6E9856BE2 /* libPods-AIDesign.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F1A4FB82D4D3F26A8EE149 /* libPods-AIDesign.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +83,11 @@
 		351E37FF201631E8008D157C /* BDRecognizerViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewDelegate.h; sourceTree = "<group>"; };
 		351E3800201631E8008D157C /* BDRecognizerViewParamsObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewParamsObject.h; sourceTree = "<group>"; };
 		351E3801201631E8008D157C /* BDTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTheme.h; sourceTree = "<group>"; };
-		351E3838201789F1008D157C /* ZXTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXTableViewCell.h; sourceTree = "<group>"; };
-		351E3839201789F1008D157C /* ZXTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTableViewCell.xib; sourceTree = "<group>"; };
 		351E383A201789F2008D157C /* ZXAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAlertVC.m; sourceTree = "<group>"; };
 		351E383B201789F2008D157C /* ZXAlertVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAlertVC.h; sourceTree = "<group>"; };
-		351E383C201789F2008D157C /* ZXTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXTableViewCell.m; sourceTree = "<group>"; };
+		351E38452018DFF4008D157C /* ZXTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXTableViewCell.h; sourceTree = "<group>"; };
+		351E38462018DFF4008D157C /* ZXTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXTableViewCell.m; sourceTree = "<group>"; };
+		351E38472018DFF4008D157C /* ZXTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTableViewCell.xib; sourceTree = "<group>"; };
 		359E7D491FF792650083C042 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		359E7D4D1FF792B00083C042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,9 @@
 		35E2D9D8201322590028B504 /* ZXMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMenuCell.h; sourceTree = "<group>"; };
 		35E2D9D9201322590028B504 /* ZXMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMenuCell.m; sourceTree = "<group>"; };
 		35E2D9DA201322590028B504 /* ZXMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMenuCell.xib; sourceTree = "<group>"; };
+		6F9DF52CA7FBDCCB45CEE54D /* Pods-AIDesign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIDesign.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign.debug.xcconfig"; sourceTree = "<group>"; };
+		85F1A4FB82D4D3F26A8EE149 /* libPods-AIDesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AIDesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E378C516F288F5CCA8D11E5 /* Pods-AIDesign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIDesign.release.xcconfig"; path = "Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +154,7 @@
 				359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */,
 				359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */,
 				359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */,
+				745564FDA2E397E6E9856BE2 /* libPods-AIDesign.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +225,9 @@
 			children = (
 				351E383B201789F2008D157C /* ZXAlertVC.h */,
 				351E383A201789F2008D157C /* ZXAlertVC.m */,
-				351E3838201789F1008D157C /* ZXTableViewCell.h */,
-				351E383C201789F2008D157C /* ZXTableViewCell.m */,
-				351E3839201789F1008D157C /* ZXTableViewCell.xib */,
+				351E38452018DFF4008D157C /* ZXTableViewCell.h */,
+				351E38462018DFF4008D157C /* ZXTableViewCell.m */,
+				351E38472018DFF4008D157C /* ZXTableViewCell.xib */,
 			);
 			path = AlertVC;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 				359E7D4D1FF792B00083C042 /* Foundation.framework */,
 				359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */,
 				359E7D491FF792650083C042 /* iflyMSC.framework */,
+				85F1A4FB82D4D3F26A8EE149 /* libPods-AIDesign.a */,
 			);
 			name = Frameworks;
 			path = AIDesign/Frameworks;
@@ -261,6 +268,7 @@
 				35C04A8B1FF743BC00AB4510 /* AIDesignUITests */,
 				35C04A661FF743BC00AB4510 /* Products */,
 				359E7D481FF792650083C042 /* Frameworks */,
+				BA6B8D4B08592D623F82E634 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +367,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BA6B8D4B08592D623F82E634 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F9DF52CA7FBDCCB45CEE54D /* Pods-AIDesign.debug.xcconfig */,
+				9E378C516F288F5CCA8D11E5 /* Pods-AIDesign.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,9 +383,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35C04A911FF743BC00AB4510 /* Build configuration list for PBXNativeTarget "AIDesign" */;
 			buildPhases = (
+				E04CED58FD749FF7F7A66D57 /* [CP] Check Pods Manifest.lock */,
 				35C04A611FF743BC00AB4510 /* Sources */,
 				35C04A621FF743BC00AB4510 /* Frameworks */,
 				35C04A631FF743BC00AB4510 /* Resources */,
+				F6164234983C7AFE2C8A1DAE /* [CP] Embed Pods Frameworks */,
+				1CD24F6433F479B62A4F5416 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -472,6 +492,7 @@
 				35C04A721FF743BC00AB4510 /* Assets.xcassets in Resources */,
 				35E2D9D620130F320028B504 /* Service.json in Resources */,
 				35C04A701FF743BC00AB4510 /* Main.storyboard in Resources */,
+				351E38492018DFF4008D157C /* ZXTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,12 +512,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CD24F6433F479B62A4F5416 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E04CED58FD749FF7F7A66D57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AIDesign-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6164234983C7AFE2C8A1DAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35C04A611FF743BC00AB4510 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				351E383F20178CE1008D157C /* ZXTableViewCell.m in Sources */,
 				351E383D20178CCE008D157C /* ZXAlertVC.m in Sources */,
 				35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */,
 				35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */,
@@ -505,6 +579,7 @@
 				351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */,
 				35C04A781FF743BC00AB4510 /* main.m in Sources */,
 				35C04A6A1FF743BC00AB4510 /* AppDelegate.m in Sources */,
+				351E38482018DFF4008D157C /* ZXTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +741,7 @@
 		};
 		35C04A921FF743BC00AB4510 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F9DF52CA7FBDCCB45CEE54D /* Pods-AIDesign.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -690,6 +766,7 @@
 		};
 		35C04A931FF743BC00AB4510 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E378C516F288F5CCA8D11E5 /* Pods-AIDesign.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

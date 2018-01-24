@@ -29,8 +29,15 @@ typedef NS_ENUM(NSInteger, ZXAlertControllerStyle) {
 
 @end
 
+@protocol ZXAlertVCDelegate <NSObject>
+
+-(void)didSelectIndex : (NSInteger) index;
+
+@end
+
 @interface ZXAlertVC : UIViewController
 
+@property(nonatomic,strong) id<ZXAlertVCDelegate> delegate;
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *message;
 
@@ -39,4 +46,7 @@ typedef NS_ENUM(NSInteger, ZXAlertControllerStyle) {
 + (instancetype _Nullable)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(ZXAlertControllerStyle)preferredStyle;
 
 -(void)addAction:(ZXAlertAction *)action;
+-(void)removeAllAction;
+
+-(void)show;
 @end
