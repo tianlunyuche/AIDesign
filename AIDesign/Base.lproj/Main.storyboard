@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e08-9j-dff" id="AJc-ye-qay">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -151,11 +151,11 @@
             </objects>
             <point key="canvasLocation" x="-124" y="27"/>
         </scene>
-        <!--Item 1-->
+        <!--下单-->
         <scene sceneID="yXb-3h-2zV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZvU-Xr-FR8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="JfW-68-DlL"/>
+                    <tabBarItem key="tabBarItem" title="下单" image="nav-add" id="JfW-68-DlL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ewe-wc-PSV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -170,11 +170,11 @@
             </objects>
             <point key="canvasLocation" x="-310.39999999999998" y="763.71814092953525"/>
         </scene>
-        <!--Item 2-->
+        <!--库存管理-->
         <scene sceneID="vcz-ol-d0n">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5H7-A4-b1k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="YLo-D7-jYr"/>
+                    <tabBarItem key="tabBarItem" title="库存管理" image="btn_drop_down" id="YLo-D7-jYr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wrq-7i-ZhM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -190,4 +190,8 @@
             <point key="canvasLocation" x="-340.80000000000001" y="1426.6866566716642"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_drop_down" width="14" height="8"/>
+        <image name="nav-add" width="24" height="24"/>
+    </resources>
 </document>

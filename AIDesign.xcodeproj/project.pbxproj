@@ -12,6 +12,19 @@
 		351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EB20161545008D157C /* libz.1.2.5.tbd */; };
 		351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */; };
 		351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E37F2201625FA008D157C /* ZXResultTableVC.m */; };
+		3525022C201C2902004E898C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3525022B201C2901004E898C /* libsqlite3.0.tbd */; };
+		35250244201C586D004E898C /* BDVRSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 35250236201C4E49004E898C /* BDVRSettings.m */; };
+		35250245201C5872004E898C /* BDVRSettingsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35250238201C4EA1004E898C /* BDVRSettingsItem.m */; };
+		35250251201C5B40004E898C /* bds_easr_basic_model.dat in Resources */ = {isa = PBXBuildFile; fileRef = 35250247201C5B34004E898C /* bds_easr_basic_model.dat */; };
+		35250252201C5B40004E898C /* bds_easr_dnn_wakeup_model.dat in Resources */ = {isa = PBXBuildFile; fileRef = 35250248201C5B34004E898C /* bds_easr_dnn_wakeup_model.dat */; };
+		35250253201C5B40004E898C /* bds_easr_gramm.dat in Resources */ = {isa = PBXBuildFile; fileRef = 35250249201C5B34004E898C /* bds_easr_gramm.dat */; };
+		35250254201C5B40004E898C /* bds_easr_input_model.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024A201C5B34004E898C /* bds_easr_input_model.dat */; };
+		35250255201C5B40004E898C /* bds_easr_mfe_cmvn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024B201C5B34004E898C /* bds_easr_mfe_cmvn.dat */; };
+		35250256201C5B40004E898C /* bds_easr_mfe_dnn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024C201C5B34004E898C /* bds_easr_mfe_dnn.dat */; };
+		35250257201C5B40004E898C /* bds_easr_wakeup_words.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024D201C5B34004E898C /* bds_easr_wakeup_words.dat */; };
+		35250258201C5B40004E898C /* bds_license.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024E201C5B34004E898C /* bds_license.dat */; };
+		35250259201C5B40004E898C /* vad.dnn_o.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024F201C5B34004E898C /* vad.dnn_o.dat */; };
+		3525025A201C5B40004E898C /* vad_dnn_online.dat in Resources */ = {isa = PBXBuildFile; fileRef = 35250250201C5B34004E898C /* vad_dnn_online.dat */; };
 		359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */; };
 		359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4D1FF792B00083C042 /* Foundation.framework */; };
 		359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4F1FF792B50083C042 /* UIKit.framework */; };
@@ -25,6 +38,7 @@
 		359E7D601FF792EF0083C042 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D5F1FF792EE0083C042 /* CoreLocation.framework */; };
 		359E7D641FF7935D0083C042 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D631FF7935C0083C042 /* libc++.tbd */; };
 		359E7D681FF795190083C042 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D491FF792650083C042 /* iflyMSC.framework */; };
+		35BB170F20503F93004C0873 /* ZXStockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB170E20503F93004C0873 /* ZXStockVC.m */; };
 		35C04A6A1FF743BC00AB4510 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A691FF743BC00AB4510 /* AppDelegate.m */; };
 		35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A6C1FF743BC00AB4510 /* ViewController.m */; };
 		35C04A701FF743BC00AB4510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C04A6E1FF743BC00AB4510 /* Main.storyboard */; };
@@ -67,6 +81,44 @@
 		351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		351E37F1201625FA008D157C /* ZXResultTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXResultTableVC.h; sourceTree = "<group>"; };
 		351E37F2201625FA008D157C /* ZXResultTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXResultTableVC.m; sourceTree = "<group>"; };
+		35250216201B8752004E898C /* .gitIgnore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitIgnore; sourceTree = "<group>"; };
+		35250217201B8752004E898C /* BDSASRDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRDefines.h; sourceTree = "<group>"; };
+		35250218201B8752004E898C /* BDSASRParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
+		35250219201B8752004E898C /* BDSEventManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSEventManager.h; sourceTree = "<group>"; };
+		3525021A201B8752004E898C /* BDSUploaderDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSUploaderDefines.h; sourceTree = "<group>"; };
+		3525021B201B8752004E898C /* BDSUploaderParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSUploaderParameters.h; sourceTree = "<group>"; };
+		3525021C201B8752004E898C /* BDSWakeupDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupDefines.h; sourceTree = "<group>"; };
+		3525021D201B8752004E898C /* BDSWakeupParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupParameters.h; sourceTree = "<group>"; };
+		3525021F201B8752004E898C /* BDRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewController.h; sourceTree = "<group>"; };
+		35250220201B8752004E898C /* BDRecognizerViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewDelegate.h; sourceTree = "<group>"; };
+		35250221201B8752004E898C /* BDRecognizerViewParamsObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewParamsObject.h; sourceTree = "<group>"; };
+		35250222201B8752004E898C /* BDTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTheme.h; sourceTree = "<group>"; };
+		3525022B201C2901004E898C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3525022D201C29BF004E898C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		35250235201C4E49004E898C /* BDVRSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDVRSettings.h; sourceTree = "<group>"; };
+		35250236201C4E49004E898C /* BDVRSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDVRSettings.m; sourceTree = "<group>"; };
+		35250237201C4EA1004E898C /* BDVRSettingsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDVRSettingsItem.h; sourceTree = "<group>"; };
+		35250238201C4EA1004E898C /* BDVRSettingsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDVRSettingsItem.m; sourceTree = "<group>"; };
+		3525023A201C504C004E898C /* bds_easr_basic_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_basic_model.dat; sourceTree = "<group>"; };
+		3525023B201C504C004E898C /* bds_easr_dnn_wakeup_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_dnn_wakeup_model.dat; sourceTree = "<group>"; };
+		3525023C201C504C004E898C /* bds_easr_gramm.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_easr_gramm.dat; sourceTree = "<group>"; };
+		3525023D201C504C004E898C /* bds_easr_input_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_input_model.dat; sourceTree = "<group>"; };
+		3525023E201C504C004E898C /* bds_easr_mfe_cmvn.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_easr_mfe_cmvn.dat; sourceTree = "<group>"; };
+		3525023F201C504C004E898C /* bds_easr_mfe_dnn.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_mfe_dnn.dat; sourceTree = "<group>"; };
+		35250240201C504C004E898C /* bds_easr_wakeup_words.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_wakeup_words.dat; sourceTree = "<group>"; };
+		35250241201C504C004E898C /* bds_license.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_license.dat; sourceTree = "<group>"; };
+		35250242201C504C004E898C /* vad.dnn_o.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad.dnn_o.dat; sourceTree = "<group>"; };
+		35250243201C504C004E898C /* vad_dnn_online.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad_dnn_online.dat; sourceTree = "<group>"; };
+		35250247201C5B34004E898C /* bds_easr_basic_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_basic_model.dat; sourceTree = "<group>"; };
+		35250248201C5B34004E898C /* bds_easr_dnn_wakeup_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_dnn_wakeup_model.dat; sourceTree = "<group>"; };
+		35250249201C5B34004E898C /* bds_easr_gramm.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_easr_gramm.dat; sourceTree = "<group>"; };
+		3525024A201C5B34004E898C /* bds_easr_input_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_input_model.dat; sourceTree = "<group>"; };
+		3525024B201C5B34004E898C /* bds_easr_mfe_cmvn.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_easr_mfe_cmvn.dat; sourceTree = "<group>"; };
+		3525024C201C5B34004E898C /* bds_easr_mfe_dnn.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_mfe_dnn.dat; sourceTree = "<group>"; };
+		3525024D201C5B34004E898C /* bds_easr_wakeup_words.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_wakeup_words.dat; sourceTree = "<group>"; };
+		3525024E201C5B34004E898C /* bds_license.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_license.dat; sourceTree = "<group>"; };
+		3525024F201C5B34004E898C /* vad.dnn_o.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad.dnn_o.dat; sourceTree = "<group>"; };
+		35250250201C5B34004E898C /* vad_dnn_online.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad_dnn_online.dat; sourceTree = "<group>"; };
 		359E7D491FF792650083C042 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		359E7D4D1FF792B00083C042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +133,8 @@
 		359E7D5F1FF792EE0083C042 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		359E7D611FF792F80083C042 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		359E7D631FF7935C0083C042 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		35BB170D20503F93004C0873 /* ZXStockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXStockVC.h; sourceTree = "<group>"; };
+		35BB170E20503F93004C0873 /* ZXStockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXStockVC.m; sourceTree = "<group>"; };
 		35C04A651FF743BC00AB4510 /* AIDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C04A681FF743BC00AB4510 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35C04A691FF743BC00AB4510 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3525022C201C2902004E898C /* libsqlite3.0.tbd in Frameworks */,
 				351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */,
 				351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */,
 				351E37EA20161534008D157C /* CFNetwork.framework in Frameworks */,
@@ -159,9 +214,99 @@
 			path = BDSClientLib;
 			sourceTree = "<group>";
 		};
+		35250214201B8745004E898C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				35250215201B8752004E898C /* ASR */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		35250215201B8752004E898C /* ASR */ = {
+			isa = PBXGroup;
+			children = (
+				35250216201B8752004E898C /* .gitIgnore */,
+				35250217201B8752004E898C /* BDSASRDefines.h */,
+				35250218201B8752004E898C /* BDSASRParameters.h */,
+				35250219201B8752004E898C /* BDSEventManager.h */,
+				3525021A201B8752004E898C /* BDSUploaderDefines.h */,
+				3525021B201B8752004E898C /* BDSUploaderParameters.h */,
+				3525021C201B8752004E898C /* BDSWakeupDefines.h */,
+				3525021D201B8752004E898C /* BDSWakeupParameters.h */,
+				3525021E201B8752004E898C /* UIHeaders */,
+			);
+			path = ASR;
+			sourceTree = "<group>";
+		};
+		3525021E201B8752004E898C /* UIHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				3525021F201B8752004E898C /* BDRecognizerViewController.h */,
+				35250220201B8752004E898C /* BDRecognizerViewDelegate.h */,
+				35250221201B8752004E898C /* BDRecognizerViewParamsObject.h */,
+				35250222201B8752004E898C /* BDTheme.h */,
+			);
+			path = UIHeaders;
+			sourceTree = "<group>";
+		};
+		3525022F201C4D0E004E898C /* ASR */ = {
+			isa = PBXGroup;
+			children = (
+				35250230201C4D0E004E898C /* Settings */,
+			);
+			path = ASR;
+			sourceTree = "<group>";
+		};
+		35250230201C4D0E004E898C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				35250235201C4E49004E898C /* BDVRSettings.h */,
+				35250236201C4E49004E898C /* BDVRSettings.m */,
+				35250237201C4EA1004E898C /* BDVRSettingsItem.h */,
+				35250238201C4EA1004E898C /* BDVRSettingsItem.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		35250239201C504C004E898C /* BDSClientEASRResources */ = {
+			isa = PBXGroup;
+			children = (
+				3525023A201C504C004E898C /* bds_easr_basic_model.dat */,
+				3525023B201C504C004E898C /* bds_easr_dnn_wakeup_model.dat */,
+				3525023C201C504C004E898C /* bds_easr_gramm.dat */,
+				3525023D201C504C004E898C /* bds_easr_input_model.dat */,
+				3525023E201C504C004E898C /* bds_easr_mfe_cmvn.dat */,
+				3525023F201C504C004E898C /* bds_easr_mfe_dnn.dat */,
+				35250240201C504C004E898C /* bds_easr_wakeup_words.dat */,
+				35250241201C504C004E898C /* bds_license.dat */,
+				35250242201C504C004E898C /* vad.dnn_o.dat */,
+				35250243201C504C004E898C /* vad_dnn_online.dat */,
+			);
+			path = BDSClientEASRResources;
+			sourceTree = "<group>";
+		};
+		35250246201C5B34004E898C /* BDSClientEASRResources */ = {
+			isa = PBXGroup;
+			children = (
+				35250247201C5B34004E898C /* bds_easr_basic_model.dat */,
+				35250248201C5B34004E898C /* bds_easr_dnn_wakeup_model.dat */,
+				35250249201C5B34004E898C /* bds_easr_gramm.dat */,
+				3525024A201C5B34004E898C /* bds_easr_input_model.dat */,
+				3525024B201C5B34004E898C /* bds_easr_mfe_cmvn.dat */,
+				3525024C201C5B34004E898C /* bds_easr_mfe_dnn.dat */,
+				3525024D201C5B34004E898C /* bds_easr_wakeup_words.dat */,
+				3525024E201C5B34004E898C /* bds_license.dat */,
+				3525024F201C5B34004E898C /* vad.dnn_o.dat */,
+				35250250201C5B34004E898C /* vad_dnn_online.dat */,
+			);
+			path = BDSClientEASRResources;
+			sourceTree = "<group>";
+		};
 		359E7D481FF792650083C042 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3525022D201C29BF004E898C /* OpenGLES.framework */,
+				3525022B201C2901004E898C /* libsqlite3.0.tbd */,
 				351E37ED2016248C008D157C /* BDSClientLib */,
 				351E37EB20161545008D157C /* libz.1.2.5.tbd */,
 				351E37E920161534008D157C /* CFNetwork.framework */,
@@ -185,9 +330,43 @@
 			path = AIDesign/Frameworks;
 			sourceTree = "<group>";
 		};
+		35BB170920503F1F004C0873 /* Item2 */ = {
+			isa = PBXGroup;
+			children = (
+				35BB170A20503F1F004C0873 /* Control */,
+				35BB170B20503F20004C0873 /* Model */,
+				35BB170C20503F20004C0873 /* View */,
+			);
+			path = Item2;
+			sourceTree = "<group>";
+		};
+		35BB170A20503F1F004C0873 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				35BB170D20503F93004C0873 /* ZXStockVC.h */,
+				35BB170E20503F93004C0873 /* ZXStockVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		35BB170B20503F20004C0873 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35BB170C20503F20004C0873 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		35C04A5C1FF743BC00AB4510 = {
 			isa = PBXGroup;
 			children = (
+				35250239201C504C004E898C /* BDSClientEASRResources */,
 				35C04A671FF743BC00AB4510 /* AIDesign */,
 				35C04A801FF743BC00AB4510 /* AIDesignTests */,
 				35C04A8B1FF743BC00AB4510 /* AIDesignUITests */,
@@ -209,6 +388,8 @@
 		35C04A671FF743BC00AB4510 /* AIDesign */ = {
 			isa = PBXGroup;
 			children = (
+				35250214201B8745004E898C /* Common */,
+				35BB170920503F1F004C0873 /* Item2 */,
 				35CE7FCA200AEDDB00C13235 /* Item1 */,
 				35C04A681FF743BC00AB4510 /* AppDelegate.h */,
 				35C04A691FF743BC00AB4510 /* AppDelegate.m */,
@@ -266,6 +447,8 @@
 		35CE7FCC200AEDDB00C13235 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35250246201C5B34004E898C /* BDSClientEASRResources */,
+				3525022F201C4D0E004E898C /* ASR */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,6 +581,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35250251201C5B40004E898C /* bds_easr_basic_model.dat in Resources */,
+				35250252201C5B40004E898C /* bds_easr_dnn_wakeup_model.dat in Resources */,
+				35250253201C5B40004E898C /* bds_easr_gramm.dat in Resources */,
+				35250254201C5B40004E898C /* bds_easr_input_model.dat in Resources */,
+				35250255201C5B40004E898C /* bds_easr_mfe_cmvn.dat in Resources */,
+				35250256201C5B40004E898C /* bds_easr_mfe_dnn.dat in Resources */,
+				35250257201C5B40004E898C /* bds_easr_wakeup_words.dat in Resources */,
+				35250258201C5B40004E898C /* bds_license.dat in Resources */,
+				35250259201C5B40004E898C /* vad.dnn_o.dat in Resources */,
+				3525025A201C5B40004E898C /* vad_dnn_online.dat in Resources */,
 				35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */,
 				35C04A751FF743BC00AB4510 /* LaunchScreen.storyboard in Resources */,
 				35CE7FDA200B00B200C13235 /* ZXGoodsCell01.xib in Resources */,
@@ -428,9 +621,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35250245201C5872004E898C /* BDVRSettingsItem.m in Sources */,
+				35250244201C586D004E898C /* BDVRSettings.m in Sources */,
 				35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */,
 				35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */,
 				35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */,
+				35BB170F20503F93004C0873 /* ZXStockVC.m in Sources */,
 				35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */,
 				351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */,
 				35C04A781FF743BC00AB4510 /* main.m in Sources */,

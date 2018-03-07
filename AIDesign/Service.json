@@ -1,62 +1,54 @@
 {
-    "order":{
         "menu":{
-            "jsonrpc": "2.0",
-            "id": 678163280,
-            "result": {
-                "records": [{
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 1,
-                            "name": "\u51c9\u83dc\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 2,
-                            "name": "\u5305\u70b9\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 3,
-                            "name": "\u9152\u6c34\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 4,
-                            "name": "\u7ca5\u54c1\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 5,
-                            "name": "\u5305\u6750\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 6,
-                            "name": "\u5176\u4ed6\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 7,
-                            "name": "\u8c03\u6599\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 8,
-                            "name": "\u6c64\u7c7b"
-                            }, {
-                            "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
-                            "number": 0,
-                            "id": 9,
-                            "name": "\u539f\u6750\u6599"
-                            }],
-                "length": 9
-            }
+            "records": [{
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 1,
+                        "name": "\u51c9\u83dc\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 2,
+                        "name": "\u5305\u70b9\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 3,
+                        "name": "\u9152\u6c34\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 4,
+                        "name": "\u7ca5\u54c1\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 5,
+                        "name": "\u5305\u6750\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 6,
+                        "name": "\u5176\u4ed6\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 7,
+                        "name": "\u8c03\u6599\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 8,
+                        "name": "\u6c64\u7c7b"
+                        }, {
+                        "company_id": [1, "\u5c1a\u58f9\u4f9b\u5e94\u94fe\u516c\u53f8"],
+                        "number": 0,
+                        "id": 9,
+                        "name": "\u539f\u6750\u6599"
+                        }],
+            "length": 9
         },
         "Goods":{
-            "jsonrpc": "2.0",
-            "id": 891589165,
-            "result": {
                 "records": [{
                             "name": "\u62db\u724c\u58f9\u53f7\u704c\u6c64\u5305\u58f9\u53f7\u9985",
                             "product_variant_ids": [791],
@@ -579,7 +571,5 @@
                             "product_variant_count": 1
                             }],
                 "length": 153
-            }
         }
-    }
 }

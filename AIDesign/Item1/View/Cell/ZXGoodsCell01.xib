@@ -149,8 +149,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="code" destination="IwZ-1U-YOa" id="FcT-I9-uvR"/>
                 <outlet property="imageV" destination="9Dr-6e-YVp" id="155-AS-O6z"/>
                 <outlet property="name" destination="Gor-Vh-UBC" id="Nlu-Yn-we9"/>
+                <outlet property="price" destination="pRH-4Z-kov" id="AHS-FX-M2C"/>
+                <outlet property="textfield" destination="i7R-kH-OBJ" id="kiE-jX-RKA"/>
             </connections>
         </tableViewCell>
     </objects>
