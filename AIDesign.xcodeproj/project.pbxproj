@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3504050C205E9B72002BDC3B /* ZXMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3504050B205E9B72002BDC3B /* ZXMessageVC.m */; };
+		3504050F205E9FFF002BDC3B /* ZXNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3504050E205E9FFF002BDC3B /* ZXNetWorkManager.m */; };
 		351E37E82016150E008D157C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37E72016150E008D157C /* GLKit.framework */; };
 		351E37EA20161534008D157C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37E920161534008D157C /* CFNetwork.framework */; };
 		351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EB20161545008D157C /* libz.1.2.5.tbd */; };
@@ -25,6 +27,17 @@
 		35250258201C5B40004E898C /* bds_license.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024E201C5B34004E898C /* bds_license.dat */; };
 		35250259201C5B40004E898C /* vad.dnn_o.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024F201C5B34004E898C /* vad.dnn_o.dat */; };
 		3525025A201C5B40004E898C /* vad_dnn_online.dat in Resources */ = {isa = PBXBuildFile; fileRef = 35250250201C5B34004E898C /* vad_dnn_online.dat */; };
+		354FBD632068A1CF002871A5 /* goods0.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD622068A1CF002871A5 /* goods0.json */; };
+		354FBD672068A474002871A5 /* ZXGoodsSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD662068A474002871A5 /* ZXGoodsSourceModel.m */; };
+		354FBD6A2068DA8A002871A5 /* ZXEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD692068DA8A002871A5 /* ZXEditView.m */; };
+		354FBD6C2068DA96002871A5 /* ZXEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD6B2068DA96002871A5 /* ZXEditView.xib */; };
+		354FBD6E2068F41F002871A5 /* goods1.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD6D2068F41F002871A5 /* goods1.json */; };
+		354FBD7020692611002871A5 /* goods2.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD6F20692611002871A5 /* goods2.json */; };
+		354FBD7220692810002871A5 /* goods3.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD7120692810002871A5 /* goods3.json */; };
+		354FBD74206929CF002871A5 /* goods4.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD73206929CF002871A5 /* goods4.json */; };
+		354FBD7620692A8C002871A5 /* goods5.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD7520692A8C002871A5 /* goods5.json */; };
+		354FBD7820692AF4002871A5 /* goods6.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD7720692AF4002871A5 /* goods6.json */; };
+		3566605F20601FBE0070C401 /* ZXConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3566605E20601FBE0070C401 /* ZXConversationVC.m */; };
 		359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */; };
 		359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4D1FF792B00083C042 /* Foundation.framework */; };
 		359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D4F1FF792B50083C042 /* UIKit.framework */; };
@@ -54,6 +67,7 @@
 		35E2D9D620130F320028B504 /* Service.json in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9D520130C590028B504 /* Service.json */; };
 		35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D9D9201322590028B504 /* ZXMenuCell.m */; };
 		35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9DA201322590028B504 /* ZXMenuCell.xib */; };
+		4870B892E0CF3F1DBFC94B45 /* libPods-AIDesign.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +88,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F6D9EB7903CEDF2CA382915 /* Pods-AIDesign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIDesign.release.xcconfig"; path = "Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign.release.xcconfig"; sourceTree = "<group>"; };
+		3112301D77ED63030CC9B5A7 /* Pods-AIDesign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIDesign.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign.debug.xcconfig"; sourceTree = "<group>"; };
+		3504050A205E9B72002BDC3B /* ZXMessageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMessageVC.h; sourceTree = "<group>"; };
+		3504050B205E9B72002BDC3B /* ZXMessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMessageVC.m; sourceTree = "<group>"; };
+		3504050D205E9FFF002BDC3B /* ZXNetWorkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNetWorkManager.h; sourceTree = "<group>"; };
+		3504050E205E9FFF002BDC3B /* ZXNetWorkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNetWorkManager.m; sourceTree = "<group>"; };
+		35040511205EA5B5002BDC3B /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		35040514205EA931002BDC3B /* AIDesign.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIDesign.pch; sourceTree = "<group>"; };
 		351E37E72016150E008D157C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		351E37E920161534008D157C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		351E37EB20161545008D157C /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -119,6 +141,21 @@
 		3525024E201C5B34004E898C /* bds_license.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_license.dat; sourceTree = "<group>"; };
 		3525024F201C5B34004E898C /* vad.dnn_o.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad.dnn_o.dat; sourceTree = "<group>"; };
 		35250250201C5B34004E898C /* vad_dnn_online.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad_dnn_online.dat; sourceTree = "<group>"; };
+		354FBD612068043B002871A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		354FBD622068A1CF002871A5 /* goods0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods0.json; sourceTree = "<group>"; };
+		354FBD652068A474002871A5 /* ZXGoodsSourceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXGoodsSourceModel.h; sourceTree = "<group>"; };
+		354FBD662068A474002871A5 /* ZXGoodsSourceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXGoodsSourceModel.m; sourceTree = "<group>"; };
+		354FBD682068DA8A002871A5 /* ZXEditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXEditView.h; sourceTree = "<group>"; };
+		354FBD692068DA8A002871A5 /* ZXEditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXEditView.m; sourceTree = "<group>"; };
+		354FBD6B2068DA96002871A5 /* ZXEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXEditView.xib; sourceTree = "<group>"; };
+		354FBD6D2068F41F002871A5 /* goods1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods1.json; sourceTree = "<group>"; };
+		354FBD6F20692611002871A5 /* goods2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods2.json; sourceTree = "<group>"; };
+		354FBD7120692810002871A5 /* goods3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods3.json; sourceTree = "<group>"; };
+		354FBD73206929CF002871A5 /* goods4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods4.json; sourceTree = "<group>"; };
+		354FBD7520692A8C002871A5 /* goods5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods5.json; sourceTree = "<group>"; };
+		354FBD7720692AF4002871A5 /* goods6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods6.json; sourceTree = "<group>"; };
+		3566605D20601FBE0070C401 /* ZXConversationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXConversationVC.h; sourceTree = "<group>"; };
+		3566605E20601FBE0070C401 /* ZXConversationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXConversationVC.m; sourceTree = "<group>"; };
 		359E7D491FF792650083C042 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		359E7D4D1FF792B00083C042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +197,7 @@
 		35E2D9D8201322590028B504 /* ZXMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMenuCell.h; sourceTree = "<group>"; };
 		35E2D9D9201322590028B504 /* ZXMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMenuCell.m; sourceTree = "<group>"; };
 		35E2D9DA201322590028B504 /* ZXMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMenuCell.xib; sourceTree = "<group>"; };
+		AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AIDesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +223,7 @@
 				359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */,
 				359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */,
 				359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */,
+				4870B892E0CF3F1DBFC94B45 /* libPods-AIDesign.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +244,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35040506205E9B56002BDC3B /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				35040507205E9B56002BDC3B /* Control */,
+				35040508205E9B56002BDC3B /* Model */,
+				35040509205E9B56002BDC3B /* View */,
+			);
+			path = "消息";
+			sourceTree = "<group>";
+		};
+		35040507205E9B56002BDC3B /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				3504050A205E9B72002BDC3B /* ZXMessageVC.h */,
+				3504050B205E9B72002BDC3B /* ZXMessageVC.m */,
+				3566605D20601FBE0070C401 /* ZXConversationVC.h */,
+				3566605E20601FBE0070C401 /* ZXConversationVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		35040508205E9B56002BDC3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35040509205E9B56002BDC3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		351E37ED2016248C008D157C /* BDSClientLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +291,12 @@
 		35250214201B8745004E898C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				354FBD642068A45D002871A5 /* Model */,
 				35250215201B8752004E898C /* ASR */,
+				3504050D205E9FFF002BDC3B /* ZXNetWorkManager.h */,
+				3504050E205E9FFF002BDC3B /* ZXNetWorkManager.m */,
+				35040511205EA5B5002BDC3B /* API.h */,
+				354FBD612068043B002871A5 /* README.md */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -302,6 +381,15 @@
 			path = BDSClientEASRResources;
 			sourceTree = "<group>";
 		};
+		354FBD642068A45D002871A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				354FBD652068A474002871A5 /* ZXGoodsSourceModel.h */,
+				354FBD662068A474002871A5 /* ZXGoodsSourceModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		359E7D481FF792650083C042 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +413,7 @@
 				359E7D4D1FF792B00083C042 /* Foundation.framework */,
 				359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */,
 				359E7D491FF792650083C042 /* iflyMSC.framework */,
+				AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */,
 			);
 			name = Frameworks;
 			path = AIDesign/Frameworks;
@@ -372,6 +461,7 @@
 				35C04A8B1FF743BC00AB4510 /* AIDesignUITests */,
 				35C04A661FF743BC00AB4510 /* Products */,
 				359E7D481FF792650083C042 /* Frameworks */,
+				4A59C9ED24DB57D798CB78B1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				35250214201B8745004E898C /* Common */,
+				35040506205E9B56002BDC3B /* 消息 */,
 				35BB170920503F1F004C0873 /* Item2 */,
 				35CE7FCA200AEDDB00C13235 /* Item1 */,
 				35C04A681FF743BC00AB4510 /* AppDelegate.h */,
@@ -396,6 +487,7 @@
 				35C04A6B1FF743BC00AB4510 /* ViewController.h */,
 				35C04A6C1FF743BC00AB4510 /* ViewController.m */,
 				35C04A6E1FF743BC00AB4510 /* Main.storyboard */,
+				35040514205EA931002BDC3B /* AIDesign.pch */,
 				35C04A711FF743BC00AB4510 /* Assets.xcassets */,
 				35C04A731FF743BC00AB4510 /* LaunchScreen.storyboard */,
 				35C04A761FF743BC00AB4510 /* Info.plist */,
@@ -449,6 +541,13 @@
 			children = (
 				35250246201C5B34004E898C /* BDSClientEASRResources */,
 				3525022F201C4D0E004E898C /* ASR */,
+				354FBD622068A1CF002871A5 /* goods0.json */,
+				354FBD6D2068F41F002871A5 /* goods1.json */,
+				354FBD6F20692611002871A5 /* goods2.json */,
+				354FBD7120692810002871A5 /* goods3.json */,
+				354FBD73206929CF002871A5 /* goods4.json */,
+				354FBD7520692A8C002871A5 /* goods5.json */,
+				354FBD7720692AF4002871A5 /* goods6.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,6 +556,9 @@
 			isa = PBXGroup;
 			children = (
 				35CE7FD2200AF7AF00C13235 /* Cell */,
+				354FBD682068DA8A002871A5 /* ZXEditView.h */,
+				354FBD692068DA8A002871A5 /* ZXEditView.m */,
+				354FBD6B2068DA96002871A5 /* ZXEditView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,6 +576,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		4A59C9ED24DB57D798CB78B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3112301D77ED63030CC9B5A7 /* Pods-AIDesign.debug.xcconfig */,
+				2F6D9EB7903CEDF2CA382915 /* Pods-AIDesign.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,9 +592,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35C04A911FF743BC00AB4510 /* Build configuration list for PBXNativeTarget "AIDesign" */;
 			buildPhases = (
+				E7951C90FBF3D93FD1ACF90A /* [CP] Check Pods Manifest.lock */,
 				35C04A611FF743BC00AB4510 /* Sources */,
 				35C04A621FF743BC00AB4510 /* Frameworks */,
 				35C04A631FF743BC00AB4510 /* Resources */,
+				96E95ED908C4E3708584D4E5 /* [CP] Embed Pods Frameworks */,
+				437DE4498967BFDDA4AC3DFE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -583,19 +697,27 @@
 			files = (
 				35250251201C5B40004E898C /* bds_easr_basic_model.dat in Resources */,
 				35250252201C5B40004E898C /* bds_easr_dnn_wakeup_model.dat in Resources */,
+				354FBD7620692A8C002871A5 /* goods5.json in Resources */,
 				35250253201C5B40004E898C /* bds_easr_gramm.dat in Resources */,
 				35250254201C5B40004E898C /* bds_easr_input_model.dat in Resources */,
 				35250255201C5B40004E898C /* bds_easr_mfe_cmvn.dat in Resources */,
 				35250256201C5B40004E898C /* bds_easr_mfe_dnn.dat in Resources */,
+				354FBD7220692810002871A5 /* goods3.json in Resources */,
+				354FBD74206929CF002871A5 /* goods4.json in Resources */,
 				35250257201C5B40004E898C /* bds_easr_wakeup_words.dat in Resources */,
 				35250258201C5B40004E898C /* bds_license.dat in Resources */,
 				35250259201C5B40004E898C /* vad.dnn_o.dat in Resources */,
 				3525025A201C5B40004E898C /* vad_dnn_online.dat in Resources */,
 				35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */,
 				35C04A751FF743BC00AB4510 /* LaunchScreen.storyboard in Resources */,
+				354FBD632068A1CF002871A5 /* goods0.json in Resources */,
+				354FBD7020692611002871A5 /* goods2.json in Resources */,
+				354FBD7820692AF4002871A5 /* goods6.json in Resources */,
 				35CE7FDA200B00B200C13235 /* ZXGoodsCell01.xib in Resources */,
+				354FBD6C2068DA96002871A5 /* ZXEditView.xib in Resources */,
 				35C04A721FF743BC00AB4510 /* Assets.xcassets in Resources */,
 				35E2D9D620130F320028B504 /* Service.json in Resources */,
+				354FBD6E2068F41F002871A5 /* goods1.json in Resources */,
 				35C04A701FF743BC00AB4510 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,21 +738,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		437DE4498967BFDDA4AC3DFE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96E95ED908C4E3708584D4E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7951C90FBF3D93FD1ACF90A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AIDesign-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35C04A611FF743BC00AB4510 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				354FBD6A2068DA8A002871A5 /* ZXEditView.m in Sources */,
 				35250245201C5872004E898C /* BDVRSettingsItem.m in Sources */,
 				35250244201C586D004E898C /* BDVRSettings.m in Sources */,
 				35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */,
 				35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */,
+				354FBD672068A474002871A5 /* ZXGoodsSourceModel.m in Sources */,
+				3504050F205E9FFF002BDC3B /* ZXNetWorkManager.m in Sources */,
 				35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */,
 				35BB170F20503F93004C0873 /* ZXStockVC.m in Sources */,
 				35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */,
 				351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */,
+				3504050C205E9B72002BDC3B /* ZXMessageVC.m in Sources */,
 				35C04A781FF743BC00AB4510 /* main.m in Sources */,
 				35C04A6A1FF743BC00AB4510 /* AppDelegate.m in Sources */,
+				3566605F20601FBE0070C401 /* ZXConversationVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,23 +977,26 @@
 		};
 		35C04A921FF743BC00AB4510 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3112301D77ED63030CC9B5A7 /* Pods-AIDesign.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2K8YQD53SK;
+				DEVELOPMENT_TEAM = 264N6AV3ZH;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/AIDesign/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = AIDesign/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Volumes/Data/ios_projects/AIDesign/AIDesign/AIDesign.pch;
+				INFOPLIST_FILE = /Volumes/Data/ios_projects/AIDesign/AIDesign/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AIDesign/Frameworks/BDSClientLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.habav.AIDesign;
+				PRODUCT_BUNDLE_IDENTIFIER = com.runwise.AIDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -816,15 +1004,18 @@
 		};
 		35C04A931FF743BC00AB4510 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F6D9EB7903CEDF2CA382915 /* Pods-AIDesign.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2K8YQD53SK;
+				DEVELOPMENT_TEAM = 264N6AV3ZH;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/AIDesign/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Volumes/Data/ios_projects/AIDesign/AIDesign/AIDesign.pch;
 				INFOPLIST_FILE = AIDesign/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -832,7 +1023,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AIDesign/Frameworks/BDSClientLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.habav.AIDesign;
+				PRODUCT_BUNDLE_IDENTIFIER = com.runwise.AIDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

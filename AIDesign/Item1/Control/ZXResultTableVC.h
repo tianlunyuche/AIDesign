@@ -18,6 +18,9 @@
 
 #import "BDVRSettings.h"
 
-@interface ZXResultTableVC : UITableViewController<UISearchResultsUpdating>
+@interface ZXResultTableVC : UIViewController<UISearchResultsUpdating>
+
+@property(nonatomic,strong) NSMutableArray *menuArray;
+@property(nonatomic,strong) NSMutableArray *goodsArray;
 
 @end

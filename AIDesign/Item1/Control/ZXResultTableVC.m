@@ -8,12 +8,17 @@
 
 #import "ZXResultTableVC.h"
 #import "ZXGoodsCell01.h"
+#import "ZXGoodsSourceModel.h"
 
 #define ZXProductCell @"ZXGoodsCell01"
+#define ZXGoodsCell @"ZXGoodsCell01"
+#define ZXMENUCELL @"ZXMenuCell"
 
-@interface ZXResultTableVC ()<BDSClientASRDelegate ,BDSClientWakeupDelegate>
+@interface ZXResultTableVC ()<BDSClientWakeupDelegate ,UITableViewDelegate, UITableViewDataSource>
 
-@property(nonatomic, strong) NSFileHandle *fileHandler;
+@property(nonatomic,strong) UITableView *tableView;
+@property(nonatomic,strong) UITableView *menuView;
+@property(nonatomic,strong) NSMutableArray *resultArray;
 
 @end
 
@@ -27,150 +32,71 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerNib:[UINib nibWithNibName:ZXProductCell bundle:nil] forCellReuseIdentifier:ZXProductCell];
+    [self.tableView registerNib:[UINib nibWithNibName:ZXProductCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ZXProductCell];
     self.tableView.delegate =self;
     self.tableView.dataSource =self;
-    
+
+    [self addSureButton];
 }
 
-#pragma mark - MVoiceRecognitionClientDelegate
-
-- (void)VoiceRecognitionClientWorkStatus:(int)workStatus obj:(id)aObj {
-    switch (workStatus) {
-        case EVoiceRecognitionClientWorkStatusNewRecordData: {
-            [self.fileHandler writeData:(NSData *)aObj];
-            break;
-        }
-            //------------开始识别
-        case EVoiceRecognitionClientWorkStatusStartWorkIng: {
-            NSDictionary *logDic = [self parseLogToDic:aObj];
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: start vr, log: %@\n", logDic]];
-            [self onStartWorking];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusStart: {
-            [self printLogTextView:@"CALLBACK: detect voice start point.\n"];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusEnd: {
-            [self printLogTextView:@"CALLBACK: detect voice end point.\n"];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusFlushData: {
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: partial result - %@.\n\n", [self getDescriptionForDic:aObj]]];
-            break;
-        }
-            //-----------------完成状态
-        case EVoiceRecognitionClientWorkStatusFinish: {
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: final result - %@.\n\n", [self getDescriptionForDic:aObj]]];
-            if (aObj) {
-                NSArray *resultsArray = [aObj objectForKey:@"results_recognition"];
-                NSLog(@"resultsArray =%@",resultsArray);
-            }
-            break;
-        }
-            
-        case EVoiceRecognitionClientWorkStatusMeterLevel: {
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusCancel: {
-            [self printLogTextView:@"CALLBACK: user press cancel.\n"];
-            [self onEnd];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusError: {
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: encount error - %@.\n", (NSError *)aObj]];
-            [self onEnd];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusLoaded: {
-            [self printLogTextView:@"CALLBACK: offline engine loaded.\n"];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusUnLoaded: {
-            [self printLogTextView:@"CALLBACK: offline engine unLoaded.\n"];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusChunkThirdData: {
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: Chunk 3-party data length: %lu\n", (unsigned long)[(NSData *)aObj length]]];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusChunkNlu: {
-            NSString *nlu = [[NSString alloc] initWithData:(NSData *)aObj encoding:NSUTF8StringEncoding];
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: Chunk NLU data: %@\n", nlu]];
-            NSLog(@"%@", nlu);
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusChunkEnd: {
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: Chunk end, sn: %@.\n", aObj]];
-
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusFeedback: {
-            NSDictionary *logDic = [self parseLogToDic:aObj];
-            [self printLogTextView:[NSString stringWithFormat:@"CALLBACK Feedback: %@\n", logDic]];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusRecorderEnd: {
-            [self printLogTextView:@"CALLBACK: recorder closed.\n"];
-            break;
-        }
-        case EVoiceRecognitionClientWorkStatusLongSpeechEnd: {
-            [self printLogTextView:@"CALLBACK: Long Speech end.\n"];
-            [self onEnd];
-            break;
-        }
-        default:
-            break;
-    }
-}
-//--------结束 标志 和 视图变化
-- (void)onEnd
-{
-    
-}
-//--------开始 标志 和 视图变化
--(void)onStartWorking{
-    
+-(void)addSureButton{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = [UIColor redColor];
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    [btn setTitle:@"确 定"  forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    [self.view bringSubviewToFront:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(50);
+        make.bottom.mas_equalTo(0);
+    }];
+//-----------
+    [btn addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        
+    }];
 }
 
-- (void)printLogTextView:(NSString *)logString
-{
-    NSLog(@"logString \n %@",logString);
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
 }
 
-- (NSString *)getDescriptionForDic:(NSDictionary *)dic {
-    if (dic) {
-        return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dic
-                                                                              options:NSJSONWritingPrettyPrinted
-                                                                                error:nil] encoding:NSUTF8StringEncoding];
-    }
-    return nil;
-}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    self.tabBarController.tabBar.hidden  = NO;
+//}
 
-- (NSDictionary *)parseLogToDic:(NSString *)logString
-{
-    NSArray *tmp = NULL;
-    NSMutableDictionary *logDic = [[NSMutableDictionary alloc] initWithCapacity:3];
-    NSArray *items = [logString componentsSeparatedByString:@"&"];
-    for (NSString *item in items) {
-        tmp = [item componentsSeparatedByString:@"="];
-        if (tmp.count == 2) {
-            [logDic setObject:tmp.lastObject forKey:tmp.firstObject];
-        }
-    }
-    return logDic;
-}
 
-#pragma mark - LazyLoad
 //the search bar becomes first responder.
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
     NSLog(@"update");
 }
 
+#pragma mark - LazyLoad
+-(UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] init];
+        [self.view addSubview: _tableView];
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.mas_equalTo(0);
+            make.bottom.mas_equalTo(-50);
+        }];
+    }
+    return _tableView;
+}
+
+-(NSMutableArray *)resultArray{
+    if (!_resultArray) {
+        _resultArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    return _resultArray;
+}
+
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewAutomaticDimension;
+    return 140;
 }
 
 #pragma mark - Table view data source
@@ -182,14 +108,35 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 1;
+    return self.resultArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZXGoodsCell01 *cell = [tableView dequeueReusableCellWithIdentifier:ZXProductCell forIndexPath:indexPath];
+    ZXGoodsCell01 *cell = [tableView dequeueReusableCellWithIdentifier:ZXGoodsCell];
+    ZXGoodsModel *goodsModel = self.goodsArray[indexPath.row];
+    cell.name.text = goodsModel.title;
+    [cell.imageV sd_setImageWithURL:[NSURL URLWithString:goodsModel.img] placeholderImage:[UIImage imageNamed:@"default-ico-none"]];
+    cell.price.text = [NSString stringWithFormat:@"%@元/%@",goodsModel.currentPrice ,goodsModel.unit];
+    cell.unit.text = goodsModel.unit;
     
-    // Configure the cell...
+    if (goodsModel.num >0) {
+        cell.addBtn.hidden = YES;
+        cell.num.hidden = NO;
+        cell.num.text = [NSString stringWithFormat:@"%ld",(long)goodsModel.num];
+    } else {
+        cell.addBtn.hidden = NO;
+        cell.num.hidden = YES;
+    }
+    
+    if (cell.gestureRecognizers.count ==0) {
+        UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lpGR:)];
+        //设定最小的长按时间 按不够这个时间不响应手势
+        longPressGR.minimumPressDuration = 1;
+        [cell addGestureRecognizer:longPressGR];
+    }
+    //        NSArray *priceArray =[goodsdic objectForKey:@"uom_id"];
+    //        cell.price.text =[NSString stringWithFormat:@"%@\%@",priceArray[0] ,priceArray[1]];
     
     return cell;
 }
