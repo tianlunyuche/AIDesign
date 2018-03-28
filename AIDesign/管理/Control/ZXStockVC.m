@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *speechBtn;
 
 
+
 @end
 
 @implementation ZXStockVC
@@ -27,6 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self speechAuthorization];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)speechAuthorization{
@@ -58,10 +64,6 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)speechClick:(id)sender {
     if (self.audioEngine.isRunning) {
         [self.audioEngine stop];
@@ -161,14 +163,7 @@
     }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end
