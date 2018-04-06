@@ -14,6 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     self.focusStyle =UITableViewCellFocusStyleCustom;
+    
 }
 
 @end

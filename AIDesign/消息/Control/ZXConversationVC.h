@@ -9,5 +9,5 @@
 #import <RongIMKit/RongIMKit.h>
 
 @interface ZXConversationVC : RCConversationViewController
-
+@property(nonatomic,strong) UIButton  *aiSpeechBtn;
 @end

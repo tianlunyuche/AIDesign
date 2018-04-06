@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PingFang.ttc">
+            <string>PingFangSC-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--CartVC-->
+        <scene sceneID="Iyq-W6-07v">
+            <objects>
+                <viewController storyboardIdentifier="ZXCartVC" id="E9S-RW-Agd" customClass="ZXCartVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uu7-Dd-sDL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-Vd-B1K">
+                                <rect key="frame" x="80" y="50" width="295" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fay-4S-GCf">
+                                <rect key="frame" x="0.0" y="20" width="80" height="598"/>
+                                <color key="backgroundColor" red="1" green="0.61329630660000001" blue="0.30232147819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="5C3-IZ-obp"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zl-i0-Jjk">
+                                <rect key="frame" x="80" y="20" width="295" height="30"/>
+                                <state key="normal" title="沧州西瑞食品有限公司">
+                                    <color key="titleColor" red="0.86718940730000005" green="0.1016018465" blue="0.4071396887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkr-1V-g6y">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="17"/>
+                                <state key="normal" title="下  单" backgroundImage="bg_bar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="orderSeclet:" destination="E9S-RW-Agd" eventType="touchUpInside" id="aZq-P0-RBQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Pkr-1V-g6y" secondAttribute="trailing" id="APh-jU-7kE"/>
+                            <constraint firstAttribute="bottom" secondItem="Pkr-1V-g6y" secondAttribute="bottom" id="FaO-WG-ax9"/>
+                            <constraint firstItem="fay-4S-GCf" firstAttribute="leading" secondItem="doD-DP-2f3" secondAttribute="leading" id="Fuj-UF-QHd"/>
+                            <constraint firstItem="Pkr-1V-g6y" firstAttribute="leading" secondItem="uu7-Dd-sDL" secondAttribute="leading" id="HAU-wv-sWh"/>
+                            <constraint firstItem="Pkr-1V-g6y" firstAttribute="top" secondItem="fay-4S-GCf" secondAttribute="bottom" id="HJl-sT-RD0"/>
+                            <constraint firstItem="cmc-Vd-B1K" firstAttribute="leading" secondItem="fay-4S-GCf" secondAttribute="trailing" id="L8I-Zs-Zmp"/>
+                            <constraint firstItem="doD-DP-2f3" firstAttribute="bottom" secondItem="fay-4S-GCf" secondAttribute="bottom" constant="49" id="Wfj-Y1-LA1"/>
+                            <constraint firstItem="cmc-Vd-B1K" firstAttribute="trailing" secondItem="doD-DP-2f3" secondAttribute="trailing" id="c3h-gB-4It"/>
+                            <constraint firstItem="fay-4S-GCf" firstAttribute="top" secondItem="doD-DP-2f3" secondAttribute="top" id="eOV-E8-m7e"/>
+                            <constraint firstItem="9Zl-i0-Jjk" firstAttribute="top" secondItem="doD-DP-2f3" secondAttribute="top" id="fTC-cT-jnq"/>
+                            <constraint firstItem="cmc-Vd-B1K" firstAttribute="top" secondItem="9Zl-i0-Jjk" secondAttribute="bottom" id="gYZ-fb-uOU"/>
+                            <constraint firstItem="cmc-Vd-B1K" firstAttribute="bottom" secondItem="fay-4S-GCf" secondAttribute="bottom" id="hqu-6E-9Q4"/>
+                            <constraint firstItem="9Zl-i0-Jjk" firstAttribute="trailing" secondItem="doD-DP-2f3" secondAttribute="trailing" id="qP2-rI-IJA"/>
+                            <constraint firstItem="9Zl-i0-Jjk" firstAttribute="leading" secondItem="fay-4S-GCf" secondAttribute="trailing" id="umn-xK-Dx8"/>
+                            <constraint firstItem="doD-DP-2f3" firstAttribute="bottom" secondItem="cmc-Vd-B1K" secondAttribute="bottom" constant="49" id="wGD-hM-8Tu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="doD-DP-2f3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7eB-1w-bUE"/>
+                    <connections>
+                        <outlet property="menuView" destination="fay-4S-GCf" id="qkU-uL-Mru"/>
+                        <outlet property="orderBtn" destination="Pkr-1V-g6y" id="pcZ-u9-a5F"/>
+                        <outlet property="searchDisplayController" destination="te1-SS-alI" id="eNO-my-9sh"/>
+                        <outlet property="selectButton" destination="9Zl-i0-Jjk" id="Neu-1X-xxu"/>
+                        <outlet property="tableView" destination="cmc-Vd-B1K" id="SEz-0S-JS0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6Q-r8-egb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="te1-SS-alI">
+                    <connections>
+                        <outlet property="delegate" destination="E9S-RW-Agd" id="5Mm-JL-Als"/>
+                        <outlet property="searchContentsController" destination="E9S-RW-Agd" id="r5I-5e-uZC"/>
+                        <outlet property="searchResultsDataSource" destination="E9S-RW-Agd" id="y35-Yv-pEv"/>
+                        <outlet property="searchResultsDelegate" destination="E9S-RW-Agd" id="cpk-KS-6Ng"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="413.60000000000002" y="555.47226386806597"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_bar" width="540" height="64"/>
+    </resources>
+</document>

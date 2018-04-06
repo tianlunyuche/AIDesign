@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXGoodsSourceModel.h"
 
 @interface ZXGoodsCell01 : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *name;
@@ -14,7 +15,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *code;
 @property (weak, nonatomic) IBOutlet UILabel *price;
 @property (weak, nonatomic) IBOutlet UILabel *num;
+@property (weak, nonatomic) IBOutlet UILabel *soldOut;
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (weak, nonatomic) IBOutlet UILabel *unit;
+
+@property(nonatomic,copy) void (^judgeWhenEndEditing)(void);
+
 
 @end

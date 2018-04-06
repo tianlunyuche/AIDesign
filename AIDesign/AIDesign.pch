@@ -17,5 +17,10 @@
 #import <YYKit.h>
 #import <UIImageView+WebCache.h>
 #import <Masonry.h>
+#import "KeyChain.h"
+
+
+#define klineColor [UIColor colorWithRed:50.0f/255.0f green:214.0f/255.0f blue:210.0f/255.0f alpha:1.0f]
+#define kbackgdColor [UIColor colorWithRed:236.0f /255.0f green:236.0f /255.0f blue:236.0f /255.0f alpha:1]
 
 #endif /* AIDesign_pch */

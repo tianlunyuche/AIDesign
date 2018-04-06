@@ -21,8 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[RCIM sharedRCIM] initWithAppKey:RongAppKey];
     
+    
+    [[RCIM sharedRCIM] initWithAppKey:RongAppKey];
+    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
 //    NSDictionary *param =@{@"userId":@"123456",@"name":@"小新",@"portraitUri":@"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=552972519,2902321478&fm=58"};
 //    [[ZXNetWorkManager sharedInstance] postRongYunTokenWithParam:param success:^(NSURLSessionDataTask *task, id responseObject) {
 //

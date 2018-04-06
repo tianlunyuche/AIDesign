@@ -13,6 +13,7 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     self.numTextFiled.delegate = self;
+    self.numTextFiled.keyboardType = UIKeyboardTypeDecimalPad;
 }
 - (IBAction)sureSelect:(id)sender {
     if (self.sureBtnSelect) {

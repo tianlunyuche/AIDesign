@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXOrderDetailVC">
+            <connections>
+                <outlet property="scrollView" destination="D4I-Tc-dxy" id="5p0-4F-um1"/>
+                <outlet property="sureBtn" destination="q4y-55-lnn" id="fSY-Rr-f4b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-55-lnn">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="RmM-mu-mez"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="收  货" backgroundImage="bg_bar">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Tc-dxy">
+                    <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="q4y-55-lnn" secondAttribute="trailing" id="4cH-ht-vdU"/>
+                <constraint firstItem="D4I-Tc-dxy" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="722-Th-3sW"/>
+                <constraint firstItem="D4I-Tc-dxy" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="DCG-jm-orh"/>
+                <constraint firstItem="q4y-55-lnn" firstAttribute="top" secondItem="D4I-Tc-dxy" secondAttribute="bottom" id="K2B-Dk-OHL"/>
+                <constraint firstItem="q4y-55-lnn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="aRb-xm-44d"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="D4I-Tc-dxy" secondAttribute="trailing" id="grk-eV-CFI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="q4y-55-lnn" secondAttribute="bottom" id="kCv-S0-gkh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_bar" width="540" height="64"/>
+    </resources>
+</document>

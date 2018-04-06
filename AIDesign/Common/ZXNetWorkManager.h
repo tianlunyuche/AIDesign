@@ -10,6 +10,10 @@
 #import "API.h"
 #import "ZXGoodsSourceModel.h"
 
+#define API_KEY @"CfGHkaxz5VfDbLkn8gdoKb8v"
+#define SECRET_KEY @"dGqy8gG8iLGayjvbsadSXAfRmg7dbDUY "
+#define APP_ID @"10605504"
+
 @interface ZXNetWorkManager : AFHTTPSessionManager
 
 + (instancetype) sharedInstance ;

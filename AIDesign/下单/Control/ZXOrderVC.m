@@ -12,13 +12,10 @@
 #import "ZXResultTableVC.h"
 #import "ZXNetWorkManager.h"
 #import "ZXEditView.h"
+#import "ZXCartVC.h"
 
 #define ZXGoodsCell @"ZXGoodsCell01"
 #define ZXMENUCELL @"ZXMenuCell"
-
-const NSString *API_KEY = @"CfGHkaxz5VfDbLkn8gdoKb8v";
-const NSString *SECRET_KEY = @"dGqy8gG8iLGayjvbsadSXAfRmg7dbDUY ";
-const NSString *APP_ID = @"10605504";
 
 @interface ZXOrderVC ()<UITableViewDelegate ,UITableViewDataSource ,UISearchBarDelegate, UISearchControllerDelegate, BDSClientASRDelegate >
 
@@ -41,9 +38,11 @@ const NSString *APP_ID = @"10605504";
 @property(nonatomic, assign) BOOL longSpeechFlag;
 
 @property(nonatomic,strong) NSMutableArray *menuArray;
+@property(nonatomic,strong) NSMutableDictionary<NSString *, NSMutableArray *> *allGoodsDic;
 @property(nonatomic,strong) NSMutableArray *goodsArray;
 @property(nonatomic,strong) NSMutableArray *searchArray;
 @property(nonatomic,strong) ZXEditView *editView;
+@property(nonatomic,strong) UIView *editBackgroudView;
 @end
 
 @implementation ZXOrderVC
@@ -78,6 +77,7 @@ const NSString *APP_ID = @"10605504";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.hidesBottomBarWhenPushed = NO;
+    [self.tableView reloadData];
 }
 
 -(void)dealData{
@@ -95,7 +95,7 @@ const NSString *APP_ID = @"10605504";
     self.tableView.dataSource = self;
     
     [self.menuView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
-    [self getGoodSourcesWithParam:@"goods0"];
+    [self getGoodSourcesWithParam:@"goods0" withMenuRow:0];
 }
 
 
@@ -336,6 +336,20 @@ const NSString *APP_ID = @"10605504";
     return _searchArray;
 }
 
+-(UIView *)editBackgroudView{
+    if (!_editBackgroudView) {
+        _editBackgroudView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _editBackgroudView.backgroundColor = [UIColor colorWithWhite:2 alpha:0.1];
+    }
+    return _editBackgroudView;
+}
+
+-(NSMutableDictionary <NSString *, NSMutableArray *> *)allGoodsDic{
+    if (!_allGoodsDic) {
+        _allGoodsDic = [[NSMutableDictionary alloc] init];
+    }
+    return _allGoodsDic;
+}
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -345,6 +359,12 @@ const NSString *APP_ID = @"10605504";
         return 140;
 }
 
+-(ZXEditView *)editView{
+    if (!_editView) {
+        _editView = [[[NSBundle mainBundle] loadNibNamed:@"ZXEditView" owner:self options:nil] lastObject];
+    }
+    return _editView;
+}
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 //
 //}
@@ -354,11 +374,12 @@ const NSString *APP_ID = @"10605504";
     if (tableView.tag == 1010) {
         
         NSString *goods = [NSString stringWithFormat:@"goods%ld", (long)indexPath.row];
-        [self getGoodSourcesWithParam:goods];
+        [self getGoodSourcesWithParam:goods withMenuRow:indexPath.row];
         
     }else {
-    
-        [self.view addSubview:self.editView];
+        
+        [self.view addSubview:self.editBackgroudView];
+        [self.editBackgroudView addSubview:self.editView];
         self.editView.tag = 10086;
         [self.editView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
@@ -371,23 +392,21 @@ const NSString *APP_ID = @"10605504";
         self.editView.sureBtnSelect = ^(NSString *num) {
             
             ZXGoodsModel *goodsModel = weakSelf.goodsArray[indexPath.row];
-            goodsModel.num = num.longValue;
-            
+            if (num.integerValue <= goodsModel.soldOut) {
+                goodsModel.num = num.integerValue;
+            } else {
+                goodsModel.num  = goodsModel.soldOut;
+            }
+        
             [tableView beginUpdates];
             [tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationAutomatic];
             [tableView endUpdates];
             
             [weakEditView removeFromSuperview];
+            [weakSelf.editBackgroudView removeFromSuperview];
             weakEditView = nil;
         };
     }
-}
-
--(ZXEditView *)editView{
-    if (!_editView) {
-         _editView = [[[NSBundle mainBundle] loadNibNamed:@"ZXEditView" owner:self options:nil] lastObject];
-    }
-    return _editView;
 }
 
 
@@ -414,13 +433,13 @@ const NSString *APP_ID = @"10605504";
         return cell;
     }else{
         ZXGoodsCell01 *cell = [tableView dequeueReusableCellWithIdentifier:ZXGoodsCell];
-        ZXGoodsModel *goodsModel;
+        __block ZXGoodsModel *goodsModel;
         if ([self.searchVC.searchBar.text isEqualToString:@""]) {
             goodsModel = self.goodsArray[indexPath.row];
         } else {
             goodsModel = self.searchArray[indexPath.row];
         }
-
+        cell.soldOut.text = [NSString stringWithFormat:@"库存：%ld",goodsModel.soldOut];
         cell.name.text = goodsModel.title;
         [cell.imageV sd_setImageWithURL:[NSURL URLWithString:goodsModel.img] placeholderImage:[UIImage imageNamed:@"default-ico-none"]];
         cell.price.text = [NSString stringWithFormat:@"%@元/%@",goodsModel.currentPrice ,goodsModel.unit];
@@ -491,10 +510,16 @@ const NSString *APP_ID = @"10605504";
 }
 
 
--(void)getGoodSourcesWithParam:(NSString *)goods{
+-(void)getGoodSourcesWithParam:(NSString *)goods withMenuRow:(NSInteger)menuRow{
     [[ZXNetWorkManager sharedInstance] getGoodSourcesWithParam:@{@"goods":goods} success:^(NSURLSessionDataTask *task, NSMutableArray *responseObject) {
         
-        self.goodsArray = responseObject;
+        NSString *numStr = [NSString stringWithFormat:@"%ld",menuRow];
+        NSMutableArray *array = [self.allGoodsDic objectForKey:numStr];
+        if (!array || array.count ==0 ) {
+            [self.allGoodsDic setObject:responseObject forKey:numStr];
+        }
+        self.goodsArray = [self.allGoodsDic objectForKey:numStr];
+        
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self.goodsArray removeAllObjects];
@@ -522,6 +547,20 @@ const NSString *APP_ID = @"10605504";
     }
     self.searchArray = mutableArray;
     [self.tableView reloadData];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.editView removeFromSuperview];
+    [self.editBackgroudView removeFromSuperview];
+}
+
+//购物车按钮
+- (IBAction)cartBtnselect:(id)sender {
+    ZXCartVC *cartVC = [[UIStoryboard storyboardWithName:@"ZXCartVC" bundle:nil] instantiateViewControllerWithIdentifier:@"ZXCartVC"];
+    cartVC.allGoodsDic = self.allGoodsDic;
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cartVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 @end

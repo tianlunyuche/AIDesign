@@ -10,7 +10,7 @@
 #import <Speech/Speech.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ZXConversationVC ()<SFSpeechRecognizerDelegate>
+@interface ZXConversationVC ()<SFSpeechRecognizerDelegate ,RCTextViewDelegate, RCPluginBoardViewDelegate>
 @property(nonatomic,strong) SFSpeechRecognizer *speechRecognizer;
 @property(nonatomic,strong) AVAudioEngine *audioEngine;
 @property(nonatomic,strong) SFSpeechRecognitionTask *recognitionTask;
@@ -24,41 +24,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-//    [self addSureButton];
+    self.navigationController.navigationBar.backgroundColor = [UIColor darkGrayColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.chatSessionInputBarControl.inputTextView.textChangeDelegate = self;
 }
 
-- (void)onBeginRecordEvent {
-    
-    [self startRecording];
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self setaiSpeenchSwitch];
+    [self speechAuthorization];
 }
 
--(void)onEndRecordEvent{
+//- (void)onBeginRecordEvent {
+//
+//    [self startRecording];
+//}
+//
+//-(void)onEndRecordEvent{
+//
+//    if (self.audioEngine.isRunning) {
+//        [self.audioEngine stop];
+//        if (_recognitionRequest) {
+//            [_recognitionRequest endAudio];
+//        }
+//    }
+//}
 
-    if (self.audioEngine.isRunning) {
-        [self.audioEngine stop];
-        if (_recognitionRequest) {
-            [_recognitionRequest endAudio];
-        }
-    }
-}
 
--(void)addSureButton{
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.backgroundColor = [UIColor redColor];
-    btn.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-    [btn setTitle:@"确 定"  forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.chatSessionInputBarControl addSubview:btn];
-    [self.chatSessionInputBarControl bringSubviewToFront:btn];
-    
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.mas_equalTo(self.chatSessionInputBarControl.recordButton);
-
-    }];
-    //-----------
-    [btn addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        
+-(void)setaiSpeenchSwitch{
+    self.chatSessionInputBarControl.pluginBoardView.pluginBoardDelegate = self;
+    [self.chatSessionInputBarControl addSubview:self.aiSpeechBtn];
+    [self.aiSpeechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.mas_equalTo(self.chatSessionInputBarControl.switchButton);
     }];
 }
 
@@ -125,6 +122,9 @@
         if (result) {
             self.chatSessionInputBarControl.currentBottomBarStatus = KBottomBarKeyboardStatus;
             self.chatSessionInputBarControl.inputTextView.text = [NSString stringWithFormat:@"%@", result.bestTranscription.formattedString] ;
+            NSLog(@"bestTranscription %@",result.bestTranscription);
+            NSLog(@"bestTranscription.segments %@",result.bestTranscription.segments);
+            NSLog(@"transcriptions %@",result.transcriptions);
             isFinal = result.isFinal;
         }
         
@@ -171,6 +171,39 @@
     return _speechRecognizer;
 }
 
+-(UIButton *)aiSpeechBtn{
+    if (!_aiSpeechBtn) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.backgroundColor = [UIColor lightGrayColor];
+        btn.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+        [btn setTitle:@"麦"  forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        btn.layer.cornerRadius = btn.size.height / 2;
+        btn.layer.borderWidth = 1.5;
+        btn.layer.borderColor = [UIColor brownColor].CGColor;
+        btn.layer.masksToBounds = YES;
+        //-----------
+        __weak typeof(btn) weakBtn = btn;
+        [btn addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            NSLog(@"_aiSpeechBtn确 定");
+            if (self.audioEngine.isRunning) {
+                [self.audioEngine stop];
+                if (_recognitionRequest) {
+                    [_recognitionRequest endAudio];
+                }
+                [weakBtn setTitle:@"麦"  forState:UIControlStateNormal];
+            }
+            else {
+                [self startRecording];
+                [weakBtn setTitle:@"-"  forState:UIControlStateNormal];
+            }
+        }];
+        
+        _aiSpeechBtn = btn;
+        _aiSpeechBtn.hidden = YES;
+    }
+    return _aiSpeechBtn;
+}
 #pragma mark - SFSpeechRecognizerDelegate
 - (void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available{
     if (available) {
@@ -181,4 +214,18 @@
 //        [self.speechBtn setTitle:@"语音识别不可用" forState:UIControlStateNormal];
     }
 }
+
+#pragma mark - RCTextViewDelegate
+- (void)rctextView:(RCTextView *)textView textDidChange:(NSString *)text{
+    
+}
+
+#pragma mark - RCPluginBoardViewDelegate
+//点击扩展功能板中的扩展项的回调
+-(void)pluginBoardView:(RCPluginBoardView*)pluginBoardView clickedItemWithTag:(NSInteger)tag{
+    if (tag == 1314) {
+        self.aiSpeechBtn.hidden = !self.aiSpeechBtn.isHidden;
+    }
+}
+
 @end
