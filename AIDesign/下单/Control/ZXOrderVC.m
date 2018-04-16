@@ -78,6 +78,11 @@
     [super viewWillAppear:animated];
     self.hidesBottomBarWhenPushed = NO;
     [self.tableView reloadData];
+    
+    if (self.isPresent) {
+        self.tabBarController.selectedIndex = 0;
+        self.isPresent = NO;
+    }
 }
 
 -(void)dealData{

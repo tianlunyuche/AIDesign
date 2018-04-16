@@ -17,21 +17,28 @@
 
 -(void)loadView{
     [super loadView];
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-  
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.hidesBottomBarWhenPushed = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    self.hidesBottomBarWhenPushed = NO;
+    self.navigationController.tabBarController.tabBar.hidden = NO;
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if (![userDefaults objectForKey:@"user"]) {
         UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:[[ZXLoginVC alloc] init]];
-
+        
         [self presentViewController:navVC animated:YES completion:^{
             
         }];

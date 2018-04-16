@@ -11,6 +11,8 @@
 #import "ZXResultTableVC.h"
 #import "ZXNetWorkManager.h"
 #import "ZXGoodsCell02.h"
+#import "ZXDynamicVC.h"
+#import "ZXOrderVC.h"
 
 #define ZXGoodsCell @"ZXGoodsCell02"
 #define ZXMENUCELL @"ZXMenuCell"
@@ -72,6 +74,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.hidesBottomBarWhenPushed = NO;
+    
 }
 
 -(void)dealData{
@@ -501,8 +504,17 @@
     self.searchArray = mutableArray;
     [self.tableView reloadData];
 }
+
 - (IBAction)orderSeclet:(id)sender {
     
+    [MBProgressHUD showSuccess:@"下单成功"];
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:[ZXOrderVC class]]) {
+            ((ZXOrderVC *)vc).isPresent = YES;
+        }
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

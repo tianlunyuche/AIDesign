@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXOrderDetailVC">
             <connections>
-                <outlet property="scrollView" destination="D4I-Tc-dxy" id="5p0-4F-um1"/>
                 <outlet property="sureBtn" destination="q4y-55-lnn" id="fSY-Rr-f4b"/>
+                <outlet property="tableView" destination="Alx-2K-3lV" id="gRU-5A-Fe0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,19 +30,23 @@
                     <state key="normal" title="收  货" backgroundImage="bg_bar">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="sureSelect:" destination="-1" eventType="touchUpInside" id="dIo-mF-CwM"/>
+                    </connections>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Tc-dxy">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Alx-2K-3lV">
                     <rect key="frame" x="0.0" y="20" width="375" height="597"/>
-                </scrollView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="q4y-55-lnn" secondAttribute="trailing" id="4cH-ht-vdU"/>
-                <constraint firstItem="D4I-Tc-dxy" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="722-Th-3sW"/>
-                <constraint firstItem="D4I-Tc-dxy" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="DCG-jm-orh"/>
-                <constraint firstItem="q4y-55-lnn" firstAttribute="top" secondItem="D4I-Tc-dxy" secondAttribute="bottom" id="K2B-Dk-OHL"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Alx-2K-3lV" secondAttribute="trailing" id="65b-7d-dew"/>
+                <constraint firstItem="q4y-55-lnn" firstAttribute="top" secondItem="Alx-2K-3lV" secondAttribute="bottom" id="GJQ-ue-Cpv"/>
                 <constraint firstItem="q4y-55-lnn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="aRb-xm-44d"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="D4I-Tc-dxy" secondAttribute="trailing" id="grk-eV-CFI"/>
+                <constraint firstItem="Alx-2K-3lV" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="aqn-fy-ebv"/>
+                <constraint firstItem="Alx-2K-3lV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="evX-xw-fWl"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="q4y-55-lnn" secondAttribute="bottom" id="kCv-S0-gkh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

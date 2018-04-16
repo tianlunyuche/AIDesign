@@ -79,6 +79,9 @@
 		359E7D601FF792EF0083C042 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D5F1FF792EE0083C042 /* CoreLocation.framework */; };
 		359E7D641FF7935D0083C042 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D631FF7935C0083C042 /* libc++.tbd */; };
 		359E7D681FF795190083C042 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359E7D491FF792650083C042 /* iflyMSC.framework */; };
+		35A6F84F207769DE00F31319 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6F84E2077692B00F31319 /* MBProgressHUD+MJ.m */; };
+		35A6F8532078767200F31319 /* ZXDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6F8512078767200F31319 /* ZXDetailCollectionViewCell.m */; };
+		35A6F8542078767200F31319 /* ZXDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A6F8522078767200F31319 /* ZXDetailCollectionViewCell.xib */; };
 		35BB170F20503F93004C0873 /* ZXStockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB170E20503F93004C0873 /* ZXStockVC.m */; };
 		35C04A6A1FF743BC00AB4510 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A691FF743BC00AB4510 /* AppDelegate.m */; };
 		35C04A6D1FF743BC00AB4510 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A6C1FF743BC00AB4510 /* ViewController.m */; };
@@ -245,6 +248,11 @@
 		359E7D5F1FF792EE0083C042 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		359E7D611FF792F80083C042 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		359E7D631FF7935C0083C042 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		35A6F84D2077692A00F31319 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		35A6F84E2077692B00F31319 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		35A6F8502078767200F31319 /* ZXDetailCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXDetailCollectionViewCell.h; sourceTree = "<group>"; };
+		35A6F8512078767200F31319 /* ZXDetailCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXDetailCollectionViewCell.m; sourceTree = "<group>"; };
+		35A6F8522078767200F31319 /* ZXDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		35BB170D20503F93004C0873 /* ZXStockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXStockVC.h; sourceTree = "<group>"; };
 		35BB170E20503F93004C0873 /* ZXStockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXStockVC.m; sourceTree = "<group>"; };
 		35C04A651FF743BC00AB4510 /* AIDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,6 +377,7 @@
 		35250214201B8745004E898C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				35A6F84C2077692A00F31319 /*  MBProgressHUD (MJ) */,
 				35916E2A206F66A600DEF3F5 /* keychain */,
 				3589A51D206D286400FC7604 /* TipView.h */,
 				3589A51E206D286500FC7604 /* TipView.m */,
@@ -575,6 +584,9 @@
 				35916E402070D59C00DEF3F5 /* ZXDynamicCell.h */,
 				35916E412070D59C00DEF3F5 /* ZXDynamicCell.m */,
 				35916E422070D59C00DEF3F5 /* ZXDynamicCell.xib */,
+				35A6F8502078767200F31319 /* ZXDetailCollectionViewCell.h */,
+				35A6F8512078767200F31319 /* ZXDetailCollectionViewCell.m */,
+				35A6F8522078767200F31319 /* ZXDetailCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -606,6 +618,15 @@
 			);
 			name = Frameworks;
 			path = AIDesign/Frameworks;
+			sourceTree = "<group>";
+		};
+		35A6F84C2077692A00F31319 /*  MBProgressHUD (MJ) */ = {
+			isa = PBXGroup;
+			children = (
+				35A6F84D2077692A00F31319 /* MBProgressHUD+MJ.h */,
+				35A6F84E2077692B00F31319 /* MBProgressHUD+MJ.m */,
+			);
+			path = " MBProgressHUD (MJ)";
 			sourceTree = "<group>";
 		};
 		35BB170920503F1F004C0873 /* 管理 */ = {
@@ -908,6 +929,7 @@
 				35250255201C5B40004E898C /* bds_easr_mfe_cmvn.dat in Resources */,
 				35250256201C5B40004E898C /* bds_easr_mfe_dnn.dat in Resources */,
 				3589A519206D268800FC7604 /* ZXRegisterVC.xib in Resources */,
+				35A6F8542078767200F31319 /* ZXDetailCollectionViewCell.xib in Resources */,
 				354FBD7220692810002871A5 /* goods3.json in Resources */,
 				35916E492070E45C00DEF3F5 /* ZXOrderDetailVC.xib in Resources */,
 				3589A510206D251600FC7604 /* ZXLoginVC.xib in Resources */,
@@ -1015,6 +1037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A6F84F207769DE00F31319 /* MBProgressHUD+MJ.m in Sources */,
 				35916E3A206FC5B400DEF3F5 /* ZXGoodsCell02.m in Sources */,
 				35916E31206F6FAC00DEF3F5 /* ZXUserModel.m in Sources */,
 				3589A511206D259400FC7604 /* LoginContentView.m in Sources */,
@@ -1041,6 +1064,7 @@
 				35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */,
 				35916E482070E45C00DEF3F5 /* ZXOrderDetailVC.m in Sources */,
 				351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */,
+				35A6F8532078767200F31319 /* ZXDetailCollectionViewCell.m in Sources */,
 				3504050C205E9B72002BDC3B /* ZXMessageVC.m in Sources */,
 				3589A51F206D286500FC7604 /* TipView.m in Sources */,
 				3589A522206D2B9B00FC7604 /* ZXforgetPassVC.m in Sources */,

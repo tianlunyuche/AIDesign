@@ -28,6 +28,21 @@
     self.tableView.dataSource = self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.hidesBottomBarWhenPushed = NO;
+    self.tabBarController.tabBar.hidden = NO;
+    self.tabBarController.hidesBottomBarWhenPushed = NO;
+    self.navigationController.hidesBottomBarWhenPushed = NO;
+    self.navigationController.tabBarController.hidesBottomBarWhenPushed = NO;
+    self.navigationController.tabBarController.tabBar.hidden = NO;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 150;
@@ -35,6 +50,7 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZXOrderDetailVC *vc = [[ZXOrderDetailVC alloc] initWithNibName:OrderDetailVC bundle:nil];
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];

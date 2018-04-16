@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXOrderVC : UIViewController
-
+@property(nonatomic,assign) BOOL isPresent;
 @end
