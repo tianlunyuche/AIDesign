@@ -149,35 +149,6 @@
             <point key="canvasLocation" x="-181.25" y="1325.1066666666666"/>
         </scene>
         <!--个人中心-->
-        <scene sceneID="LqV-J9-9Tf">
-            <objects>
-                <tableViewController title="个人中心" id="GaH-Xz-ZA7" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bHa-Uh-wT1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VR7-z9-k3O">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VR7-z9-k3O" id="DfJ-Mr-DRS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="GaH-Xz-ZA7" id="u1a-5k-pVQ"/>
-                            <outlet property="delegate" destination="GaH-Xz-ZA7" id="n9L-74-G8V"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="个人中心" id="ZSy-tI-sPk"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cTx-nO-hhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="413.75" y="2894.7799999999997"/>
-        </scene>
-        <!--个人中心-->
         <scene sceneID="4Xt-Wk-4r8">
             <objects>
                 <navigationController id="Hkn-WO-TMe" sceneMemberID="viewController">
@@ -187,12 +158,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="GaH-Xz-ZA7" kind="relationship" relationship="rootViewController" id="QA9-ik-g50"/>
+                        <segue destination="Yb3-jT-4nm" kind="relationship" relationship="rootViewController" id="mIe-Sw-IkW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUV-bh-b28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-181.25" y="2894.7799999999997"/>
+        </scene>
+        <!--个人中心-->
+        <scene sceneID="DYu-jQ-lXh">
+            <objects>
+                <viewController id="Yb3-jT-4nm" customClass="ZXCenterVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pNb-7W-1Bm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="T8j-lS-ZoW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="个人中心" id="M5q-e8-fm5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JzA-sB-35C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="2889"/>
         </scene>
         <!--消息-->
         <scene sceneID="ZXy-KW-Jwa">

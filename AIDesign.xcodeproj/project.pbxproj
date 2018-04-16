@@ -98,6 +98,7 @@
 		35E2D9D620130F320028B504 /* Service.json in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9D520130C590028B504 /* Service.json */; };
 		35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D9D9201322590028B504 /* ZXMenuCell.m */; };
 		35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9DA201322590028B504 /* ZXMenuCell.xib */; };
+		35EFCCD52084DA83006FAB94 /* ZXCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */; };
 		4870B892E0CF3F1DBFC94B45 /* libPods-AIDesign.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */; };
 /* End PBXBuildFile section */
 
@@ -280,6 +281,8 @@
 		35E2D9D8201322590028B504 /* ZXMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMenuCell.h; sourceTree = "<group>"; };
 		35E2D9D9201322590028B504 /* ZXMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMenuCell.m; sourceTree = "<group>"; };
 		35E2D9DA201322590028B504 /* ZXMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMenuCell.xib; sourceTree = "<group>"; };
+		35EFCCD32084DA82006FAB94 /* ZXCenterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXCenterVC.h; sourceTree = "<group>"; };
+		35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXCenterVC.m; sourceTree = "<group>"; };
 		AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AIDesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -545,6 +548,8 @@
 				3589A517206D268800FC7604 /* ZXRegisterVC.xib */,
 				3589A51A206D274400FC7604 /* ZXCountryCodeVC.h */,
 				3589A51B206D274500FC7604 /* ZXCountryCodeVC.m */,
+				35EFCCD32084DA82006FAB94 /* ZXCenterVC.h */,
+				35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -1059,6 +1064,7 @@
 				354FBD672068A474002871A5 /* ZXGoodsSourceModel.m in Sources */,
 				35916E4C2070E9D200DEF3F5 /* ZXDetailView.m in Sources */,
 				3504050F205E9FFF002BDC3B /* ZXNetWorkManager.m in Sources */,
+				35EFCCD52084DA83006FAB94 /* ZXCenterVC.m in Sources */,
 				35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */,
 				35BB170F20503F93004C0873 /* ZXStockVC.m in Sources */,
 				35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */,
