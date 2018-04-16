@@ -1,0 +1,32 @@
+
+{
+"user": [{
+"uid": "123456",
+"nickname": "杨爽妹妹",
+"headPortrait": "qq",
+"sex": 0,
+"icon": "等级icon ",
+"blogPic": "微博背景",
+"autograph": "个性签名",
+"seat": "所在地",
+"synopsis": "简介",
+"level": 1,
+"concern": 0,
+"fan": 0,
+"createTime":"2016-07-08 16:25:29"
+},{
+"uid": "12345",
+"nickname": "媛媛妹妹",
+"headPortrait": "qq",
+"sex": 0,
+"icon": "等级icon ",
+"blogPic": "微博背景",
+"autograph": "个性签名",
+"seat": "所在地",
+"synopsis": "简介",
+"level": 1,
+"concern": 0,
+"fan": 0,
+"createTime":"2016-07-08 16:25:29"
+}]
+}
