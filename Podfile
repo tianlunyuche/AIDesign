@@ -15,4 +15,6 @@ target 'AIDesign' do
     pod 'MBProgressHUD'
     pod 'MJRefresh'
     pod 'SDCycleScrollView'
+    pod 'Charts'
+    use_frameworks!
 end

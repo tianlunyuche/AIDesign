@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3504050C205E9B72002BDC3B /* ZXMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3504050B205E9B72002BDC3B /* ZXMessageVC.m */; };
 		3504050F205E9FFF002BDC3B /* ZXNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3504050E205E9FFF002BDC3B /* ZXNetWorkManager.m */; };
+		351683E5208C8AC100D175D8 /* ZXReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351683E4208C8AC100D175D8 /* ZXReportVC.m */; };
 		351E37E82016150E008D157C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37E72016150E008D157C /* GLKit.framework */; };
 		351E37EA20161534008D157C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37E920161534008D157C /* CFNetwork.framework */; };
 		351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EB20161545008D157C /* libz.1.2.5.tbd */; };
@@ -99,7 +100,7 @@
 		35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D9D9201322590028B504 /* ZXMenuCell.m */; };
 		35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9DA201322590028B504 /* ZXMenuCell.xib */; };
 		35EFCCD52084DA83006FAB94 /* ZXCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */; };
-		4870B892E0CF3F1DBFC94B45 /* libPods-AIDesign.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */; };
+		403677FA649967C7C655E007 /* Pods_AIDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8538EA9CBA74D5AB695D93 /* Pods_AIDesign.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,9 @@
 		3504050E205E9FFF002BDC3B /* ZXNetWorkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNetWorkManager.m; sourceTree = "<group>"; };
 		35040511205EA5B5002BDC3B /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		35040514205EA931002BDC3B /* AIDesign.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIDesign.pch; sourceTree = "<group>"; };
+		351683E0208C886A00D175D8 /* AIDesign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AIDesign-Bridging-Header.h"; sourceTree = "<group>"; };
+		351683E3208C8AC100D175D8 /* ZXReportVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReportVC.h; sourceTree = "<group>"; };
+		351683E4208C8AC100D175D8 /* ZXReportVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXReportVC.m; sourceTree = "<group>"; };
 		351E37E72016150E008D157C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		351E37E920161534008D157C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		351E37EB20161545008D157C /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -283,7 +287,7 @@
 		35E2D9DA201322590028B504 /* ZXMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMenuCell.xib; sourceTree = "<group>"; };
 		35EFCCD32084DA82006FAB94 /* ZXCenterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXCenterVC.h; sourceTree = "<group>"; };
 		35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXCenterVC.m; sourceTree = "<group>"; };
-		AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AIDesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8538EA9CBA74D5AB695D93 /* Pods_AIDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +313,7 @@
 				359E7D501FF792B50083C042 /* UIKit.framework in Frameworks */,
 				359E7D4E1FF792B00083C042 /* Foundation.framework in Frameworks */,
 				359E7D4C1FF792AB0083C042 /* CoreGraphics.framework in Frameworks */,
-				4870B892E0CF3F1DBFC94B45 /* libPods-AIDesign.a in Frameworks */,
+				403677FA649967C7C655E007 /* Pods_AIDesign.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,7 +623,7 @@
 				359E7D4D1FF792B00083C042 /* Foundation.framework */,
 				359E7D4B1FF792AB0083C042 /* CoreGraphics.framework */,
 				359E7D491FF792650083C042 /* iflyMSC.framework */,
-				AF826F3974DD48EEDF8D53E8 /* libPods-AIDesign.a */,
+				8B8538EA9CBA74D5AB695D93 /* Pods_AIDesign.framework */,
 			);
 			name = Frameworks;
 			path = AIDesign/Frameworks;
@@ -652,6 +656,9 @@
 				3589A4FB206BE2E900FC7604 /* ZXStockVC.xib */,
 				3589A4F8206BE0F600FC7604 /* ZXPageController.h */,
 				3589A4F9206BE0F600FC7604 /* ZXPageController.m */,
+				351683E3208C8AC100D175D8 /* ZXReportVC.h */,
+				351683E4208C8AC100D175D8 /* ZXReportVC.m */,
+				351683E0208C886A00D175D8 /* AIDesign-Bridging-Header.h */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -884,6 +891,7 @@
 				TargetAttributes = {
 					35C04A641FF743BC00AB4510 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					35C04A7C1FF743BC00AB4510 = {
@@ -986,7 +994,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
@@ -1008,9 +1015,28 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AIDesign/Pods-AIDesign-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1052,6 +1078,7 @@
 				3535CE6C207600F60083F6C6 /* ZXDetailPageVC.m in Sources */,
 				354FBD6A2068DA8A002871A5 /* ZXEditView.m in Sources */,
 				3589A514206D266400FC7604 /* RegisterContentView.m in Sources */,
+				351683E5208C8AC100D175D8 /* ZXReportVC.m in Sources */,
 				35916E3E2070D51000DEF3F5 /* ZXDynamicVC.m in Sources */,
 				35916E432070D59C00DEF3F5 /* ZXDynamicCell.m in Sources */,
 				3589A50F206D251600FC7604 /* ZXLoginVC.m in Sources */,
@@ -1241,6 +1268,7 @@
 			baseConfigurationReference = 3112301D77ED63030CC9B5A7 /* Pods-AIDesign.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 264N6AV3ZH;
 				ENABLE_BITCODE = NO;
@@ -1259,6 +1287,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.runwise.AIDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AIDesign/管理/Control/AIDesign-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1268,6 +1299,7 @@
 			baseConfigurationReference = 2F6D9EB7903CEDF2CA382915 /* Pods-AIDesign.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 264N6AV3ZH;
 				ENABLE_BITCODE = NO;
@@ -1286,6 +1318,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.runwise.AIDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AIDesign/管理/Control/AIDesign-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

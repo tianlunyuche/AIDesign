@@ -8,6 +8,7 @@
 
 #import "ZXPageController.h"
 #import "ZXStockVC.h"
+#import "ZXReportVC.h"
 
 @interface ZXPageController ()
 
@@ -29,6 +30,7 @@
 //    self.progressViewBottomSpace =10;
     //    self.menuBGColor = [UIColor whiteColor];
     self.progressViewCornerRadius = 30;
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -37,12 +39,13 @@
 
 #pragma mark -
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
-    return 2;
+    return 3;
 }
 
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
     switch (index) {
         case 0: return @"仓库管理";
+        case 1: return @"报表";
     }
     return @"报表";
 }
@@ -50,6 +53,7 @@
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     switch (index) {
         case 0: return [[ZXStockVC alloc] initWithNibName:@"ZXStockVC" bundle:nil];
+        case 1: return [[ZXReportVC alloc] init];
     }
     return [[UIViewController alloc] init];
 }
