@@ -25,15 +25,18 @@
 //    　"createTime":"2016-07-08 16:25:29"
 //},
 @property (nonatomic, strong)  NSString *uid;
+@property (nonatomic, strong) NSString *mobile;
 @property (nonatomic, strong) NSString *nickname;
 @property (nonatomic, strong)  NSString *portrait;
-@property (nonatomic, assign) NSInteger sex;
-@property (nonatomic, strong)  NSString *icon;
-@property (nonatomic, strong)  NSString *backdrop;
-@property (nonatomic, assign)  NSInteger level;
-@property (nonatomic, assign)  NSInteger concern;
-@property (nonatomic, assign)  NSInteger fan;
-@property (nonatomic, strong) NSString *createTime;
+@property (nonatomic, strong)  NSString *compellation;
+@property (nonatomic, strong)  NSNumber *sex;
+@property (nonatomic, strong)  NSString *birthday;
+@property (nonatomic, strong)  NSString *email;
+@property (nonatomic, strong)  NSString *qq;
+@property (nonatomic, assign)  NSInteger active;
+@property (nonatomic, assign)  NSInteger money;
+@property (nonatomic, strong)  NSString *token;
+@property (nonatomic, strong)  NSString *createTime;
 
 //@property (nonatomic, strong) NSString *mobile;
 //@property (nonatomic, strong)  NSString *compellation;

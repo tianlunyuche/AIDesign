@@ -15,6 +15,12 @@
 		351E37EC20161545008D157C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EB20161545008D157C /* libz.1.2.5.tbd */; };
 		351E37F02016249A008D157C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */; };
 		351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 351E37F2201625FA008D157C /* ZXResultTableVC.m */; };
+		3520BEC3209971430046E899 /* PersonalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BEC2209971420046E899 /* PersonalInfoVC.m */; };
+		3520BEC6209971590046E899 /* PersonalContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BEC4209971590046E899 /* PersonalContent.m */; };
+		3520BEC9209971BD0046E899 /* ZXSexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BEC7209971BD0046E899 /* ZXSexView.m */; };
+		3520BECC209971DB0046E899 /* ZXSexChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BECA209971DA0046E899 /* ZXSexChoice.m */; };
+		3520BECF209972070046E899 /* ZXPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BECD209972060046E899 /* ZXPhoto.m */; };
+		3520BED22099724A0046E899 /* ASBirthSelectSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BED1209972490046E899 /* ASBirthSelectSheet.m */; };
 		3525022C201C2902004E898C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3525022B201C2901004E898C /* libsqlite3.0.tbd */; };
 		35250244201C586D004E898C /* BDVRSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 35250236201C4E49004E898C /* BDVRSettings.m */; };
 		35250245201C5872004E898C /* BDVRSettingsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35250238201C4EA1004E898C /* BDVRSettingsItem.m */; };
@@ -99,6 +105,7 @@
 		35E2D9D620130F320028B504 /* Service.json in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9D520130C590028B504 /* Service.json */; };
 		35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D9D9201322590028B504 /* ZXMenuCell.m */; };
 		35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E2D9DA201322590028B504 /* ZXMenuCell.xib */; };
+		35E9F0CF209987020007876C /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E9F0CE209975980007876C /* UIImage+Extension.m */; };
 		35EFCCD52084DA83006FAB94 /* ZXCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */; };
 		403677FA649967C7C655E007 /* Pods_AIDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8538EA9CBA74D5AB695D93 /* Pods_AIDesign.framework */; };
 /* End PBXBuildFile section */
@@ -139,6 +146,18 @@
 		351E37EF2016248C008D157C /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		351E37F1201625FA008D157C /* ZXResultTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXResultTableVC.h; sourceTree = "<group>"; };
 		351E37F2201625FA008D157C /* ZXResultTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXResultTableVC.m; sourceTree = "<group>"; };
+		3520BEC1209971420046E899 /* PersonalInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoVC.h; sourceTree = "<group>"; };
+		3520BEC2209971420046E899 /* PersonalInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoVC.m; sourceTree = "<group>"; };
+		3520BEC4209971590046E899 /* PersonalContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalContent.m; sourceTree = "<group>"; };
+		3520BEC5209971590046E899 /* PersonalContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalContent.h; sourceTree = "<group>"; };
+		3520BEC7209971BD0046E899 /* ZXSexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSexView.m; sourceTree = "<group>"; };
+		3520BEC8209971BD0046E899 /* ZXSexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXSexView.h; sourceTree = "<group>"; };
+		3520BECA209971DA0046E899 /* ZXSexChoice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSexChoice.m; sourceTree = "<group>"; };
+		3520BECB209971DA0046E899 /* ZXSexChoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXSexChoice.h; sourceTree = "<group>"; };
+		3520BECD209972060046E899 /* ZXPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXPhoto.m; sourceTree = "<group>"; };
+		3520BECE209972070046E899 /* ZXPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPhoto.h; sourceTree = "<group>"; };
+		3520BED0209972490046E899 /* ASBirthSelectSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASBirthSelectSheet.h; sourceTree = "<group>"; };
+		3520BED1209972490046E899 /* ASBirthSelectSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASBirthSelectSheet.m; sourceTree = "<group>"; };
 		35250216201B8752004E898C /* .gitIgnore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitIgnore; sourceTree = "<group>"; };
 		35250217201B8752004E898C /* BDSASRDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRDefines.h; sourceTree = "<group>"; };
 		35250218201B8752004E898C /* BDSASRParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
@@ -285,6 +304,8 @@
 		35E2D9D8201322590028B504 /* ZXMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXMenuCell.h; sourceTree = "<group>"; };
 		35E2D9D9201322590028B504 /* ZXMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXMenuCell.m; sourceTree = "<group>"; };
 		35E2D9DA201322590028B504 /* ZXMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMenuCell.xib; sourceTree = "<group>"; };
+		35E9F0CD209975970007876C /* UIImage+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		35E9F0CE209975980007876C /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		35EFCCD32084DA82006FAB94 /* ZXCenterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXCenterVC.h; sourceTree = "<group>"; };
 		35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXCenterVC.m; sourceTree = "<group>"; };
 		8B8538EA9CBA74D5AB695D93 /* Pods_AIDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,6 +405,7 @@
 		35250214201B8745004E898C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				35E9F0CC2099757F0007876C /* Category */,
 				35A6F84C2077692A00F31319 /*  MBProgressHUD (MJ) */,
 				35916E2A206F66A600DEF3F5 /* keychain */,
 				3589A51D206D286400FC7604 /* TipView.h */,
@@ -554,6 +576,8 @@
 				3589A51B206D274500FC7604 /* ZXCountryCodeVC.m */,
 				35EFCCD32084DA82006FAB94 /* ZXCenterVC.h */,
 				35EFCCD42084DA82006FAB94 /* ZXCenterVC.m */,
+				3520BEC1209971420046E899 /* PersonalInfoVC.h */,
+				3520BEC2209971420046E899 /* PersonalInfoVC.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -574,6 +598,16 @@
 				3589A50B206D24D500FC7604 /* LoginContentView.m */,
 				3589A513206D266400FC7604 /* RegisterContentView.h */,
 				3589A512206D266300FC7604 /* RegisterContentView.m */,
+				3520BEC5209971590046E899 /* PersonalContent.h */,
+				3520BEC4209971590046E899 /* PersonalContent.m */,
+				3520BEC8209971BD0046E899 /* ZXSexView.h */,
+				3520BEC7209971BD0046E899 /* ZXSexView.m */,
+				3520BECB209971DA0046E899 /* ZXSexChoice.h */,
+				3520BECA209971DA0046E899 /* ZXSexChoice.m */,
+				3520BECE209972070046E899 /* ZXPhoto.h */,
+				3520BECD209972060046E899 /* ZXPhoto.m */,
+				3520BED0209972490046E899 /* ASBirthSelectSheet.h */,
+				3520BED1209972490046E899 /* ASBirthSelectSheet.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -809,6 +843,15 @@
 				35E2D9DA201322590028B504 /* ZXMenuCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		35E9F0CC2099757F0007876C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				35E9F0CD209975970007876C /* UIImage+Extension.h */,
+				35E9F0CE209975980007876C /* UIImage+Extension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		4A59C9ED24DB57D798CB78B1 /* Pods */ = {
@@ -1068,12 +1111,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E9F0CF209987020007876C /* UIImage+Extension.m in Sources */,
+				3520BEC3209971430046E899 /* PersonalInfoVC.m in Sources */,
 				35A6F84F207769DE00F31319 /* MBProgressHUD+MJ.m in Sources */,
 				35916E3A206FC5B400DEF3F5 /* ZXGoodsCell02.m in Sources */,
 				35916E31206F6FAC00DEF3F5 /* ZXUserModel.m in Sources */,
 				3589A511206D259400FC7604 /* LoginContentView.m in Sources */,
 				3589A518206D268800FC7604 /* ZXRegisterVC.m in Sources */,
 				3589A51C206D274500FC7604 /* ZXCountryCodeVC.m in Sources */,
+				3520BED22099724A0046E899 /* ASBirthSelectSheet.m in Sources */,
 				3589A4FA206BE0F600FC7604 /* ZXPageController.m in Sources */,
 				3535CE6C207600F60083F6C6 /* ZXDetailPageVC.m in Sources */,
 				354FBD6A2068DA8A002871A5 /* ZXEditView.m in Sources */,
@@ -1082,6 +1128,7 @@
 				35916E3E2070D51000DEF3F5 /* ZXDynamicVC.m in Sources */,
 				35916E432070D59C00DEF3F5 /* ZXDynamicCell.m in Sources */,
 				3589A50F206D251600FC7604 /* ZXLoginVC.m in Sources */,
+				3520BECF209972070046E899 /* ZXPhoto.m in Sources */,
 				35916E34206F91FF00DEF3F5 /* ZXCartVC.m in Sources */,
 				35250245201C5872004E898C /* BDVRSettingsItem.m in Sources */,
 				35250244201C586D004E898C /* BDVRSettings.m in Sources */,
@@ -1092,8 +1139,11 @@
 				35916E4C2070E9D200DEF3F5 /* ZXDetailView.m in Sources */,
 				3504050F205E9FFF002BDC3B /* ZXNetWorkManager.m in Sources */,
 				35EFCCD52084DA83006FAB94 /* ZXCenterVC.m in Sources */,
+				3520BEC6209971590046E899 /* PersonalContent.m in Sources */,
+				3520BEC9209971BD0046E899 /* ZXSexView.m in Sources */,
 				35E2D9DB201322590028B504 /* ZXMenuCell.m in Sources */,
 				35BB170F20503F93004C0873 /* ZXStockVC.m in Sources */,
+				3520BECC209971DB0046E899 /* ZXSexChoice.m in Sources */,
 				35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */,
 				35916E482070E45C00DEF3F5 /* ZXOrderDetailVC.m in Sources */,
 				351E37F3201625FA008D157C /* ZXResultTableVC.m in Sources */,

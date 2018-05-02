@@ -20,6 +20,8 @@
 /** 头视图 */
 @property (strong, nonatomic)  UIView *headView;
 @property(nonatomic,strong) UIImageView *imageView;
+
+
 @end
 
 static CGFloat logoBgImgViewHeight = 219;
@@ -49,12 +51,15 @@ static CGFloat logoBgImgViewHeight = 219;
     if (indexPath.section == 0) {
         return logoBgImgViewHeight;
     }
-    return 150;
+    return 50;
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [self.navigationController pushViewController:[[NSClassFromString(self.classArray[indexPath.row]) alloc] init] animated:YES];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -66,7 +71,7 @@ static CGFloat logoBgImgViewHeight = 219;
     if (section == 0) {
         return 1;
     }
-    return 10;
+    return self.listArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -109,31 +114,42 @@ static CGFloat logoBgImgViewHeight = 219;
             make.size.mas_equalTo(CGSizeMake(100, 100));
             make.centerY.mas_equalTo(self.headView.mas_centerY);
         }];
-
+        //--------------
+        
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
         }
-        cell.textLabel.text = @"个人设置";
-        cell.detailTextLabel.text = @"详情";
+        
+        cell.textLabel.text = self.listArray[indexPath.row];
+//        cell.detailTextLabel.text = @"详情";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }
 }
+
+-(NSArray *)listArray {
+    return @[@"修改个人信息",@"查看购物车",@"退出登录"];
+}
+
+-(NSArray *)classArray {
+    return @[@"PersonalInfoVC",@"PersonalInfoVC",@""];
+}
+
 
 #pragma mark - ScrollViewDelegate
 #pragma mark -- UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     if (scrollView == self.tableView) {
-        NSLog(@"self.tableView.contentOffset.y =%f",self.tableView.contentOffset.y);
+//        NSLog(@"self.tableView.contentOffset.y =%f",self.tableView.contentOffset.y);
         if (scrollView.contentOffset.y<30) {
             
             float ratito = fabs(self.tableView.contentOffset.y*0.5 -15)/30 +1;
             self.logoBgImgView.transform = CGAffineTransformMakeScale(ratito,ratito);
-            
+
             if (self.tableView.contentOffset.y<=-30) {
                 
                 self.tableView.contentOffset = CGPointMake(0, -30);

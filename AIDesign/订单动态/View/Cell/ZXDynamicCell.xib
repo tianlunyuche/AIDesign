@@ -170,7 +170,7 @@
     </objects>
     <resources>
         <image name="call" width="36" height="34"/>
-        <image name="icon_item" width="14" height="14"/>
+        <image name="icon_item" width="15" height="15"/>
         <image name="icon_price" width="15" height="15"/>
         <image name="person" width="25" height="23"/>
         <image name="state-restaurant-1-toCertain" width="42" height="42"/>

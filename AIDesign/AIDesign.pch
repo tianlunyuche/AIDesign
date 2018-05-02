@@ -24,8 +24,17 @@
 #import "AFNetworking.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MBProgressHUD+MJ.h"
+#import "UIImage+Extension.h"
 
 #define klineColor [UIColor colorWithRed:50.0f/255.0f green:214.0f/255.0f blue:210.0f/255.0f alpha:1.0f]
 #define kbackgdColor [UIColor colorWithRed:236.0f /255.0f green:236.0f /255.0f blue:236.0f /255.0f alpha:1]
+
+//MARK: - ImageView
+#define kImgV(img) [[UIImageView alloc] initWithImage:[UIImage imageNamed:img]]
+//MARK: - userDefaults
+#define kUserDefaults           [NSUserDefaults standardUserDefaults]
+#define kApplication            [UIApplication sharedApplication]
+#define kNotificationCenter     [NSNotificationCenter defaultCenter]
+#define ZXcolor(r,g,b)          [UIColor colorWithRed:r /250 green:g/250 blue:b/250 alpha:1]
 
 #endif /* AIDesign_pch */
