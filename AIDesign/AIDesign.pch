@@ -37,4 +37,6 @@
 #define kNotificationCenter     [NSNotificationCenter defaultCenter]
 #define ZXcolor(r,g,b)          [UIColor colorWithRed:r /250 green:g/250 blue:b/250 alpha:1]
 
+#define UserModelMsg @"userModelMsg"
+
 #endif /* AIDesign_pch */

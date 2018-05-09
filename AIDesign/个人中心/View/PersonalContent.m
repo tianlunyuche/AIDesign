@@ -42,7 +42,7 @@
     self.avatarImgView.userInteractionEnabled = YES;
     _singleTap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Notificate:)];
     [self.avatarImgView addGestureRecognizer:_singleTap];
-
+    
     
     //左侧标签
     NSArray*  attre =[[NSArray alloc] initWithObjects:@"昵称：",@"真实姓名：",@"性别：",@"生日：",@"QQ：",@"邮箱：",@"手机号：", nil];
@@ -82,7 +82,7 @@
         make.width.mas_equalTo(kScreenWidth - 110 -30);
         make.top.equalTo(self.mas_top).offset(208);
     }];
-
+    
     [self addSubview:self.manView];
     [self.manView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(100);
@@ -90,11 +90,11 @@
         make.top.equalTo(self.mas_top).offset(240);
         make.height.equalTo(@(50));
     }];
-
+    
     self.manView.userInteractionEnabled =YES;
     _singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Notificate:)];
     [self.manView addGestureRecognizer:_singleTap];
-
+    
     
     //女性图层
     [self addSubview:self.womanView];
@@ -104,23 +104,25 @@
         make.top.equalTo(self.mas_top).offset(240);
         make.height.equalTo(@(50));
     }];
-
+    
     self.womanView.userInteractionEnabled =YES;
     _singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Notificate:)];
     [_womanView addGestureRecognizer:_singleTap];
-
+    
     //生日标签
     [self addSubview:self.birthlabel];
     [self.birthlabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top).offset(Height);
-            make.left.equalTo(self.mas_left).offset(110);
+        make.top.equalTo(self.mas_top).offset(Height);
+        make.left.equalTo(self.mas_left).offset(110);
+        make.width.mas_equalTo(kScreenWidth - 110 -30);
     }];
+    
     //生日视图可交互
     self.birthlabel.userInteractionEnabled = YES;
     _singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Notificate:)];
     [self.birthlabel addGestureRecognizer:_singleTap];
     
-
+    
     //QQ
     _qqfld = [[UITextField alloc] init];
     _qqfld.placeholder = @"请输入您的QQ";
@@ -130,7 +132,7 @@
         make.left.equalTo(self.mas_left).offset(100);
         make.width.mas_equalTo(kScreenWidth - 110 -30);
     }];
-
+    
     //邮箱
     _mailfld = [[UITextField alloc] init];
     _mailfld.placeholder = @"请输入您的邮箱";
@@ -140,8 +142,8 @@
         make.left.equalTo(self.mas_left).offset(100);
         make.width.mas_equalTo(kScreenWidth - 110 -30);
     }];
-
-//    手机号码 部分
+    
+    //    手机号码 部分
     _pholabel =[[UILabel alloc] init];
     _pholabel.text =@"18888888888";
     [_pholabel setFont:[UIFont systemFontOfSize:18.0]];
@@ -152,10 +154,10 @@
         make.right.equalTo(self.mas_left).offset(300);
     }];
     
-//    提交按键
+    //    提交按键
     [self addSubview:self.postBtn];
     [self.postBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_pholabel.mas_bottom).offset(30);
+        make.top.equalTo(_pholabel.mas_bottom).offset(60);
         make.centerX.equalTo(self.mas_centerX);
         make.height.equalTo(@(30));
     }];
@@ -184,7 +186,7 @@
 
 #pragma mark - 点击 头像 ,sex 通知
 - (void)Notificate:(UITapGestureRecognizer *)tap{
-
+    
     //发送通知 ,异步发送通知, 主线程监听通知
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"manNotificate =%@",[NSThread currentThread]);
@@ -219,7 +221,7 @@
     if (!_avatarImgView) {
         
         _avatarImgView = [[UIImageView alloc] init];
-//        _avatarImgView.image =[UIImage circleImageWithLocalName:@"selfPhoto.png" borderWidth:0];
+        //        _avatarImgView.image =[UIImage circleImageWithLocalName:@"selfPhoto.png" borderWidth:0];
         _avatarImgView.image =[UIImage imageNamed:@"allocation_btn_add"];
         _avatarImgView.tag =110;
     }
@@ -244,8 +246,8 @@
 - (UIView *)birthlabel{
     
     if (!_birthlabel) {
-//        _birthView =[[UIView alloc] init];
-//        _birthView.backgroundColor=[UIColor redColor];
+        //        _birthView =[[UIView alloc] init];
+        //        _birthView.backgroundColor=[UIColor redColor];
         _birthlabel =[[UILabel alloc] init];
         _birthlabel.text = @"1996-05-24";
         [_birthlabel setFont:[UIFont systemFontOfSize:18.0]];
@@ -270,7 +272,7 @@
         [_postBtn setTitle:@"     提   交      " forState:UIControlStateNormal];
         [_postBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _postBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-
+        
     }
     return _postBtn;
 }
@@ -329,3 +331,4 @@
 
 
 @end
+

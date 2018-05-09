@@ -7,6 +7,7 @@
 //
 
 #import "ZXCenterVC.h"
+#import "ZXUserModel.h"
 
 #define DynamicCell @"ZXDynamicCell"
 #define ZXMENUCELL @"ZXMenuCell"
@@ -34,7 +35,7 @@ static CGFloat logoBgImgViewHeight = 219;
     [self.tableView registerNib:[UINib nibWithNibName:DynamicCell bundle:nil] forCellReuseIdentifier:DynamicCell];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
-//   self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0);
+    //   self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0);
     self.tableView.dataSource = self;
     
     self.logoBgImgView = [[UIImageView alloc]init];
@@ -44,6 +45,13 @@ static CGFloat logoBgImgViewHeight = 219;
     self.tempBgViewCenter = self.logoBgImgView.center;
     
     [self.view insertSubview:self.logoBgImgView belowSubview:self.tableView];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    ZXUserModel *userModel = [NSKeyedUnarchiver unarchiveObjectWithData:[kUserDefaults objectForKey:UserModelMsg]];
+    self.imageView.image = userModel.portraitImage ? userModel.portraitImage : [UIImage imageNamed:@"portrait"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -58,7 +66,20 @@ static CGFloat logoBgImgViewHeight = 219;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 1) {
-        [self.navigationController pushViewController:[[NSClassFromString(self.classArray[indexPath.row]) alloc] init] animated:YES];
+        switch (indexPath.row) {
+            case 2: {
+                
+            }
+                break;
+                
+            default: {
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:[[NSClassFromString(self.classArray[indexPath.row]) alloc] init] animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+            }
+                break;
+        }
+        
     }
 }
 
@@ -76,19 +97,18 @@ static CGFloat logoBgImgViewHeight = 219;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0) {
-
+        
         static NSString *ID = @"centervcCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-
+        
         if (!cell) {
-
+            
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
             cell.backgroundColor = [UIColor clearColor];
             cell.contentView.backgroundColor = [UIColor clearColor];
             cell.selectionStyle = NO;
         }
-
-
+        
         for (UIView *view in cell.contentView.subviews) {
             [view removeFromSuperview];
         }
@@ -96,7 +116,7 @@ static CGFloat logoBgImgViewHeight = 219;
         self.headView.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:self.headView];
         [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
-
+            
             make.left.equalTo(cell.contentView.mas_left).offset(0);
             make.right.equalTo(cell.contentView.mas_right).offset(0);
             if (@available(iOS 11.0, *)) {
@@ -104,7 +124,7 @@ static CGFloat logoBgImgViewHeight = 219;
             } else {
                 make.top.equalTo(cell.contentView.mas_top).offset(25);
             }
-
+            
             make.bottom.equalTo(cell.contentView.mas_bottom).offset(0);
         }];
         
@@ -124,7 +144,7 @@ static CGFloat logoBgImgViewHeight = 219;
         }
         
         cell.textLabel.text = self.listArray[indexPath.row];
-//        cell.detailTextLabel.text = @"详情";
+        //        cell.detailTextLabel.text = @"详情";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }
@@ -141,33 +161,33 @@ static CGFloat logoBgImgViewHeight = 219;
 
 #pragma mark - ScrollViewDelegate
 #pragma mark -- UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    if (scrollView == self.tableView) {
-//        NSLog(@"self.tableView.contentOffset.y =%f",self.tableView.contentOffset.y);
-        if (scrollView.contentOffset.y<30) {
-            
-            float ratito = fabs(self.tableView.contentOffset.y*0.5 -15)/30 +1;
-            self.logoBgImgView.transform = CGAffineTransformMakeScale(ratito,ratito);
-
-            if (self.tableView.contentOffset.y<=-30) {
-                
-                self.tableView.contentOffset = CGPointMake(0, -30);
-            }
-        }
-        else{
-            
-            if (self.tableView.contentOffset.y>=100) {
-                self.tableView.contentOffset = CGPointMake(0, 100);
-            }
-            
-            CGFloat lY = self.tempBgViewCenter.y-self.tableView.contentOffset.y;
-            CGPoint lCenter = CGPointMake(self.tempBgViewCenter.x, lY);
-            
-            self.logoBgImgView.center = lCenter;
-        }
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//    if (scrollView == self.tableView) {
+////        NSLog(@"self.tableView.contentOffset.y =%f",self.tableView.contentOffset.y);
+//        if (scrollView.contentOffset.y<30) {
+//
+//            float ratito = fabs(self.tableView.contentOffset.y*0.5 -15)/30 +1;
+//            self.logoBgImgView.transform = CGAffineTransformMakeScale(ratito,ratito);
+//
+//            if (self.tableView.contentOffset.y<=-30) {
+//
+//                self.tableView.contentOffset = CGPointMake(0, -30);
+//            }
+//        }
+//        else{
+//
+//            if (self.tableView.contentOffset.y>=100) {
+//                self.tableView.contentOffset = CGPointMake(0, 100);
+//            }
+//
+//            CGFloat lY = self.tempBgViewCenter.y-self.tableView.contentOffset.y;
+//            CGPoint lCenter = CGPointMake(self.tempBgViewCenter.x, lY);
+//
+//            self.logoBgImgView.center = lCenter;
+//        }
+//    }
+//}
 
 #pragma mark - LazyLoad
 -(UITableView *)tableView{
@@ -213,3 +233,4 @@ static CGFloat logoBgImgViewHeight = 219;
 //}
 
 @end
+

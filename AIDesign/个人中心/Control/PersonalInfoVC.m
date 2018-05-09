@@ -31,7 +31,7 @@
     self.title=@"修改个人信息";
     [super viewDidLoad];
     self.view.backgroundColor =kbackgdColor;
-   
+    
     [self.view addSubview:self.personView];
     [self.personView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -54,67 +54,84 @@
     [kNotificationCenter addObserver:self selector:@selector(ChooseSex:) name:@"manNotificate" object:nil];
     [kNotificationCenter addObserver:self selector:@selector(ChooseSex:) name:@"womanNotificate" object:nil];
     [kNotificationCenter addObserver:self selector:@selector(birthClk) name:@"birthNotificate" object:nil];
+    //-----------------UI操作
+    ZXUserModel *userModel = [NSKeyedUnarchiver unarchiveObjectWithData:[kUserDefaults objectForKey:UserModelMsg]];
+    self.personView.usern.text = userModel.nickname;
+    self.personView.trueName.text = userModel.compellation;
+    [self.personView Sexselected:userModel.sex.intValue];
+    
+    self.personView.birthlabel.text = userModel.birthday ? userModel.birthday : @"1996-05-24";
+    self.personView.qqfld.text = userModel.qq;
+    self.personView.mailfld.text = userModel.email;
+    self.personView.pholabel.text = userModel.mobile;
+    self.personView.avatarImgView.image = userModel.portraitImage ? userModel.portraitImage : [UIImage imageNamed:@"portrait"];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     //将coredata储存的用户数据 显示到界面
     NSArray *userArray;
-//    NSArray *userArray =[[CoreDataManager sharedCoreDataManager] fentchEntityName:@"ZXUserModel" predicate:[NSPredicate predicateWithFormat:@"uid = %@",[KeyChain account]] orderby:nil];
-//    if (userArray !=nil) {
-//        for (ZXUserModel *userOjc in userArray) {
-//
-//             self.user =userOjc;
-//        }
-//
-//        self.personView.usern.text =self.user.nickname;
-//        self.personView.trueName.text =self.user.compellation;
-//
-//        if([self.user.sex isEqual: @0]){
-//            [kNotificationCenter postNotificationName:@"manNotificate" object:nil];
-//        }else if([self.user.sex isEqual: @1]){
-//            [kNotificationCenter postNotificationName:@"womanNotificate" object:nil];
-//        }
+    //    NSArray *userArray =[[CoreDataManager sharedCoreDataManager] fentchEntityName:@"ZXUserModel" predicate:[NSPredicate predicateWithFormat:@"uid = %@",[KeyChain account]] orderby:nil];
+    //    if (userArray !=nil) {
+    //        for (ZXUserModel *userOjc in userArray) {
+    //
+    //             self.user =userOjc;
+    //        }
+    //
+    //        self.personView.usern.text =self.user.nickname;
+    //        self.personView.trueName.text =self.user.compellation;
+    //
+    //        if([self.user.sex isEqual: @0]){
+    //            [kNotificationCenter postNotificationName:@"manNotificate" object:nil];
+    //        }else if([self.user.sex isEqual: @1]){
+    //            [kNotificationCenter postNotificationName:@"womanNotificate" object:nil];
+    //        }
     
-//        self.personView.weighfld.text =self.user.weight;
-//        self.personView.heighfld.text =self.user.height;
-        
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        [formatter setDateStyle:NSDateFormatterMediumStyle];
-//        [formatter setTimeStyle:NSDateFormatterShortStyle];
-//        [formatter setDateFormat:@"YYYY-MM-dd"]; // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
-//        //      时间戳转时间的方法:
-//        if (self.user.birthday !=nil) {
-//
-//            NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:
-//                                     [self.user.birthday longValue]/1000];
-//            NSLog(@"createTime =%@",confromTimesp);
-//            NSString *timespStr = [formatter stringFromDate:confromTimesp];
-//            NSArray *array = [timespStr componentsSeparatedByString:@" "];
-//
-//            self.personView.birthlabel.text =[array objectAtIndex:0];
-//
-//            self.personView.qqfld.text =self.user.qq;
-//            self.personView.mailfld.text =self.user.email;
-//            self.personView.pholabel.text =self.user.mobile;
-//        }
-//    }
+    //        self.personView.weighfld.text =self.user.weight;
+    //        self.personView.heighfld.text =self.user.height;
+    
+    //        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //        [formatter setDateStyle:NSDateFormatterMediumStyle];
+    //        [formatter setTimeStyle:NSDateFormatterShortStyle];
+    //        [formatter setDateFormat:@"YYYY-MM-dd"]; // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    //        //      时间戳转时间的方法:
+    //        if (self.user.birthday !=nil) {
+    //
+    //            NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:
+    //                                     [self.user.birthday longValue]/1000];
+    //            NSLog(@"createTime =%@",confromTimesp);
+    //            NSString *timespStr = [formatter stringFromDate:confromTimesp];
+    //            NSArray *array = [timespStr componentsSeparatedByString:@" "];
+    //
+    //            self.personView.birthlabel.text =[array objectAtIndex:0];
+    //
+    //            self.personView.qqfld.text =self.user.qq;
+    //            self.personView.mailfld.text =self.user.email;
+    //            self.personView.pholabel.text =self.user.mobile;
+    //        }
+    //    }
 }
 
 
 - (void)disMsg{
     
-//    usrMsg =[kUserDefaults objectForKey:@"usrMsg"];
-////    - (void)deleteData:(NSString *)entityName byattr:(NSString *)attr andValue:(NSString *)value
-////    getStatusByAttr
-//    self.personView.usern.text =[usrMsg objectForKey:@"nickname"];
-//    self.personView.trueName.text =[usrMsg objectForKey:@"compellation"];
-//
-//    if([[usrMsg objectForKey:@"sex"]  isEqual: @0]){
-////        [self Chooseman];
-//    }else if([[usrMsg objectForKey:@"sex"]  isEqual: @1]){
-////        [self Choosewoman];
-//    }
-
+    //    usrMsg =[kUserDefaults objectForKey:@"usrMsg"];
+    ////    - (void)deleteData:(NSString *)entityName byattr:(NSString *)attr andValue:(NSString *)value
+    ////    getStatusByAttr
+    //    self.personView.usern.text =[usrMsg objectForKey:@"nickname"];
+    //    self.personView.trueName.text =[usrMsg objectForKey:@"compellation"];
+    //
+    //    if([[usrMsg objectForKey:@"sex"]  isEqual: @0]){
+    ////        [self Chooseman];
+    //    }else if([[usrMsg objectForKey:@"sex"]  isEqual: @1]){
+    ////        [self Choosewoman];
+    //    }
+    
 }
 
 #pragma mark - 提交
@@ -126,20 +143,33 @@
     NSNumber* weight =[[NSNumber alloc]initWithFloat:self.personView.weighfld.text.floatValue];
     NSNumber* sexnum =[[NSNumber alloc] initWithInt:sex];
     //提交 用户基本信息
-
-//    [self.reqObj correctUserMsgwithview:self.view birth:self.personView.birthlabel.text email:self.personView.mailfld.text height:height nickname:self.personView.usern.text qq:self.personView.qqfld.text sex:sexnum compellation:self.personView.trueName.text weight:weight success:^(id result) {
-//
-//        NSLog(@"result =%@",[NSThread currentThread]);
-//        if ([result isEqual:@"success"]) {
-//
-//            [self performSelector:@selector(dismissController) withObject:nil afterDelay:1];
-//        }
-//    }];
+    ZXUserModel *userModel = [ZXUserModel new];
+    userModel.nickname = self.personView.usern.text;
+    userModel.compellation = self.personView.trueName.text;
+    userModel.sex = @(sex);
+    userModel.birthday = self.personView.birthlabel.text;
+    userModel.qq = self.personView.qqfld.text;
+    userModel.email = self.personView.mailfld.text;
+    userModel.mobile = self.personView.pholabel.text;
+    userModel.portraitImage = self.personView.avatarImgView.image;
     
-//  是否选中了其他图片
+    [kUserDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:userModel] forKey:UserModelMsg];
+    [kUserDefaults synchronize];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    //    [self.reqObj correctUserMsgwithview:self.view birth:self.personView.birthlabel.text email:self.personView.mailfld.text height:height nickname:self.personView.usern.text qq:self.personView.qqfld.text sex:sexnum compellation:self.personView.trueName.text weight:weight success:^(id result) {
+    //
+    //        NSLog(@"result =%@",[NSThread currentThread]);
+    //        if ([result isEqual:@"success"]) {
+    //
+    //            [self performSelector:@selector(dismissController) withObject:nil afterDelay:1];
+    //        }
+    //    }];
+    
+    //  是否选中了其他图片
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self.photoOperate filePath:@"selfTemporPhoto.png"]]) {
         //分表单提交用户头像
-//        [self.reqObj correctUsrportrait:self.view];
+        //        [self.reqObj correctUsrportrait:self.view];
     }
 }
 
@@ -152,7 +182,7 @@
 #pragma mark - 返回按钮事件触发
 - (void)pressBack{
     
-    [self.photoOperate removeItemwithPath:[self.photoOperate filePath:@"selfTemporPhoto.png"]];
+    //    [self.photoOperate removeItemwithPath:[self.photoOperate filePath:@"selfTemporPhoto.png"]];
     //将当前的视图控制器弹出，返回到上一级界面
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -172,52 +202,52 @@
             NSLog(@"GetSelectDate %@",[NSThread currentThread]);
             self.personView.birthlabel.text = dateStr;
         };
-
+        
     });
     //创建对话框控制器 ，UIAlertControllerStyleAlert
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择日期" message:nil preferredStyle:UIAlertControllerStyleAlert];
-//    
-//    //分割线1
-//    UIView *line1 = [[UIView alloc] init];
-//    [line1 setBackgroundColor:klineColor];
-//    [alert.view addSubview:line1];
-//    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(alert.view.mas_top).offset(50);
-//        make.left.equalTo(alert.view.mas_left).offset(30);
-//        make.right.equalTo(alert.view.mas_right).offset(-30);
-//        make.height.equalTo(@(1));
-//    }];
-//    //创建日期
-//    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-//    datePicker.datePickerMode = UIDatePickerModeDate;
-//    
-//    datePicker.center=self.view.center;
-//    [alert.view addSubview:datePicker];
-//    [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(line1.mas_top).offset(10);
-//        make.left.equalTo(alert.view.mas_left);
-//        make.right.equalTo(alert.view.mas_right);
-//        make.height.equalTo(@(200));
-//    }];
-//    
-//    //添加 完成按钮
-//    [alert addAction:[UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//        
-//        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
-//        
-//        //实例化一个NSDateFormatter对象
-//        [dateFormat setDateFormat:@"yyyy-MM-dd"];//设定时间格式
-//        
-//        _birthlabel.text = [dateFormat stringFromDate:datePicker.date];
+    //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择日期" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    //
+    //    //分割线1
+    //    UIView *line1 = [[UIView alloc] init];
+    //    [line1 setBackgroundColor:klineColor];
+    //    [alert.view addSubview:line1];
+    //    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.equalTo(alert.view.mas_top).offset(50);
+    //        make.left.equalTo(alert.view.mas_left).offset(30);
+    //        make.right.equalTo(alert.view.mas_right).offset(-30);
+    //        make.height.equalTo(@(1));
+    //    }];
+    //    //创建日期
+    //    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    //    datePicker.datePickerMode = UIDatePickerModeDate;
+    //
+    //    datePicker.center=self.view.center;
+    //    [alert.view addSubview:datePicker];
+    //    [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.equalTo(line1.mas_top).offset(10);
+    //        make.left.equalTo(alert.view.mas_left);
+    //        make.right.equalTo(alert.view.mas_right);
+    //        make.height.equalTo(@(200));
+    //    }];
+    //
+    //    //添加 完成按钮
+    //    [alert addAction:[UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    //
+    //        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+    //
+    //        //实例化一个NSDateFormatter对象
+    //        [dateFormat setDateFormat:@"yyyy-MM-dd"];//设定时间格式
+    //
+    //        _birthlabel.text = [dateFormat stringFromDate:datePicker.date];
     
-        //求出当天的时间字符串
-//        NSLog(@"%@",[dateFormat stringFromDate:datePicker.date]);
-//    }]];
-//    //添加取消按钮
-//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//    }]];
-//    
-//    [self presentViewController:alert animated:YES completion:^{ }];
+    //求出当天的时间字符串
+    //        NSLog(@"%@",[dateFormat stringFromDate:datePicker.date]);
+    //    }]];
+    //    //添加取消按钮
+    //    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    //    }]];
+    //
+    //    [self presentViewController:alert animated:YES completion:^{ }];
     
 }
 
@@ -234,7 +264,7 @@
             sex =1;
             [self.personView Sexselected:sex];
         }
-
+    
 }
 
 #pragma mark -  从相册获取图片
@@ -303,11 +333,6 @@
         self.personView.avatarImgView.clipsToBounds =YES;
         self.personView.avatarImgView.image =[UIImage circleImage:img];
         
-        //保存当前选中头像
-//        [self.queue addOperationWithBlock:^{
-//            NSLog(@"current thread %@",[NSThread currentThread]);
-//            [self.photoOperate saveImage:self.personView.avatarImgView.image imageName:@"selfTemporPhoto.png" toImagView:nil];
-//        }];
     }
     else if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeMovie]) {
         NSString *videoPath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
@@ -337,7 +362,7 @@
         self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
     
     [UIView commitAnimations];
-
+    
 }
 
 //当用户按下return键或者按回车键，keyboard消失
@@ -398,3 +423,4 @@
 }
 
 @end
+

@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZXUserModel : NSObject
+#define ZXUserModelSingle [ZXUserModel sharedInstance]
+
+@interface ZXUserModel : NSObject <NSCopying>
 //"user": {
 //    　"uid": "用户ID ",
 //    "nickname": "昵称",
@@ -38,6 +40,8 @@
 @property (nonatomic, strong)  NSString *token;
 @property (nonatomic, strong)  NSString *createTime;
 
+@property (nonatomic, strong)  UIImage *portraitImage;
+
 //@property (nonatomic, strong) NSString *mobile;
 //@property (nonatomic, strong)  NSString *compellation;
 //@property (nonatomic, strong)  NSString *height;
@@ -60,4 +64,7 @@
 //@property (nonatomic, strong)  NSString *headPortrait;
 //@property (nonatomic, strong)  NSSet<ZXStatus *> *user;
 
++ (instancetype) sharedInstance;
+
 @end
+
