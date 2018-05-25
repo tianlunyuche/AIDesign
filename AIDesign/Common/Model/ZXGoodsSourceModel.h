@@ -15,6 +15,12 @@
 
 @end
 
+@interface ZXGoodsArrayModel : NSObject
+
+@property(nonatomic,strong) NSArray<ZXGoodsModel *> *goodsArray;
+
+@end
+
 @interface ZXGoodsDoubleModel : NSObject
 
 @property(nonatomic,strong) ZXGoodsModel *goods1;
@@ -48,5 +54,7 @@
 
 @property (nonatomic, assign) NSInteger num;
 
+@property(nonatomic,assign) NSInteger type;
+@property (nonatomic, strong) NSString *deadTime;
 
 @end

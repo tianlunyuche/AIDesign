@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXLoginVC : UIViewController
-
+@property(nonatomic,assign) BOOL isDirectLogin;
 @end

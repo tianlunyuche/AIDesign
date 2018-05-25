@@ -9,22 +9,22 @@
 #import "ZXOrderVC.h"
 #import "ZXGoodsCell01.h"
 #import "ZXMenuCell.h"
-#import "ZXResultTableVC.h"
+//#import "ZXResultTableVC.h"
 #import "ZXNetWorkManager.h"
 #import "ZXEditView.h"
 #import "ZXCartVC.h"
 
 #define ZXGoodsCell @"ZXGoodsCell01"
 #define ZXMENUCELL @"ZXMenuCell"
-
-@interface ZXOrderVC ()<UITableViewDelegate ,UITableViewDataSource ,UISearchBarDelegate, UISearchControllerDelegate, BDSClientASRDelegate >
+//UISearchResultsUpdating
+@interface ZXOrderVC ()<UITableViewDelegate ,UITableViewDataSource ,UISearchBarDelegate, UISearchControllerDelegate, BDSClientASRDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITableView *menuView;
 @property (weak, nonatomic) IBOutlet UIButton *selectButton;
-@property(nonatomic,strong) UISearchController *searchVC;
+//@property(nonatomic,strong) UISearchController *searchVC;
 
-@property(nonatomic,strong) ZXResultTableVC *resultTableVC;
+//@property(nonatomic,strong) ZXResultTableVC *resultTableVC;
 
 @property(nonatomic,strong) BDSEventManager *asrEventManager;
 @property(nonatomic,strong) BDSEventManager *wakeupEventManager;
@@ -43,6 +43,9 @@
 @property(nonatomic,strong) NSMutableArray *searchArray;
 @property(nonatomic,strong) ZXEditView *editView;
 @property(nonatomic,strong) UIView *editBackgroudView;
+
+@property(nonatomic,strong) UISearchBar *searchBar;
+
 @end
 
 @implementation ZXOrderVC
@@ -52,15 +55,15 @@
     [self.tableView registerNib:[UINib nibWithNibName:ZXGoodsCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ZXGoodsCell];
     [self.menuView registerNib:[UINib nibWithNibName:ZXMENUCELL bundle:nil] forCellReuseIdentifier:ZXMENUCELL];
 //----------------------
-    self.searchVC.searchBar.placeholder =@"搜索产品";
+//    self.searchVC.searchBar.placeholder =@"搜索产品";
     //    self.navigationController.navigationBar.prefersLargeTitles = true;
     self.navigationItem.hidesSearchBarWhenScrolling =NO;
     self.definesPresentationContext = YES;
     //    self.navigationItem.searchController =self.searchVC;
     //    self.tableView.tableHeaderView =self.searchVC.searchBar;
-    self.navigationItem.titleView =self.searchVC.searchBar;
+    self.navigationItem.titleView =self.searchBar;
     self.tabBarController.tabBarItem.image =[[UIImage imageNamed:@"state-restaurant-done"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
+    self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithTitle:@"语音识别" style:UIBarButtonItemStylePlain target:self action:@selector(clickEvent)];
 }
 
 - (void)viewDidLoad {
@@ -103,6 +106,28 @@
     [self getGoodSourcesWithParam:@"goods0" withMenuRow:0];
 }
 
+#pragma mark - Search
+//- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+//    NSLog(@"update");
+//    [self.tableView reloadData];
+//}
+#pragma mark - SearchDelegate
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if ([searchText isEqualToString:@""]) {
+        [self.searchBar resignFirstResponder];
+        [self.tableView reloadData];
+    }
+}
+
+//键盘上搜索事件的响应
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    NSLog(@"搜索");
+    [self.tableView reloadData];
+    [self searchGoods:@[searchBar.text]];
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+}
 
 #pragma mark - 语音识别配置
 -(void)configVoiceRecognitionClient{
@@ -143,6 +168,7 @@
 #pragma mark 触发语音识别
 -(void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"haode ");
+    self.navigationItem.rightBarButtonItem.title = @"识别中";
     self.touchUpFlag = NO;
     self.longPressFlag = NO;
     [self cleanLogUI];
@@ -172,7 +198,8 @@
 
 - (void)cleanLogUI
 {
-    self.searchVC.searchBar.text =@"";
+    self.searchBar.text = @"";
+//    self.searchVC.searchBar.text =@"";
 }
 
 
@@ -210,7 +237,8 @@
                 NSArray *resultsArray = [aObj objectForKey:@"results_recognition"];
                 NSLog(@"resultsArray =%@",resultsArray);
                 if (resultsArray.count) {
-                    self.searchVC.searchBar.text = resultsArray[0];
+                    self.navigationItem.rightBarButtonItem.title = @"语音识别";
+                    self.searchBar.text = resultsArray[0];
                     [self searchGoods:resultsArray];
                 }
                 
@@ -310,30 +338,31 @@
     return logDic;
 }
 
+//#pragma mark - LazyLoad
+//-(UISearchController *)searchVC{
+//    if (!_searchVC) {
+//
+//        _searchVC =[[UISearchController alloc] initWithSearchResultsController:self];
+//        _searchVC.searchResultsUpdater =self;
+//        //得加上这一句，否则 以 self.navigationItem.titleView =self.searchVC.searchBar;这种方式，会导致 搜索框上移-64 不可见。
+//        _searchVC.hidesNavigationBarDuringPresentation =NO;
+//        _searchVC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+//        _searchVC.searchBar.showsSearchResultsButton =YES;
+//        _searchVC.searchBar.delegate = self;
+//        _searchVC.delegate = self;
+//
+//    }
+//    return _searchVC;
+//}
+//
+//-(ZXResultTableVC *)resultTableVC{
+//    if (!_resultTableVC) {
+//        _resultTableVC = [[ZXResultTableVC alloc] init];
+//    }
+//    return _resultTableVC;
+//}
+
 #pragma mark - LazyLoad
--(UISearchController *)searchVC{
-    if (!_searchVC) {
-        
-        _searchVC =[[UISearchController alloc] initWithSearchResultsController:self.resultTableVC];
-        _searchVC.searchResultsUpdater =self.resultTableVC;
-        //得加上这一句，否则 以 self.navigationItem.titleView =self.searchVC.searchBar;这种方式，会导致 搜索框上移-64 不可见。
-        _searchVC.hidesNavigationBarDuringPresentation =NO;
-        _searchVC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
-        _searchVC.searchBar.showsSearchResultsButton =YES;
-        _searchVC.searchBar.delegate = self;
-        _searchVC.delegate = self;
-
-    }
-    return _searchVC;
-}
-
--(ZXResultTableVC *)resultTableVC{
-    if (!_resultTableVC) {
-        _resultTableVC = [[ZXResultTableVC alloc] init];
-    }
-    return _resultTableVC;
-}
-
 -(NSMutableArray *)searchArray{
     if (!_searchArray) {
         _searchArray =[NSMutableArray arrayWithCapacity:1];
@@ -354,6 +383,15 @@
         _allGoodsDic = [[NSMutableDictionary alloc] init];
     }
     return _allGoodsDic;
+}
+
+-(UISearchBar *)searchBar {
+    if (!_searchBar) {
+        _searchBar = [[UISearchBar alloc] init];
+        _searchBar.placeholder = @"请输入关键词";
+        _searchBar.delegate = self;
+    }
+    return _searchBar;
 }
 
 #pragma mark - UITableViewDelegate
@@ -380,7 +418,10 @@
         
         NSString *goods = [NSString stringWithFormat:@"goods%ld", (long)indexPath.row];
         [self getGoodSourcesWithParam:goods withMenuRow:indexPath.row];
-        
+        if (![self.searchBar.text isEqualToString:@""]) {
+            [self searchGoods:@[self.searchBar.text]];
+        }
+ 
     }else {
         
         [self.view addSubview:self.editBackgroudView];
@@ -395,8 +436,14 @@
         __block __weak typeof(self.editView) weakEditView = self.editView;
         __weak typeof(self) weakSelf = self;
         self.editView.sureBtnSelect = ^(NSString *num) {
-            
-            ZXGoodsModel *goodsModel = weakSelf.goodsArray[indexPath.row];
+        __strong typeof(self) self = weakSelf;
+            ZXGoodsModel *goodsModel;
+            if ([self.searchBar.text isEqualToString:@""]) {
+                goodsModel = weakSelf.goodsArray[indexPath.row];
+            } else {
+                goodsModel = weakSelf.searchArray[indexPath.row];
+            }
+
             if (num.integerValue <= goodsModel.soldOut) {
                 goodsModel.num = num.integerValue;
             } else {
@@ -420,7 +467,7 @@
     if (tableView.tag == 1010) {
         return self.menuArray.count;
     }else {
-        if ([self.searchVC.searchBar.text isEqualToString:@""]) {
+        if ([self.searchBar.text isEqualToString:@""]) {
             return self.goodsArray.count;
         } else {
             return self.searchArray.count;
@@ -439,11 +486,12 @@
     }else{
         ZXGoodsCell01 *cell = [tableView dequeueReusableCellWithIdentifier:ZXGoodsCell];
         __block ZXGoodsModel *goodsModel;
-        if ([self.searchVC.searchBar.text isEqualToString:@""]) {
+        if ([self.searchBar.text isEqualToString:@""]) {
             goodsModel = self.goodsArray[indexPath.row];
         } else {
             goodsModel = self.searchArray[indexPath.row];
         }
+        cell.code.text = goodsModel.offerId;
         cell.soldOut.text = [NSString stringWithFormat:@"库存：%ld",goodsModel.soldOut];
         cell.name.text = goodsModel.title;
         [cell.imageV sd_setImageWithURL:[NSURL URLWithString:goodsModel.img] placeholderImage:[UIImage imageNamed:@"default-ico-none"]];
@@ -533,8 +581,8 @@
 }
 
 - (void)willPresentSearchController:(UISearchController *)searchController{
-    self.resultTableVC.goodsArray = self.goodsArray;
-    self.resultTableVC.menuArray = self.menuArray;
+//    self.resultTableVC.goodsArray = self.goodsArray;
+//    self.resultTableVC.menuArray = self.menuArray;
     self.tabBarController.tabBar.hidden = YES;
 }
 
@@ -557,6 +605,7 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.editView removeFromSuperview];
     [self.editBackgroudView removeFromSuperview];
+    [self.searchBar resignFirstResponder];
 }
 
 //购物车按钮
@@ -566,6 +615,10 @@
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cartVC animated:YES];
     self.hidesBottomBarWhenPushed = NO;
+}
+
+-(void)clickEvent {
+    [self searchBarResultsListButtonClicked:[[UISearchBar alloc] init]];
 }
 
 @end

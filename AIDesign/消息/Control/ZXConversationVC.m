@@ -24,15 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.backgroundColor = [UIColor darkGrayColor];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.chatSessionInputBarControl.inputTextView.textChangeDelegate = self;
+//    self.navigationController.navigationBar.backgroundColor = [UIColor darkGrayColor];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.chatSessionInputBarControl.inputTextView.textChangeDelegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self setaiSpeenchSwitch];
-    [self speechAuthorization];
+//    [self setaiSpeenchSwitch];
+//    [self speechAuthorization];
 }
 
 //- (void)onBeginRecordEvent {
@@ -51,7 +51,7 @@
 //}
 
 
--(void)setaiSpeenchSwitch{
+-(void)setaiSpeenchSwitch {
     self.chatSessionInputBarControl.pluginBoardView.pluginBoardDelegate = self;
     [self.chatSessionInputBarControl addSubview:self.aiSpeechBtn];
     [self.aiSpeechBtn mas_makeConstraints:^(MASConstraintMaker *make) {

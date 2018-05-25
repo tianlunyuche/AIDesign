@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,16 +13,53 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bhd-cB-zx4"/>
+                        <viewControllerLayoutGuide type="bottom" id="WVc-by-fVU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startImage" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-4f-aGP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppImage" translatesAutoresizingMaskIntoConstraints="NO" id="SpI-Gb-e1w">
+                                <rect key="frame" x="147" y="170" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OQP-TP-Znb"/>
+                                    <constraint firstAttribute="width" constant="80" id="fw9-Wa-XOu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="供应链管先生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WS-35-TXV">
+                                <rect key="frame" x="111" y="307" width="152" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.30838517189999998" green="1" blue="0.60979121059999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="SpI-Gb-e1w" firstAttribute="centerX" secondItem="b3M-4f-aGP" secondAttribute="centerX" id="7se-Xm-eat"/>
+                            <constraint firstItem="SpI-Gb-e1w" firstAttribute="top" secondItem="bhd-cB-zx4" secondAttribute="bottom" constant="150" id="GzD-N3-U5B"/>
+                            <constraint firstItem="3WS-35-TXV" firstAttribute="top" secondItem="SpI-Gb-e1w" secondAttribute="bottom" constant="57" id="LNb-bD-KnQ"/>
+                            <constraint firstAttribute="bottom" secondItem="b3M-4f-aGP" secondAttribute="bottom" id="QyX-f9-buL"/>
+                            <constraint firstAttribute="trailing" secondItem="b3M-4f-aGP" secondAttribute="trailing" id="bnN-Lf-3Eb"/>
+                            <constraint firstItem="b3M-4f-aGP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="20" id="eWN-D2-Ydz"/>
+                            <constraint firstItem="b3M-4f-aGP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="qWP-Ba-j18"/>
+                            <constraint firstItem="3WS-35-TXV" firstAttribute="centerX" secondItem="SpI-Gb-e1w" secondAttribute="centerX" id="qc3-ri-w5D"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppImage" width="120" height="120"/>
+        <image name="startImage" width="419" height="492"/>
+    </resources>
 </document>

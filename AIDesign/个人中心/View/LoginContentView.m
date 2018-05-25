@@ -37,7 +37,7 @@
     
     //在view中添加文本编辑框
     [_view addSubview:self.phoneNumField];
-//
+    
     [_phoneNumField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_view.mas_top);
         make.centerX.equalTo(_view.mas_centerX);
@@ -221,6 +221,7 @@
     
     if (!_phoneNumField) {
         _phoneNumField = [[UITextField alloc] init];
+      
         [_phoneNumField setKeyboardType:UIKeyboardTypePhonePad];
         _phoneNumField.clearButtonMode = UITextFieldViewModeWhileEditing;
         //    [phoneNumField setClearButtonMode:UITextFieldViewModeWhileEditing];  //编辑时会出现个修改X

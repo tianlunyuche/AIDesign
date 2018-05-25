@@ -15,5 +15,8 @@
 @property(nonatomic,strong) NSMutableArray *goodsArray;
 @property(nonatomic,strong) NSMutableArray *searchArray;
 @property (weak, nonatomic) IBOutlet UIButton *orderBtn;
+//供应商id
+@property(nonatomic,strong) NSString *manuID;
+@property (weak, nonatomic) IBOutlet UILabel *totalPrice;
 
 @end

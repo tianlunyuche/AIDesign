@@ -47,6 +47,11 @@
     return @"报表";
 }
 
+- (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
+    CGFloat leftMargin = self.showOnNavigationBar ? 50 : 0;
+    return CGRectMake(leftMargin, 0, self.view.frame.size.width - 2*leftMargin, 44);
+}
+
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
 //    switch (index) {
 //        case 0: return [[ZXStockVC alloc] initWithNibName:@"ZXStockVC" bundle:nil];

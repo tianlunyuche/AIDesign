@@ -70,13 +70,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZXConversationVC *conversationVC = [[ZXConversationVC alloc]init];
     conversationVC.conversationType = ConversationType_PRIVATE;
     
     ZXUserModel *userModel = self.msgListArray[indexPath.row];
-    conversationVC.targetId = @"123456";
-    conversationVC.title = userModel.nickname;
-    [conversationVC.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"more_restaurant_call"] title:@"语音转文字" atIndex:0 tag:1314];
+    conversationVC.targetId = userModel.uid;
+//    conversationVC.title = userModel.nickname;
+//    [conversationVC.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"more_restaurant_call"] title:@"语音转文字" atIndex:0 tag:1314];
     
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:conversationVC animated:YES];
@@ -94,11 +95,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
     }
     ZXUserModel *userModel = self.msgListArray[indexPath.row];
-    if ([userModel.portrait hasPrefix:@"http"]) {
-        [cell.imageView setImageWithURL:[NSURL URLWithString:userModel.portrait] placeholder:[UIImage imageNamed:@"allocation_btn_add"]];
-    } else {
-        [cell.imageView setImageWithURL:[NSURL URLWithString:@"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=552972519,2902321478&fm=58"] placeholder:[UIImage imageNamed:@"allocation_btn_add"]];
-    }
+   cell.imageView.image = [UIImage imageNamed:self.picArray[indexPath.row]];
 
     cell.textLabel.text = userModel.nickname;
     cell.detailTextLabel.text = userModel.createTime;
@@ -114,6 +111,12 @@
         
     }
     return _msgListArray;
+}
+
+-(NSArray *)picArray {
+    return @[@"more-restautant-orderAll-1",
+             @"more-restautant-orderAll",
+             @"more-restaurant-freeze-1"];
 }
 
 @end

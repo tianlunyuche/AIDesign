@@ -40,6 +40,7 @@
     [aCoder encodeObject:self.token forKey:@"token"];
     [aCoder encodeObject:self.createTime forKey:@"createTime"];
     [aCoder encodeObject:self.portraitImage forKey:@"portraitImage"];
+    [aCoder encodeInteger:self.isOld forKey:@"isOld"];
 }
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
@@ -57,6 +58,7 @@
         self.token = [aDecoder decodeObjectForKey:@"token"];
         self.createTime = [aDecoder decodeObjectForKey:@"createTime"];
         self.portraitImage = [aDecoder decodeObjectForKey:@"portraitImage"];
+        self.isOld = [aDecoder decodeIntegerForKey:@"isOld"];
     }
     return self;
 }

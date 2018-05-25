@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXReportVC : UIViewController
-
+@property(nonatomic,assign) NSInteger row;
+@property(nonatomic,strong) NSString *name;
 @end

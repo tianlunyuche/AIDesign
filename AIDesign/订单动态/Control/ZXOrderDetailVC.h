@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXOrders.h"
 
 @interface ZXOrderDetailVC : UIViewController
 
+@property(nonatomic,strong) NSMutableArray *ordersArray;
+@property(nonatomic,strong) ZXOrder *order;
+@property(nonatomic,assign) NSInteger row;
 @end

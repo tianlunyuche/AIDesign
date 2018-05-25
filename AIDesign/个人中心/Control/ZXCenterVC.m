@@ -8,6 +8,7 @@
 
 #import "ZXCenterVC.h"
 #import "ZXUserModel.h"
+#import "ZXLoginVC.h"
 
 #define DynamicCell @"ZXDynamicCell"
 #define ZXMENUCELL @"ZXMenuCell"
@@ -68,7 +69,12 @@ static CGFloat logoBgImgViewHeight = 219;
     if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 2: {
+                [kUserDefaults removeObjectForKey:@"user"];
+                UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:[[ZXLoginVC alloc] init]];
                 
+                [self presentViewController:navVC animated:YES completion:^{
+                    
+                }];
             }
                 break;
                 

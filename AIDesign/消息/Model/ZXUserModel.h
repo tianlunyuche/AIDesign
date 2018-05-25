@@ -42,6 +42,8 @@
 
 @property (nonatomic, strong)  UIImage *portraitImage;
 
+@property (nonatomic, assign)  NSInteger isOld;
+
 //@property (nonatomic, strong) NSString *mobile;
 //@property (nonatomic, strong)  NSString *compellation;
 //@property (nonatomic, strong)  NSString *height;

@@ -14,7 +14,7 @@
 #define ZXGoodsCell @"ZXGoodsCell01"
 #define ZXMENUCELL @"ZXMenuCell"
 
-@interface ZXResultTableVC ()<BDSClientWakeupDelegate ,UITableViewDelegate, UITableViewDataSource>
+@interface ZXResultTableVC ()<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) UITableView *menuView;

@@ -13,6 +13,8 @@
 #import "ZXGoodsCell02.h"
 #import "ZXDynamicVC.h"
 #import "ZXOrderVC.h"
+#import "ZXOrders.h"
+#import "ZXUserModel.h"
 
 #define ZXGoodsCell @"ZXGoodsCell02"
 #define ZXMENUCELL @"ZXMenuCell"
@@ -38,6 +40,7 @@
 
 @property(nonatomic, assign) BOOL longSpeechFlag;
 @property(nonatomic,strong) NSMutableDictionary<NSString *, NSMutableArray *> *allCartGoodsDic;
+
 
 @end
 
@@ -104,6 +107,8 @@
         [self.allCartGoodsDic setObject:goodsArray forKey:key];
     }
     [self getGoodSourcesWithParam:@"0"];
+    
+    self.totalPrice.text = [NSString stringWithFormat:@"总价格：%.1f元",[self getTotalGoodsPrice]];
 }
 
 
@@ -405,7 +410,7 @@
         } else {
             goodsModel = self.searchArray[indexPath.row];
         }
-        
+        cell.code.text = goodsModel.offerId;
         cell.name.text = goodsModel.title;
         [cell.imageV sd_setImageWithURL:[NSURL URLWithString:goodsModel.img] placeholderImage:[UIImage imageNamed:@"default-ico-none"]];
         cell.price.text = [NSString stringWithFormat:@"%@元/%@",goodsModel.currentPrice ,goodsModel.unit];
@@ -493,7 +498,7 @@
     self.tabBarController.tabBar.hidden = NO;
 }
 
-#pragma mark - 工具
+#pragma mark - 工具，按钮触发事件
 -(void)searchGoods:(NSArray *)array{
     NSMutableArray *mutableArray = [NSMutableArray array];
     for (ZXGoodsModel *goodsModel in self.goodsArray) {
@@ -504,10 +509,53 @@
     self.searchArray = mutableArray;
     [self.tableView reloadData];
 }
-
+//------下单按钮
 - (IBAction)orderSeclet:(id)sender {
     
     [MBProgressHUD showSuccess:@"下单成功"];
+//    NSDictionary *param = @{@"uid":[kUserDefaults objectForKey:UserID],
+//                            @"orderID":[NSString stringWithFormat:@"%f",[NSDate timeIntervalSinceReferenceDate]],
+//                            @"manuID":self.manuID ? self.manuID:@"",
+//                            @"goods":self.goodsArray
+//                            };
+    //---------------
+    ZXUserModel *userModel = [NSKeyedUnarchiver unarchiveObjectWithData:[kUserDefaults objectForKey:UserModelMsg]];
+    
+    ZXOrders *orders = [NSKeyedUnarchiver unarchiveObjectWithData:[kUserDefaults objectForKey:[NSString stringWithFormat:@"%@%@",CurrentOrders ,userModel.mobile]]];
+    if (!orders) {
+        orders = [ZXOrders new];
+    }
+    ZXOrder *order = [ZXOrder new];
+    order.state = WaitOrder;
+    order.orderID = [NSString stringWithFormat:@"%f",[NSDate timeIntervalSinceReferenceDate]];
+   
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];//格式化
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString * s1 = [df stringFromDate:[NSDate date]];
+    order.time = s1;
+    
+    order.amount = [NSString stringWithFormat:@"%lu",(unsigned long)self.goodsArray.count];
+    order.orderPerson = userModel.nickname;
+    order.totalPrice = [NSString stringWithFormat:@"%.1f",[self getTotalGoodsPrice]];
+    order.wuliuPerson  = @"梁家辉";
+    order.phone = userModel.mobile;
+    order.offerer = Manu(_manuID);
+    
+    order.goods = self.goodsArray;
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];
+    if (orders.order.count) {
+        [array addObjectsFromArray:orders.order];
+    }
+    [array insertObject:order atIndex:0];
+    orders.order = array;
+    
+    if (userModel.mobile) {
+        NSString *str = [NSString stringWithFormat:@"%@%@",CurrentOrders,userModel.mobile];
+        [kUserDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:orders] forKey:str];
+        [kUserDefaults synchronize];
+    }
+    
+    //----------
     for (UIViewController *vc in self.navigationController.viewControllers) {
         if ([vc isKindOfClass:[ZXOrderVC class]]) {
             ((ZXOrderVC *)vc).isPresent = YES;
@@ -515,6 +563,15 @@
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
     self.hidesBottomBarWhenPushed = YES;
+}
+
+-(float)getTotalGoodsPrice {
+    
+    float allPrice = 0;
+    for (ZXGoodsModel *goodsModel in self.goodsArray) {
+        allPrice = allPrice + goodsModel.num * goodsModel.currentPrice.floatValue;
+    }
+    return allPrice;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

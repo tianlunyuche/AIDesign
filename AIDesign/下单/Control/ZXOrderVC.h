@@ -7,6 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BDSASRDefines.h"
+#import "BDSASRParameters.h"
+#import "BDSEventManager.h"
+#import "BDRecognizerViewController.h"
+#import "fcntl.h"
+#import "BDSWakeupDefines.h"
+#import "BDSWakeupParameters.h"
+
+#import "BDVRSettings.h"
 
 @interface ZXOrderVC : UIViewController
 @property(nonatomic,assign) BOOL isPresent;

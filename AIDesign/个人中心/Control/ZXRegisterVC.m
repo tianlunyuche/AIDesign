@@ -113,6 +113,9 @@ static int cnt = 0;
                                                                     repeats:YES];
                     _timer2=timer2;
 //
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.contentView.verifiCodeField.text = @"zYHd";
+            });
 //                } else {
 //                    NSLog(@"错误信息：%@",error);
 //                }
@@ -142,7 +145,7 @@ static int cnt = 0;
         return;
     }
     //NSLog(@"更新时间");
-    _contentView.getCodeBtn.titleLabel.text=[NSString stringWithFormat:@"%i秒后再试",120-cnt];
+    _contentView.getCodeBtn.titleLabel.text=[NSString stringWithFormat:@"%i秒后",120-cnt];
     _contentView.getCodeBtn.userInteractionEnabled=NO;
     
 }
@@ -195,11 +198,13 @@ static int cnt = 0;
 }
 
 - (void)RegisterBtn {
-    
     if([self judge]){
-        
+        [MBProgressHUD showMessage:@"注册中"];
         NSLog(@"注册成功");
-        [self.navigationController popViewControllerAnimated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUD];
+            [self.navigationController popViewControllerAnimated:YES];
+        });
     }
 }
 

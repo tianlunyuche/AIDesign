@@ -184,8 +184,8 @@
     [_backView addSubview:self.getCodeBtn];
     [_getCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(line3.mas_bottom).offset(4);
-        make.left.equalTo(_verifiCodeField.mas_right);
-        make.right.equalTo(_backView.mas_right);
+        make.left.equalTo(_verifiCodeField.mas_right).offset(-5);
+        make.right.equalTo(_backView.mas_right).offset(5);
         make.height.equalTo(@(50));
     }];
 
@@ -268,7 +268,7 @@
         _getCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         [_getCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+        _getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         //验证码按钮tag：107
         _getCodeBtn.tag =107;
         // 按钮边框宽度

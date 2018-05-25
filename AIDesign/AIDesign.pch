@@ -37,6 +37,24 @@
 #define kNotificationCenter     [NSNotificationCenter defaultCenter]
 #define ZXcolor(r,g,b)          [UIColor colorWithRed:r /250 green:g/250 blue:b/250 alpha:1]
 
+#define UserNameKey @"user"   //即手机号
+#define UserPwdKey @"password"
+#define UserID @"userPhone"
 #define UserModelMsg @"userModelMsg"
+#define UserName  [kUserDefaults objectForKey:@"UserName"]
+
+#define WaitOrder @"待发货"
+#define HavingOrder @"发货中"
+#define ReciveOrder @"待收货"
+#define CancelOrder @"取消中"
+
+#define CurrentOrders @"CurrentOrders"
+#define AllPhones @"AllPhones"
+#define CurrentStock @"CurrentStock"
+
+#define CurrentUserModel  [NSKeyedUnarchiver unarchiveObjectWithData:[kUserDefaults objectForKey:UserModelMsg]]
+
+#define Manu(a) a ?  @"汕头旺味食品源头厂家" : @"沧州西瑞食品有限公司"
+
 
 #endif /* AIDesign_pch */

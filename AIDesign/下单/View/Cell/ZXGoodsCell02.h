@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *unit;
 @property (weak, nonatomic) IBOutlet UITextField *numTextField;
 @property (weak, nonatomic) IBOutlet UIButton *reduceBtn;
+@property (weak, nonatomic) IBOutlet UILabel *deadTime;
 
 @property(nonatomic,copy) void (^judgeWhenEndEditing)(void);
 

@@ -35,6 +35,7 @@
 		35250259201C5B40004E898C /* vad.dnn_o.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3525024F201C5B34004E898C /* vad.dnn_o.dat */; };
 		3525025A201C5B40004E898C /* vad_dnn_online.dat in Resources */ = {isa = PBXBuildFile; fileRef = 35250250201C5B34004E898C /* vad_dnn_online.dat */; };
 		3535CE6C207600F60083F6C6 /* ZXDetailPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3535CE6B207600F60083F6C6 /* ZXDetailPageVC.m */; };
+		3541056B20AFC75900CE2A84 /* ZXStockPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3541056A20AFC75900CE2A84 /* ZXStockPageVC.m */; };
 		354FBD632068A1CF002871A5 /* goods0.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD622068A1CF002871A5 /* goods0.json */; };
 		354FBD672068A474002871A5 /* ZXGoodsSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD662068A474002871A5 /* ZXGoodsSourceModel.m */; };
 		354FBD6A2068DA8A002871A5 /* ZXEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD692068DA8A002871A5 /* ZXEditView.m */; };
@@ -46,6 +47,7 @@
 		354FBD7620692A8C002871A5 /* goods5.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD7520692A8C002871A5 /* goods5.json */; };
 		354FBD7820692AF4002871A5 /* goods6.json in Resources */ = {isa = PBXBuildFile; fileRef = 354FBD7720692AF4002871A5 /* goods6.json */; };
 		3566605F20601FBE0070C401 /* ZXConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3566605E20601FBE0070C401 /* ZXConversationVC.m */; };
+		357CE43320A33056004C7557 /* ZXOrders.m in Sources */ = {isa = PBXBuildFile; fileRef = 357CE43220A33056004C7557 /* ZXOrders.m */; };
 		3589A4FA206BE0F600FC7604 /* ZXPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3589A4F9206BE0F600FC7604 /* ZXPageController.m */; };
 		3589A4FC206BE2E900FC7604 /* ZXStockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3589A4FB206BE2E900FC7604 /* ZXStockVC.xib */; };
 		3589A50F206D251600FC7604 /* ZXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3589A50D206D251600FC7604 /* ZXLoginVC.m */; };
@@ -98,6 +100,10 @@
 		35C04A781FF743BC00AB4510 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A771FF743BC00AB4510 /* main.m */; };
 		35C04A821FF743BC00AB4510 /* AIDesignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A811FF743BC00AB4510 /* AIDesignTests.m */; };
 		35C04A8D1FF743BC00AB4510 /* AIDesignUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C04A8C1FF743BC00AB4510 /* AIDesignUITests.m */; };
+		35CD2FB220B1881B00A05521 /* ZXReportListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CD2FB020B1881B00A05521 /* ZXReportListVC.m */; };
+		35CD2FB320B1881B00A05521 /* ZXReportListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CD2FB120B1881B00A05521 /* ZXReportListVC.xib */; };
+		35CD2FB720B1DA6E00A05521 /* JHGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CD2FB620B1D9C100A05521 /* JHGridView.m */; };
+		35CD2FBA20B1E12A00A05521 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CD2FB920B1E0FE00A05521 /* TestObject.m */; };
 		35CE7FD0200AEDE600C13235 /* ZXOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7FCF200AEDE600C13235 /* ZXOrderVC.m */; };
 		35CE7FD9200B00B200C13235 /* ZXGoodsCell01.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7FD7200B00B200C13235 /* ZXGoodsCell01.m */; };
 		35CE7FDA200B00B200C13235 /* ZXGoodsCell01.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CE7FD8200B00B200C13235 /* ZXGoodsCell01.xib */; };
@@ -198,6 +204,8 @@
 		35250250201C5B34004E898C /* vad_dnn_online.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vad_dnn_online.dat; sourceTree = "<group>"; };
 		3535CE6A207600F60083F6C6 /* ZXDetailPageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXDetailPageVC.h; sourceTree = "<group>"; };
 		3535CE6B207600F60083F6C6 /* ZXDetailPageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXDetailPageVC.m; sourceTree = "<group>"; };
+		3541056920AFC75900CE2A84 /* ZXStockPageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXStockPageVC.h; sourceTree = "<group>"; };
+		3541056A20AFC75900CE2A84 /* ZXStockPageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXStockPageVC.m; sourceTree = "<group>"; };
 		354FBD612068043B002871A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		354FBD622068A1CF002871A5 /* goods0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods0.json; sourceTree = "<group>"; };
 		354FBD652068A474002871A5 /* ZXGoodsSourceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXGoodsSourceModel.h; sourceTree = "<group>"; };
@@ -213,6 +221,8 @@
 		354FBD7720692AF4002871A5 /* goods6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goods6.json; sourceTree = "<group>"; };
 		3566605D20601FBE0070C401 /* ZXConversationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXConversationVC.h; sourceTree = "<group>"; };
 		3566605E20601FBE0070C401 /* ZXConversationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXConversationVC.m; sourceTree = "<group>"; };
+		357CE43120A33056004C7557 /* ZXOrders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXOrders.h; sourceTree = "<group>"; };
+		357CE43220A33056004C7557 /* ZXOrders.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXOrders.m; sourceTree = "<group>"; };
 		3589A4F8206BE0F600FC7604 /* ZXPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPageController.h; sourceTree = "<group>"; };
 		3589A4F9206BE0F600FC7604 /* ZXPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXPageController.m; sourceTree = "<group>"; };
 		3589A4FB206BE2E900FC7604 /* ZXStockVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXStockVC.xib; sourceTree = "<group>"; };
@@ -295,6 +305,13 @@
 		35C04A881FF743BC00AB4510 /* AIDesignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIDesignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C04A8C1FF743BC00AB4510 /* AIDesignUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIDesignUITests.m; sourceTree = "<group>"; };
 		35C04A8E1FF743BC00AB4510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35CD2FAF20B1881B00A05521 /* ZXReportListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXReportListVC.h; sourceTree = "<group>"; };
+		35CD2FB020B1881B00A05521 /* ZXReportListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXReportListVC.m; sourceTree = "<group>"; };
+		35CD2FB120B1881B00A05521 /* ZXReportListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXReportListVC.xib; sourceTree = "<group>"; };
+		35CD2FB520B1D9C100A05521 /* JHGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHGridView.h; sourceTree = "<group>"; };
+		35CD2FB620B1D9C100A05521 /* JHGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHGridView.m; sourceTree = "<group>"; };
+		35CD2FB820B1E0FE00A05521 /* TestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
+		35CD2FB920B1E0FE00A05521 /* TestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
 		35CE7FCE200AEDE600C13235 /* ZXOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXOrderVC.h; sourceTree = "<group>"; };
 		35CE7FCF200AEDE600C13235 /* ZXOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXOrderVC.m; sourceTree = "<group>"; };
 		35CE7FD6200B00B200C13235 /* ZXGoodsCell01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXGoodsCell01.h; sourceTree = "<group>"; };
@@ -536,6 +553,8 @@
 		3589A504206D211A00FC7604 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				357CE43120A33056004C7557 /* ZXOrders.h */,
+				357CE43220A33056004C7557 /* ZXOrders.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -690,8 +709,13 @@
 				3589A4FB206BE2E900FC7604 /* ZXStockVC.xib */,
 				3589A4F8206BE0F600FC7604 /* ZXPageController.h */,
 				3589A4F9206BE0F600FC7604 /* ZXPageController.m */,
+				3541056920AFC75900CE2A84 /* ZXStockPageVC.h */,
+				3541056A20AFC75900CE2A84 /* ZXStockPageVC.m */,
 				351683E3208C8AC100D175D8 /* ZXReportVC.h */,
 				351683E4208C8AC100D175D8 /* ZXReportVC.m */,
+				35CD2FAF20B1881B00A05521 /* ZXReportListVC.h */,
+				35CD2FB020B1881B00A05521 /* ZXReportListVC.m */,
+				35CD2FB120B1881B00A05521 /* ZXReportListVC.xib */,
 				351683E0208C886A00D175D8 /* AIDesign-Bridging-Header.h */,
 			);
 			path = Control;
@@ -700,6 +724,8 @@
 		35BB170B20503F20004C0873 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35CD2FB820B1E0FE00A05521 /* TestObject.h */,
+				35CD2FB920B1E0FE00A05521 /* TestObject.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -707,6 +733,7 @@
 		35BB170C20503F20004C0873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				35CD2FB420B1D9C100A05521 /* JHGridView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -776,6 +803,15 @@
 				35C04A8E1FF743BC00AB4510 /* Info.plist */,
 			);
 			path = AIDesignUITests;
+			sourceTree = "<group>";
+		};
+		35CD2FB420B1D9C100A05521 /* JHGridView */ = {
+			isa = PBXGroup;
+			children = (
+				35CD2FB520B1D9C100A05521 /* JHGridView.h */,
+				35CD2FB620B1D9C100A05521 /* JHGridView.m */,
+			);
+			path = JHGridView;
 			sourceTree = "<group>";
 		};
 		35CE7FCA200AEDDB00C13235 /* 下单 */ = {
@@ -994,6 +1030,7 @@
 				35250258201C5B40004E898C /* bds_license.dat in Resources */,
 				35250259201C5B40004E898C /* vad.dnn_o.dat in Resources */,
 				3525025A201C5B40004E898C /* vad_dnn_online.dat in Resources */,
+				35CD2FB320B1881B00A05521 /* ZXReportListVC.xib in Resources */,
 				35916E3B206FC5B400DEF3F5 /* ZXGoodsCell02.xib in Resources */,
 				35E2D9DC201322590028B504 /* ZXMenuCell.xib in Resources */,
 				35C04A751FF743BC00AB4510 /* LaunchScreen.storyboard in Resources */,
@@ -1111,6 +1148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CD2FBA20B1E12A00A05521 /* TestObject.m in Sources */,
+				35CD2FB720B1DA6E00A05521 /* JHGridView.m in Sources */,
 				35E9F0CF209987020007876C /* UIImage+Extension.m in Sources */,
 				3520BEC3209971430046E899 /* PersonalInfoVC.m in Sources */,
 				35A6F84F207769DE00F31319 /* MBProgressHUD+MJ.m in Sources */,
@@ -1120,7 +1159,10 @@
 				3589A518206D268800FC7604 /* ZXRegisterVC.m in Sources */,
 				3589A51C206D274500FC7604 /* ZXCountryCodeVC.m in Sources */,
 				3520BED22099724A0046E899 /* ASBirthSelectSheet.m in Sources */,
+				3541056B20AFC75900CE2A84 /* ZXStockPageVC.m in Sources */,
+				35CD2FB220B1881B00A05521 /* ZXReportListVC.m in Sources */,
 				3589A4FA206BE0F600FC7604 /* ZXPageController.m in Sources */,
+				357CE43320A33056004C7557 /* ZXOrders.m in Sources */,
 				3535CE6C207600F60083F6C6 /* ZXDetailPageVC.m in Sources */,
 				354FBD6A2068DA8A002871A5 /* ZXEditView.m in Sources */,
 				3589A514206D266400FC7604 /* RegisterContentView.m in Sources */,
@@ -1318,9 +1360,10 @@
 			baseConfigurationReference = 3112301D77ED63030CC9B5A7 /* Pods-AIDesign.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 264N6AV3ZH;
+				DEVELOPMENT_TEAM = 99PJ6X3Z7H;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/AIDesign/Frameworks",
@@ -1349,9 +1392,10 @@
 			baseConfigurationReference = 2F6D9EB7903CEDF2CA382915 /* Pods-AIDesign.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 264N6AV3ZH;
+				DEVELOPMENT_TEAM = 99PJ6X3Z7H;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/AIDesign/Frameworks",

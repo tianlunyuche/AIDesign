@@ -10,6 +10,7 @@
 #import "ASBirthSelectSheet.h"
 #import "ZXPhoto.h"
 #import "ZXUserModel.h"
+#import "ZXLoginVC.h"
 
 @interface PersonalInfoVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource ,UITextFieldDelegate>
 {
@@ -137,13 +138,15 @@
 #pragma mark - 提交
 - (void)postPersonInfo{
     
-    
     //基础数据类型转成对象
-    NSNumber* height =[[NSNumber alloc]initWithFloat:self.personView.heighfld.text.floatValue];
-    NSNumber* weight =[[NSNumber alloc]initWithFloat:self.personView.weighfld.text.floatValue];
-    NSNumber* sexnum =[[NSNumber alloc] initWithInt:sex];
+//    NSNumber* height =[[NSNumber alloc]initWithFloat:self.personView.heighfld.text.floatValue];
+//    NSNumber* weight =[[NSNumber alloc]initWithFloat:self.personView.weighfld.text.floatValue];
+//    NSNumber* sexnum =[[NSNumber alloc] initWithInt:sex];
     //提交 用户基本信息
-    ZXUserModel *userModel = [ZXUserModel new];
+    ZXUserModel *userModel = [NSKeyedUnarchiver unarchiveObjectWithData:[kUserDefaults objectForKey:UserModelMsg]];  //480  ,4e00
+    if (!userModel) {
+        userModel = [ZXUserModel new];
+    }
     userModel.nickname = self.personView.usern.text;
     userModel.compellation = self.personView.trueName.text;
     userModel.sex = @(sex);
@@ -152,11 +155,18 @@
     userModel.email = self.personView.mailfld.text;
     userModel.mobile = self.personView.pholabel.text;
     userModel.portraitImage = self.personView.avatarImgView.image;
+    userModel.isOld = 1;
     
     [kUserDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:userModel] forKey:UserModelMsg];
     [kUserDefaults synchronize];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:[ZXLoginVC class]]) {
+            ((ZXLoginVC *)vc).isDirectLogin = YES;
+            [self.navigationController popToViewController:vc animated:YES];
+        }
+    }
+ 
     //    [self.reqObj correctUserMsgwithview:self.view birth:self.personView.birthlabel.text email:self.personView.mailfld.text height:height nickname:self.personView.usern.text qq:self.personView.qqfld.text sex:sexnum compellation:self.personView.trueName.text weight:weight success:^(id result) {
     //
     //        NSLog(@"result =%@",[NSThread currentThread]);

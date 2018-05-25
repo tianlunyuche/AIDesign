@@ -10,4 +10,6 @@
 
 @interface ZXDynamicVC : UIViewController
 
+@property(nonatomic,assign) NSInteger isAllOrder;
+
 @end

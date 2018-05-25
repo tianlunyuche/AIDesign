@@ -12,7 +12,7 @@
         <!--Page Controller-->
         <scene sceneID="wYS-WO-DsU">
             <objects>
-                <viewController id="vxh-fs-wOG" customClass="ZXPageController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZXPageController" id="vxh-fs-wOG" customClass="ZXPageController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BNL-lu-mEe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
         <!--订单动态-->
         <scene sceneID="Wyd-DF-AT8">
             <objects>
-                <viewController id="5m9-fV-h27" customClass="ZXDynamicVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZXDynamicVC" id="5m9-fV-h27" customClass="ZXDynamicVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TGv-re-98k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@
         <!--个人中心-->
         <scene sceneID="DYu-jQ-lXh">
             <objects>
-                <viewController id="Yb3-jT-4nm" customClass="ZXCenterVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZXCenterVC" id="Yb3-jT-4nm" customClass="ZXCenterVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNb-7W-1Bm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--消息-->
         <scene sceneID="vDR-xu-kE2">
             <objects>
-                <tableViewController title="消息" id="7eH-yY-rQo" customClass="ZXMessageVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ZXMessageVC" title="消息" id="7eH-yY-rQo" customClass="ZXMessageVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="myS-zr-E6B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
         <!--OrderVC-->
         <scene sceneID="MNn-uA-5e7">
             <objects>
-                <viewController id="gnx-KS-dLZ" customClass="ZXOrderVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZXOrderVC" id="gnx-KS-dLZ" customClass="ZXOrderVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="958-LE-be9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -35,7 +35,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zl-i0-Jjk">
                                 <rect key="frame" x="80" y="20" width="295" height="30"/>
-                                <state key="normal" title="沧州西瑞食品有限公司">
+                                <state key="normal" title="供应商——沧州西瑞食品有限公司">
                                     <color key="titleColor" red="0.86718940730000005" green="0.1016018465" blue="0.4071396887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -49,21 +49,31 @@
                                     <action selector="orderSeclet:" destination="E9S-RW-Agd" eventType="touchUpInside" id="aZq-P0-RBQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总价格：312.4元" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xes-qq-qZw">
+                                <rect key="frame" x="0.0" y="572.5" width="80" height="45.5"/>
+                                <color key="backgroundColor" red="0.97560375928878784" green="0.17579424381256104" blue="0.014464104548096657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pkr-1V-g6y" secondAttribute="trailing" id="APh-jU-7kE"/>
+                            <constraint firstItem="Xes-qq-qZw" firstAttribute="leading" secondItem="doD-DP-2f3" secondAttribute="leading" id="Baj-8R-vCl"/>
                             <constraint firstAttribute="bottom" secondItem="Pkr-1V-g6y" secondAttribute="bottom" id="FaO-WG-ax9"/>
                             <constraint firstItem="fay-4S-GCf" firstAttribute="leading" secondItem="doD-DP-2f3" secondAttribute="leading" id="Fuj-UF-QHd"/>
                             <constraint firstItem="Pkr-1V-g6y" firstAttribute="leading" secondItem="uu7-Dd-sDL" secondAttribute="leading" id="HAU-wv-sWh"/>
                             <constraint firstItem="Pkr-1V-g6y" firstAttribute="top" secondItem="fay-4S-GCf" secondAttribute="bottom" id="HJl-sT-RD0"/>
                             <constraint firstItem="cmc-Vd-B1K" firstAttribute="leading" secondItem="fay-4S-GCf" secondAttribute="trailing" id="L8I-Zs-Zmp"/>
+                            <constraint firstItem="Pkr-1V-g6y" firstAttribute="top" secondItem="Xes-qq-qZw" secondAttribute="bottom" id="NP5-TJ-xa0"/>
                             <constraint firstItem="doD-DP-2f3" firstAttribute="bottom" secondItem="fay-4S-GCf" secondAttribute="bottom" constant="49" id="Wfj-Y1-LA1"/>
                             <constraint firstItem="cmc-Vd-B1K" firstAttribute="trailing" secondItem="doD-DP-2f3" secondAttribute="trailing" id="c3h-gB-4It"/>
                             <constraint firstItem="fay-4S-GCf" firstAttribute="top" secondItem="doD-DP-2f3" secondAttribute="top" id="eOV-E8-m7e"/>
                             <constraint firstItem="9Zl-i0-Jjk" firstAttribute="top" secondItem="doD-DP-2f3" secondAttribute="top" id="fTC-cT-jnq"/>
                             <constraint firstItem="cmc-Vd-B1K" firstAttribute="top" secondItem="9Zl-i0-Jjk" secondAttribute="bottom" id="gYZ-fb-uOU"/>
                             <constraint firstItem="cmc-Vd-B1K" firstAttribute="bottom" secondItem="fay-4S-GCf" secondAttribute="bottom" id="hqu-6E-9Q4"/>
+                            <constraint firstItem="cmc-Vd-B1K" firstAttribute="leading" secondItem="Xes-qq-qZw" secondAttribute="trailing" id="iFu-VS-1gG"/>
                             <constraint firstItem="9Zl-i0-Jjk" firstAttribute="trailing" secondItem="doD-DP-2f3" secondAttribute="trailing" id="qP2-rI-IJA"/>
                             <constraint firstItem="9Zl-i0-Jjk" firstAttribute="leading" secondItem="fay-4S-GCf" secondAttribute="trailing" id="umn-xK-Dx8"/>
                             <constraint firstItem="doD-DP-2f3" firstAttribute="bottom" secondItem="cmc-Vd-B1K" secondAttribute="bottom" constant="49" id="wGD-hM-8Tu"/>
@@ -77,6 +87,7 @@
                         <outlet property="searchDisplayController" destination="te1-SS-alI" id="eNO-my-9sh"/>
                         <outlet property="selectButton" destination="9Zl-i0-Jjk" id="Neu-1X-xxu"/>
                         <outlet property="tableView" destination="cmc-Vd-B1K" id="SEz-0S-JS0"/>
+                        <outlet property="totalPrice" destination="Xes-qq-qZw" id="u7L-72-n1u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6Q-r8-egb" userLabel="First Responder" sceneMemberID="firstResponder"/>

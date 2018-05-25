@@ -9,5 +9,5 @@
 #import <WMPageController/WMPageController.h>
 
 @interface ZXPageController : WMPageController
-
+@property(nonatomic,assign) BOOL isHiddenBar;
 @end
